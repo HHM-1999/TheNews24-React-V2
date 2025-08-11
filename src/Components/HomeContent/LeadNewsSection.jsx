@@ -1,41 +1,27 @@
 import React from 'react'
 import LeadNews from './LeadNews'
-import LeadLatestNews from './LeadLatestNews'
 import SpecialTop1 from './SpecialTop1'
-// import SpecialCatBanner from './SpecialCatBanner'
 import SpecialTop2 from './SpecialTop2';
 
 export default function LeadNewsSection() {
 
     return (
         <>
-            <div className="TopLeadSection">
-                <div className="row">
-                    <div className="col-lg-9  ">
-                        <div className="row border-bottom-inner pb-3">
-                            <div className="col-lg-8 col-12">
-                                <div className="topNewsSection">
-                                    <LeadNews />
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-12 mt-0">
-                                <SpecialTop1 />
-                            </div>
+
+            <div class="leadnews-wrap">
+                <div class="container">
+                    <div class="row gx-3">
+                        <div class="col-lg-3 order-lg-1 order-2">
+                        <SpecialTop1 />
                         </div>
-                        <div className="row">
-                        <div className="col-md-12">
-                                <SpecialTop2 />
-                            </div>
+                        <div class="col-lg-6 order-lg-2 order-1">
+                            <LeadNews />
+                        </div>
+                        <div class="col-lg-3 order-3">
+                            <SpecialTop2 />
                         </div>
                     </div>
-                    <div className="col-lg-3 col-12 mt-3">
-                    <LeadLatestNews />
-                        <div className="DRightSideAdd">
-                            <a href="#">
-                                <img src={"/media/Advertisement/lab-pharmacy.jpeg"} alt='ads' title='ads' />
-                            </a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 

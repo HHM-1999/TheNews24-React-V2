@@ -2,20 +2,21 @@ import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
-import Slider from 'react-slick';
+import LeadLatestNews from './LeadLatestNews'
+
 
 
 var lazyloaded = false
 export default function VideoSec() {
     const [videos, setVideos] = useState([])
-    const [slideIndex, setSlideIndex] = useState(0);
-    const [updateCount, setUpdateCount] = useState(0);
+    const [Leadvideos, setLeadvideos] = useState([])
     let sliderRef = useRef(null);
     useEffect(() => {
         axios
             .get(`${process.env.REACT_APP_API_URL}json/file/generatePositionVideoCategory1.json`)
             .then(({ data }) => {
-                setVideos(data.data.slice(0, 8))
+                setLeadvideos(data.data[0])
+                setVideos(data.data.slice(1, 3))
                 setTimeout(function () {
                     lazyloaded = false
                     ForLazyLoaderImg(lazyloaded)
@@ -23,108 +24,79 @@ export default function VideoSec() {
             })
     }, [])
 
-    var settings = {
-        dots: false,
-        infinite: true,
-        speed: 100,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        afterChange: () => setUpdateCount(updateCount + 1),
-        beforeChange: (current, next) => setSlideIndex(next),
-        centerPadding: "50px",
-        className: "center",
-        centerMode: true,
-        // dots: true,
-        // infinite: true,
-        // arrows: true,
-        // autoplay: true,
-        pauseOnFocus: true,
-        Speed: 100,
-        // slidesToShow: 4,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
+
 
 
     return (
         <>
-
-            <div className="container">
-                <div className="SectionTitle"><h3><Link to="/video" onClick={scrollTop}><span className="ColorBox"></span>ভিডিও</Link></h3></div>
-                <div className="MoreVideoArea">
-
-                </div>
-                <div className="slider-container">
-
-                    <div className="row Dmargin">
-
-                        <Slider ref={slider => {
-                            sliderRef = slider;
-                        }}
-                            {...settings}>
-                            {videos.map((nc) => {
-                                return (
-                                    
-                                    <div className="DMoreVideoListItem" key={nc.WebTVID} style={{ padding: "0 10px", margin: "0 10px" }}>
-                                        <Link to={"/video/show/" + nc.WebTVID} onClick={scrollTop}>
-                                            <div className="DMoreVideoThumb">
-                                                <div className="Imgresize">
-                                                    <figure className="ImgViewer">
-                                                        <picture className="FixingRatio">
-                                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={406} height={228} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img100 ImgRatio" />
-                                                            <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>
-                                                        </picture>
-                                                    </figure>
-                                                </div>
-                                                <div className="card-video-img transition"></div>
-                                            </div>
-                                            <div className="Desc">
-                                                <h3 className="Title">{nc.WebTVHeading}</h3>
-                                            </div>
-                                        </Link>
-                                    </div>
-
-
-
-                                )
-                            })}
-                        </Slider>
-
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2><Link to="/video" onClick={scrollTop}>ভিডিও</Link></h2>
                     </div>
-
-
-
                 </div>
+                <div class="video-wrap">
+                    <div class="row gx-3">
+                        <div class="col-lg-9">
+                            <div class="row gx-3">
+                                <div class="col-lg-8">
+                                    {Leadvideos ?
+                                        <div class="video-big-box">
+                                            <Link to={"/video/show/" + Leadvideos.WebTVID} onClick={scrollTop}>
+                                                <div class="video-big-img">
+                                                    {Leadvideos.WebTVLinkCode ?
+                                                        <img src={'https://img.youtube.com/vi/' + Leadvideos.WebTVLinkCode + '/0.jpg'} width={800} height={450} alt={Leadvideos.WebTVHeading} title={Leadvideos.WebTVHeading} className="img-fluid" /> :
+                                                        <img src={process.env.REACT_APP_LAZYL_IMG} width={800} height={450} alt={Leadvideos.WebTVHeading} title={Leadvideos.WebTVHeading} className="img-fluid" />}
+                                                    <div class="video-btn">
+                                                        <div class="icon-wrap">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="Desc">
+                                                        <h3 className="Title">{Leadvideos.WebTVHeading}</h3>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        : false}
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="row gx-3">
+                                        {videos.map((nc,i) => {
+                                            return (
+                                                <div class="col-md-6 col-lg-12" key={i}>
+                                                    <div class="video-small-list">
+                                                        <Link to={"/video/show/" + nc.WebTVID} onClick={scrollTop}>
+                                                            <div class="video-small-img-wrap">
+                                                                {nc.WebTVLinkCode ?
+                                                                    <img src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={300} height={169} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid" /> :
+                                                                    <img src={process.env.REACT_APP_LAZYL_IMG} width={300} height={169} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid" />}
+                                                                <div class="video-btn">
+                                                                    <div class="icon-wrap">
+                                                                        <i class="fa-solid fa-play"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="Desc">
+                                                                    <h3 class="Title">{nc.WebTVHeading} </h3>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
 
 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <LeadLatestNews />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/react-slick/0.30.2/react-slick.min.js" integrity="sha512-9cn+e5E0uqJxF/RA4PERrZ9654f/pPwSWJWe1fPavysxUdVe0xYTj09jzlKW5pd9vrgaNtqDpW9CwkvKXdUBSw==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/react-slick/0.30.2/react-slick.js" integrity="sha512-aP0zyfgfU02K5gDdprwgUcfmGQJ7zoVQPdIl1irO8iXCUJ80yWeTg/WTRwTJuV0pny/jWLZqBZwhz8pkb6NxlA==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
 
         </>
 

@@ -33,101 +33,80 @@ export default function Footer() {
     }, [])
     return (
         <>
-            <footer>
-                <div className="DFooterBg">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-2 col-12 d-flex justify-content-start border-right-inner">
-                                <div className="DFooterLogo">
-                                    <a href="/">
-                                        <img src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" className="img-fluid img100" />
-                                    </a>
+            <footer class="footer-area">
+                <div class="DFooterBg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6  border-right-inner">
+                                <div class="footer-info">
+                                    <div class="footer-logo">
+                                        <a href="<?php echo $sSiteURL; ?>">
+                                            <img class="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div className="col-md-5 col-12 d-lg-flex align-items-center justify-content-center  ">
-
-                                <p className='aboutTitle'><Link to='/privacy-policy'><span className='footerIcon'><i className="fa-solid fa-scale-balanced"></i></span>নিয়মনীতি ও শর্তাবলী</Link></p>
-                                <p className='aboutTitle'><Link to='/terms-service'><span className='footerIcon'><i className="fa-solid fa-user-secret"></i></span>গোপনীয়তা</Link></p>
-                                {/* <p className='aboutTitle'><Link to='/aboutUs'><span className='footerIcon'><i className="fa-solid fa-user"></i></span>আমাদের সম্পর্কে</Link></p> */}
-                                <p className='aboutTitle'><Link to='/advertise'><span className='footerIcon'><i className="fa-solid fa-film"></i></span>বিজ্ঞাপন</Link></p>
+                            <div class="col-lg-4 col-md-6 d-flex justify-content-md-center justify-content-start border-right-inner">
+                                <div class="footer-info">
+                                    <address class="address">
+                                        <p><a href="#" target="_blank">কর্পোরেট অফিস: বাড়ি : ২১ (৮ তলা), <br /> ব্লক : এ, রোড : ০১, মহানগর প্রজেক্ট, হাতিরঝিল, ঢাকা-১২১৯ ৷</a></p>
+                                        <p>ফোন:<a href="tel:+৮৮০৯৬১১১৭১৯৮০">+৮৮০৯৬১১১৭১৯৮০</a>,<a href="tel:+৮৮০১৩৩২৫০২৩০০">+৮৮০১৩৩২৫০২৩০০</a></p>
+                                        <p>ই-মেইল:<a href="mailto:hello@thenews24.com">hello@thenews24.com </a>,<a href="mailto:info@thenews24.com">info@thenews24.com</a></p>
+                                    </address>
+                                </div>
                             </div>
-                            <div className="col-md-5 col-12 d-flex align-items-center justify-content-center">
-                                <div className="MoreInfo">
-                                    {/* <h5>সম্পাদক ও প্রকাশক: মো. আনোয়ারুল ইসলাম</h5> */}
-                                    <p> কর্পোরেট অফিস: বাড়ি : ২১ (৮ তলা), ব্লক : এ, রোড : ০১, মহানগর প্রজেক্ট, হাতিরঝিল, ঢাকা-১২১৯ ৷</p>
-                                    <div className="contact ">
-                                        <p>ফোন: <a href="tel:+৮৮০ ৯৬১১১৭১৯৮০">+৮৮০ ৯৬১১১৭১৯৮০</a> , <a href="tel:+৮৮০১৩৩২৫০২৩০০">+৮৮০১৩৩২৫০২৩০০</a></p>
-                                        {/* <p>ফ্যাক্স: +8802 550 19709</p> */}
-                                        <p>ই-মেইল: <a href="mailto:hello@thenews24.com" target="_blank" rel="noreferrer">hello@thenews24.com</a> , <a href="mailto:info@thenews24.com" target="_blank" rel="noreferrer">info@thenews24.com</a></p>
-
+                            <div class="col-md-12 col-lg-4 col-md-6 d-flex justify-content-md-center justify-content-start align-items-center">
+                                <div>
+                                    <div class="FooterSocialIcon mt-3">
+                                        <a class="twitter" href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                                        <a class="facebook" href="https://www.facebook.com/thenews24digital/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a class="youtube" href="https://www.youtube.com/@thenewsdhaka/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                                        <a class="instagram" href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                        <a class="whatsapp" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className={ticker ? "DFooterBottomBg d-print-none" : "DFooterBottomBg mb-0  d-print-none"}>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-sm-12 text-center">
-                                <p style={{ fontFamily: " SolaimanLipi" }}> &copy; {toBengaliNumber(years)} | <a href="/">দ্য নিউজ ২৪</a>  কর্তৃক সর্বসত্ব ® সংরক্ষিত | উন্নয়নে <a href="https://www.emythmakers.com"
-                                    target="_blank" rel="noreferrer"><span>ইমিথমেকারস.কম</span></a></p>
+                <div class="DFooterMiddleListBg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="DFooterMiddleListItems">
+                                    <li><a href="#">দ্য নিউজ</a></li>
+                                    <li><a href="#">আমাদের সম্পর্কে</a></li>
+                                    <li><a href="#">যোগাযোগ করুন</a></li>
+                                    <li><a href="#">বিজ্ঞাপন দিন</a></li>
+                                    <li><a href="#">সম্পাদকীয় নীতি</a></li>
+                                    <li><a href="#">গোপনীয়তা নীতি</a></li>
+                                    <li><a href="#">শর্তাবলী</a></li>
+                                    <li><a href="#">কপিরাইট নীতি</a></li>
+                                    <li><a href="#">পাঠকের অধিকার</a></li>
+                                    <li><a href="#">অভিযোগ দায়ের</a></li>
+                                    <li><a href="#">সাইট ম্যাপ</a></li>
+                                    <li><a href="#">সাবস্ক্রিপশন</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="DFooterBottomBg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <p><span class="En">&copy;</span> &copy; {toBengaliNumber(years)} | <a href="/"> দ্য নিউজ ২৪ ডটকম</a>।
+                                    সর্বসত্ব ® সংরক্ষিত। রেজি. নং: ২৪৬ । প্রতিষ্ঠাতা ও প্রধান নির্বাহী: মো. আনোয়ারুল ইসলাম । উন্নয়নে:<a href="https://www.emythmakers.com/" target="_blank">
+                                        ইমিথমেকারস</a>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </footer>
 
-            <section>
-                <div className="container-fluid d-print-none">
-                    {breaking.length > 0 ?
-                        <div className="DScroll">
-                            <div className="DScrollSection">
-                                <div className="ScrollHeading d-flex justify-content-center">
-                                    <p>ব্রেকিং:</p>
-                                </div>
-                                <div className="ScrollSubject">
-                                    <Marquee delay='0' speed='70' direction="left" pauseOnHover='true' play='true' style={{ gradientColor: "none" }}>
-                                        {breaking.map((nd) => {
-                                            return (
-                                                <React.Fragment key={nd.BreakingID}>
-                                                    <a href={nd.ScrollUrl === null ? '/' : nd.ScrollUrl} onClick={scrollTop}><span><div className="SquareIcon"></div> {nd.BreakingHead}</span></a>
-                                                </React.Fragment>
-                                            )
-                                        })}
-                                    </Marquee>
-                                </div>
-
-                            </div>
-                        </div>
-                        :
-                        <>
-                            {scroll.length > 0 ?
-                                <div className="DScroll">
-                                    <div className="DScrollSection">
-                                        <div className="ScrollHeading d-flex justify-content-center">
-                                            <p>শিরোনাম:</p>
-                                        </div>
-                                        <div className="ScrollSubject">
-                                            <Marquee delay='0' speed='70' direction="left" pauseOnHover='true' play='true'>
-                                                {scroll.map((nd) => {
-                                                    return (
-                                                        <React.Fragment key={nd.ScrollID}>
-                                                            <a href={nd.ScrollUrl === null ? '/' : nd.ScrollUrl} onClick={scrollTop}><span><div className="SquareIcon"></div> {nd.ScrollHead}</span></a>
-                                                        </React.Fragment>
-                                                    )
-                                                })}
-                                            </Marquee>
-                                        </div>
-                                    </div>
-                                </div>
-                                : false}
-                        </>}
-
-                </div>
-            </section>
 
         </>
     )

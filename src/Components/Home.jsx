@@ -70,21 +70,20 @@ export default function Home() {
                         <LeadNewsSection />
                     </section>
                     <>
-                        <Ads />
-                    </>
-                    <>
-                        <div className="videoSection ">
-                            <VideoSec />
+                        <div className="video-area">
+                            <div class="container">
+                                <VideoSec />
+                            </div>
                         </div>
                         <section>
                             <div className="container">
                                 <div className="row">
                                     <div className="col-lg-9 col-12">
-                                        <DCountry />
+                                        {/* <DCountry /> */}
                                     </div>
                                     <div className="col-lg-3 col-md-12 col-sm-12">
                                         <div className="BorderLeft">
-                                            <DDivisionSearch />
+                                            {/* <DDivisionSearch /> */}
                                         </div>
 
                                     </div>
@@ -93,7 +92,7 @@ export default function Home() {
                         </section>
                         <>
                             {/* <Ads /> */}
-                            <div className="row">
+                            {/* <div className="row">
                                 <div className="col-12">
                                     <div className="DAdd2 d-flex  justify-content-center">
                                         <Link to="">
@@ -101,23 +100,23 @@ export default function Home() {
                                         </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                         </>
                         <section>
                             <div className="container">
                                 <div className="row">
                                     <div className="col-lg-9 col-12">
-                                        <DNational />
+                                        {/* <DNational /> */}
                                     </div>
                                     <div className="col-lg-3 col-sm-12">
                                         {/* <div className="DRightSideAdd mt-4">
                                         <RightSideAds />
                                     </div> */}
-                                        <PrayerTime />
+                                        {/* <PrayerTime /> */}
 
                                         <div className="fb-page-banner">
-                                            <FBpagePlugin />
+                                            {/* <FBpagePlugin /> */}
                                         </div>
                                     </div>
                                 </div>
@@ -133,11 +132,11 @@ export default function Home() {
                                 <img src={"/media/Advertisement/adsHome.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
                             </Link>
                         </div> */}
-                          <div className="DAdd2 d-flex  justify-content-center mt-2 mb-2">
+                        {/* <div className="DAdd2 d-flex  justify-content-center mt-2 mb-2">
                             <Link to="#">
                                 <img src={"/media/Advertisement/DORJIghor.jpeg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
                             </Link>
-                        </div>
+                        </div> */}
                     </>
 
                     <>
@@ -146,14 +145,14 @@ export default function Home() {
                                 <div className="row">
                                     <div className="col-lg-9 col-12">
 
-                                        <DInternationalSec />
+                                        {/* <DInternationalSec /> */}
                                     </div>
                                     <div className="col-lg-3 col-sm-12">
-                                        <OnlinePoll />
+                                        {/* <OnlinePoll /> */}
                                         <div className="DRightSideAdd mt-2">
-                                            <Link to="">
+                                            {/* <Link to="">
                                                 <img src={"/media/Advertisement/ispahani.gif"} alt='ads' title='ads' />
-                                            </Link>
+                                            </Link> */}
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +161,7 @@ export default function Home() {
 
                         <section>
                             <div className="DBGWhite">
-                                <OpinionSec />
+                                {/* <OpinionSec /> */}
 
                             </div>
                         </section>
@@ -176,20 +175,20 @@ export default function Home() {
                             <section className="International + Economics + Politics">
                                 <div className="row">
                                     <div className="col-lg-4 col-12 BorderRight2">
-
-                                        <DPoliticsSec />
+                                        {/* 
+                                        <DPoliticsSec /> */}
 
                                     </div>
                                     <div className="col-lg-4 col-12 BorderRight2 " >
 
-                                        <DJob />
+                                        {/* <DJob /> */}
 
 
 
                                     </div>
                                     <div className="col-lg-4 col-12">
 
-                                        <DBusiness />
+                                        {/* <DBusiness /> */}
 
 
 
@@ -201,9 +200,9 @@ export default function Home() {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="DAdd2 d-flex  justify-content-center">
-                                        <Link to="">
+                                        {/* <Link to="">
                                             <img src={"/media/Advertisement/2148954953036687476.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                     {/* <Ads /> */}
                                 </div>
@@ -211,20 +210,20 @@ export default function Home() {
                         </section>
 
                         <section className="Entertainment">
-                            <DEntertainment />
+                            {/* <DEntertainment /> */}
                         </section>
                         <>
                             {/* <Ads /> */}
                             <div className="DAdd2 d-flex mt-2  justify-content-center">
-                                <Link to="">
+                                {/* <Link to="">
                                     <img src={"media/Advertisement/adertisementHome.jpg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                </Link>
+                                </Link> */}
                             </div>
                         </>
 
                         <div className="container">
                             <section className="Sports">
-                                <Sports />
+                                {/* <Sports /> */}
                             </section>
                         </div>
 
@@ -233,16 +232,16 @@ export default function Home() {
 
 
                     <section className="Lifestyle">
-                        <Lifestyle />
+                        {/* <Lifestyle /> */}
                     </section>
                     <section className="container">
                         <div className="row">
                             <div className="col-md-12 mt-2">
                                 {/* <Ads /> */}
                                 <div className="DAdd2 d-flex  justify-content-center">
-                                    <Link to="">
+                                    {/* <Link to="">
                                         <img src={"/media/Advertisement/12565849791804438290.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
                         </div>
@@ -253,39 +252,39 @@ export default function Home() {
                             <section className=" + Economics + Politics">
                                 <div className="row">
                                     <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                        <Crime />
+                                        {/* <Crime /> */}
                                     </div>
                                     <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                        <Technology />
+                                        {/* <Technology /> */}
                                     </div>
                                     <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                        <DForeign />
+                                        {/* <DForeign /> */}
                                     </div>
                                     <div className="col-lg-3 col-12 mt-3 ">
-                                        <Religion />
+                                        {/* <Religion /> */}
                                     </div>
                                     <div className="col-lg-3 col-12 BorderRight2">
-                                        <Health />
+                                        {/* <Health /> */}
 
                                     </div>
                                     <div className="col-lg-3 col-12 BorderRight2">
 
-                                        <Law />
+                                        {/* <Law /> */}
 
 
                                     </div>
                                     <div className="col-lg-3 col-12">
-                                        <DEducation />
+                                        {/* <DEducation /> */}
                                     </div>
                                     <div className="col-lg-3 col-12">
                                         {/* <Cultural /> */}
-                                        <div className="ads-section">
+                                        {/* <div className="ads-section">
                                             <div className="DAdd2 d-flex  justify-content-center">
                                                 <Link to="">
                                                     <img src={"/media/Advertisement/15824348306179494464.gif"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
                                                 </Link>
                                             </div>
-                                        </div>
+                                        </div> */}
 
 
 
@@ -298,11 +297,11 @@ export default function Home() {
                             <div className="row">
                                 <div className="col-md-12">
                                     {/* <Ads /> */}
-                                    <div className="DAdd2 d-flex  justify-content-center">
+                                    {/* <div className="DAdd2 d-flex  justify-content-center">
                                         <Link to="">
                                             <img src={"/media/Advertisement/ads.jpeg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
                                         </Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </section>
@@ -311,14 +310,14 @@ export default function Home() {
                                 <div className="DPhotoGallery">
                                     <div className="row">
                                         <div className="col-lg-9 col-12">
-                                            <PhotoSection />
+                                            {/* <PhotoSection /> */}
                                         </div>
                                         <div className="col-lg-3 col-12 MT100">
-                                            <div className="DRightSideAdd">
+                                            {/* <div className="DRightSideAdd">
                                                 <Link to="">
                                                     <img src={"/media/Advertisement/300x250.gif"} alt='ads' title='ads' />
                                                 </Link>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
 
