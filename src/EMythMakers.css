@@ -18,6 +18,12 @@ p{margin-bottom:0;font-size:16px;line-height:22px}
 ul{margin:0;padding:0;}
 .container{max-width:1300px;padding-right:10px;padding-left:10px}
 .container-fluid{padding:0}
+picture img {
+	aspect-ratio: 1.7777;
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+}
 
 /*common*/
 .subheadTitle{color: var(--primary)}
@@ -464,8 +470,8 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
 .district-title h5 { font-size: 22px; }
 .district-btn { width: 100%; }
 .district-btn { width: 100%; }
-.district-btn a { font-size: 18px; background: var(--primary); color: var(--white-color); padding: 4px 40px; width: 100%; border:1px solid transparent; transition: all 0.3s ease; }
-.district-btn a:hover {border-color:var(--primary); color: var(--primary); background: var(--white-color);}
+.district-btn .btn { font-size: 18px; background: var(--primary); color: var(--white-color); padding: 4px 40px; width: 100%; border:1px solid transparent; transition: all 0.3s ease; }
+.district-btn .btn:hover {border-color:var(--primary); color: var(--primary); background: var(--white-color);}
 .form-select:focus { border-color:var(--primary); box-shadow:none; }
 
 /* opinion */
@@ -849,107 +855,6 @@ margin-top: 100px;
 
 .MobileShow {
 	display: none;
-}
-
-/*============= Prayer =============*/
-.DPrayersBanner {
-	margin-top: 20px;
-}
-
-.DPrayersTime {
-	background: #F00000;
-	color: #f0f0f0;
-}
-
-.DPrayersTime .THead {
-	text-align: center;
-	font-size: 18px;
-	padding: 7px 10px 5px;
-}
-
-.DPrayersTime .table {
-	margin-bottom: 0;
-	background: #fff;
-	border-left: 1px solid #F00000;
-	border-right: 1px solid #F00000;
-}
-
-.DPrayersTime .table th {
-	padding: 5px 15px;
-	border-bottom: 1px solid #F00000;
-	color: #333;
-	border-right: 1px solid #F00000;
-	font-size: 17px;
-	border-top: 0 solid #dee2e6;
-	text-align: center;
-}
-
-.DPrayersTime .table td {
-	padding: 6px 15px 5px;
-	border-bottom: 1px solid #F00000;
-	color: #333;
-	border-right: 1px solid #F00000;
-	font-size: 17px;
-	border-top: 0 solid #dee2e6;
-	text-align: center;
-}
-
-.DPrayersTime .table td:last-of-type {
-	border-right: 0 solid #dee2e6;
-}
-
-.DPrayersTime p {
-	padding: 5px 15px;
-	text-align: center;
-}
-
-.DPrayersTime2 {
-	background: #F00000;
-	color: #f0f0f0;
-}
-
-.DPrayersTime2 .THead {
-	text-align: center;
-	font-size: 18px;
-	padding: 7px 10px 5px;
-}
-
-.DPrayersTime2 .table {
-	margin-bottom: 0;
-	background: #fff;
-	border-left: 1px solid #e2e2e2;
-	border-right: 1px solid #e2e2e2;
-	border-top: 1px solid #e2e2e2;
-}
-
-.DPrayersTime2 .table th {
-	padding: 5px 15px;
-	border-bottom: 1px solid #e2e2e2;
-	color: #333;
-	border-right: 1px solid #e2e2e2;
-	font-size: 17px;
-	border-top: 0 solid #dee2e6;
-	text-align: center;
-}
-
-.DPrayersTime2 .table td {
-	padding: 6px 15px 5px;
-	border-bottom: 1px solid #e2e2e2;
-	color: #333;
-	border-right: 1px solid #e2e2e2;
-	font-size: 17px;
-	border-top: 0 solid #dee2e6;
-	text-align: center;
-}
-
-.DPrayersTime2 .table td:last-of-type {
-	border-right: 0 solid #dee2e6;
-}
-
-.DPrayersTime2 p {
-	padding: 10px 15px;
-	text-align: center;
-	font-size: 18px;
 }
 
 /* ========================About us========================= */
@@ -1810,59 +1715,6 @@ a.close-search {
 .bangladesh-map {
 	margin: 0px 30px;
 }
-
-/*============= Prayer =============*/
-.DPrayersBanner {
-	margin-top: 15px;
-}
-
-.DPrayersTime {
-	background: #F00000;
-	color: #f0f0f0;
-}
-
-.DPrayersTime .THead {
-	text-align: center;
-	font-size: 18px;
-	padding: 7px 10px 5px;
-}
-
-.DPrayersTime .table {
-	margin-bottom: 0;
-	background: #fff;
-	border-left: 1px solid #F00000;
-	border-right: 1px solid #F00000;
-}
-
-.DPrayersTime .table th {
-	padding: 5px 15px;
-	border-bottom: 1px solid #F00000;
-	color: #333;
-	border-right: 1px solid #F00000;
-	font-size: 17px;
-	border-top: 0 solid #dee2e6;
-	text-align: center;
-}
-
-.DPrayersTime .table td {
-	padding: 4px 15px 3px;
-	border-bottom: 1px solid #F00000;
-	color: #333;
-	border-right: 1px solid #F00000;
-	font-size: 17px;
-	border-top: 0 solid #dee2e6;
-	text-align: center;
-}
-
-.DPrayersTime .table td:last-of-type {
-	border-right: 0 solid #dee2e6;
-}
-
-.DPrayersTime p {
-	padding: 5px 15px;
-	text-align: center;
-}
-
 
 /*=========== Online Vote ==========*/
 .DOnlineVote .VoteOption {
@@ -2828,7 +2680,7 @@ a.close-search {
 .DetailsTopCap {
 	display: flex;
 	justify-content: space-between;
-	border-top: 6px solid #F00000;
+	border-top: 6px solid var( --primary);
 	background: var(--borderClr);
 	padding: 0 6px;
 }
@@ -2840,13 +2692,13 @@ a.close-search {
 }
 
 .DetailsTopCap .DTopImgCaption:last-child {
-	border-left: 2px solid #F00000;
+	border-left: 2px solid var( --primary);
 	padding-left: 2px;
 }
 
 .DSecTitle2 {
 	position: relative;
-	background: #F00000;
+	background: var( --primary);
 }
 
 .DSecTitle2 h2 {
@@ -2882,7 +2734,7 @@ a.close-search {
 	font-weight: 600;
 	line-height: 28px;
 	padding-bottom: 2px;
-	color: #F00000;
+	color: var( --primary);
 }
 
 /* .ContentDetails h3.DHeadingSubHeading:after {content: "";top: 29px;left:1px;height: 3px;position: absolute;width: 60%;background-color: #F00000;} */

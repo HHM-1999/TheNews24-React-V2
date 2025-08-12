@@ -3,7 +3,6 @@ import LeadNewsSection from './HomeContent/LeadNewsSection'
 import Sports from './HomeContent/Sports'
 import { Link } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
-import Ads from './HomeContent/Ads'
 import VideoSec from './HomeContent/VideoSec'
 import DCountry from './HomeContent/DCountry'
 import DDivisionSearch from './HomeContent/DDivisionSearch'
@@ -75,69 +74,17 @@ export default function Home() {
                                 <VideoSec />
                             </div>
                         </div>
-                        <section>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-lg-9 col-12">
-                                        {/* <DCountry /> */}
-                                    </div>
-                                    <div className="col-lg-3 col-md-12 col-sm-12">
-                                        <div className="BorderLeft">
-                                            {/* <DDivisionSearch /> */}
-                                        </div>
-
-                                    </div>
-                                </div>
+                        <section class="others-two-area">
+                            <div class="container">
+                                <DCountry />
                             </div>
                         </section>
-                        <>
-                            {/* <Ads /> */}
-                            {/* <div className="row">
-                                <div className="col-12">
-                                    <div className="DAdd2 d-flex  justify-content-center">
-                                        <Link to="">
-                                            <img src={"/media/Advertisement/adsHomepage.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div> */}
 
-                        </>
-                        <section>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-lg-9 col-12">
-                                        {/* <DNational /> */}
-                                    </div>
-                                    <div className="col-lg-3 col-sm-12">
-                                        {/* <div className="DRightSideAdd mt-4">
-                                        <RightSideAds />
-                                    </div> */}
-                                        {/* <PrayerTime /> */}
-
-                                        <div className="fb-page-banner">
-                                            {/* <FBpagePlugin /> */}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <section class="national-news-area">
+                            <DNational />
                         </section>
                     </>
-                    <>
-                        {/* <Ads /> */}
-                        {/* <div className="DAdd2 d-flex  justify-content-center">
 
-
-                            <Link to="">
-                                <img src={"/media/Advertisement/adsHome.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                            </Link>
-                        </div> */}
-                        {/* <div className="DAdd2 d-flex  justify-content-center mt-2 mb-2">
-                            <Link to="#">
-                                <img src={"/media/Advertisement/DORJIghor.jpeg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                            </Link>
-                        </div> */}
-                    </>
 
                     <>
                         <section>

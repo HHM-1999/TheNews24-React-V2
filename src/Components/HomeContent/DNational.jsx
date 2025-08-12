@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { scrollTop, ForLazyLoaderImg, getTimeDistance } from '../AllFunctions'
+import FBpagePlugin from '../FBpagePlugin'
+import PrayerTime from './PrayerTime'
+import Ads from '../../assets/media/Advertisement/lab-pharmacy.jpeg'
+
 var lazyloaded = false
 export default function DNational() {
     const [national, setNational] = useState([])
+    const [national1, setNational1] = useState([])
     const [national2, setNational2] = useState([])
     useEffect(() => {
         axios
             .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory1.json`)
             .then(({ data }) => {
-                setNational(data.data.slice(0, 1))
-                setNational2(data.data.slice(1, 4))
+                setNational(data.data[0])
+                setNational1(data.data[1])
+                setNational2(data.data.slice(2, 5))
                 setTimeout(function () {
                     lazyloaded = false
                     ForLazyLoaderImg(lazyloaded)
@@ -20,84 +26,118 @@ export default function DNational() {
     }, [])
     return (
         <>
-            <section className="National">
-                <div className="SectionTitle"><h3><Link to="/national" onClick={scrollTop}><span className="ColorBox"></span>জাতীয়</Link></h3></div>
-                <div className="DNational">
-                    <div className="row">
-                        {national.map((nc) => {
-                            return (
-                                <div className="col-lg-6 col-sm-12">
-                                    <div className="DNationalTop">
-                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop} >
-                                            <div className="Imgresize">
-                                                <figure className="ImgViewer">
-                                                    <picture className="FixingRatio">
-                                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img100 ImgRatio" />
-                                                        {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                    </picture>
-                                                </figure>
-                                            </div>
-                                            <div className="Desc">
-                                                <div className="NewsTitle">
-                                                    {nc.ContentSubHeading == null ?
-                                                        <h3 className="Title">{nc.ContentHeading} </h3> :
-                                                        <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
-                                                    }
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="section-heading">
+                            <h2><Link to="/national" onClick={scrollTop}>জাতীয়</Link></h2>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-9">
+                        <div className="national-lead-wrap">
+                            <div className="row">
+                                <div className="col-lg-8">
+                                    <div className="national-lead">
+                                        <Link to={"/" + national.Slug + "/news/" + national.ContentID} onClick={scrollTop}>
+                                            <div className="national-img">
+                                                {national.ImageBgPath ?
+                                                    <img src={process.env.REACT_APP_IMG_Path + national.ImageBgPath} alt={national.ContentHeading} title={national.ContentHeading} className="img-fluid" /> :
+                                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={national.ContentHeading} title={national.ContentHeading} className="img-fluid img100" />}
 
-                                                    {/* <h3 className="Title">{nc.ContentSubHeading === null && <span className='subheadTitle'> {nc.ContentSubHeading + "/ "}</span>} {nc.ContentHeading}</h3> */}
-                                                </div>
-                                                <div className="Brief">
-                                                    <p>{nc.ContentBrief}</p>
+                                                {national.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
+                                                <div className="Desc">
+                                                    <h3 className="Title">{national.ContentSubHeading ? (national.ContentSubHeading + "/" + national.ContentHeading) : (national.ContentHeading)}</h3>
+                                                    <div className="news-Time">
+                                                        <span className="time">{getTimeDistance(national.created_at ? national.created_at : "")}</span>
+                                                        <span>{national.CategoryName}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </Link>
                                     </div>
                                 </div>
-                            )
-                        })}
+                                <div className="col-lg-4">
+                                    {national1 ?
+                                        <div className="national-leadTwo">
+                                            <Link to={"/" + national1.Slug + "/news/" + national1.ContentID} onClick={scrollTop}>
+                                                <div className="row">
+                                                    <div className="col-5 col-lg-12">
+                                                        <div className="national-leadTwo-img">
+                                                            {national1.ImageSmPath ?
+                                                                <img src={process.env.REACT_APP_IMG_Path + national1.ImageSmPath} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid" /> :
+                                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid img100" />}
 
-                        <div className="col-lg-6 col-sm-12">
-                            <div className="DNationalTop2">
-                                {national2.map((nc) => {
-                                    return (<div className="DNationalList">
-                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop}>
-                                            <div className="row">
-                                                <div className="col-lg-5 col-5">
-                                                    <div className="Imgresize">
-                                                        <figure className="ImgViewer">
-                                                            <picture className="FixingRatio">
-                                                                <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img100 ImgRatio" />
-                                                                {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                            </picture>
-                                                        </figure>
+                                                            {national1.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div className="col-lg-7 col-7">
-                                                    <div className="Desc">
-
-
-                                                        {nc.ContentSubHeading == null ?
-                                                            <h3 className="Title">{nc.ContentHeading} </h3> :
-                                                            <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
-                                                        }
-
-
-                                                        <div className="Brief">
-                                                            <p>{nc.ContentBrief}</p>
+                                                    <div className="col-7 col-lg-12">
+                                                        <div className="Desc">
+                                                            <h3 className="Title">{national1.ContentSubHeading ? (national1.ContentSubHeading + "/" + national1.ContentHeading) : (national1.ContentHeading)}</h3>
+                                                            <p className="Brief"></p>
+                                                            <div className="news-Time">
+                                                                <span className="time">{getTimeDistance(national1.created_at ? national1.created_at : "")}</span>
+                                                                <span>{national1.CategoryName}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </Link>
-                                    </div>)
-                                })}
+                                            </Link>
+                                        </div> :
+                                        false
+                                    }
 
+                                </div>
+                            </div>
+                        </div>
+                        <div className="national-list-wrap">
+                            <div className="row">
+                                {national2.map((nc, i) => {
+                                    return (
+                                        <div className="col-lg-4" key={i}>
+                                            <div className="national-list">
+                                                <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                    <div className="row">
+                                                        <div className="col-5 col-lg-12">
+                                                            <div className="national-list-img">
+                                                                {nc.ImageSmPath ?
+                                                                    <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" /> :
+                                                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />}
+
+                                                                {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-7 col-lg-12">
+                                                            <div className="Desc">
+                                                                <h3 className="Title">{nc.ContentSubHeading ? (nc.ContentSubHeading + "/" + nc.ContentHeading) : (nc.ContentHeading)}</h3>
+                                                                <div className="news-Time">
+                                                                    <span className="time">{getTimeDistance(nc.created_at)}</span>
+                                                                    <span>{nc.CategoryName}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
 
                             </div>
                         </div>
                     </div>
+                    <div className="col-lg-3">
+                        <div className="DPrayer mb-3">
+                            <PrayerTime />
+                        </div>
+                        <FBpagePlugin />
+                        <div class="DRightSideAdd mt-2">
+                            <a href="#"><img src={Ads} alt="ads" title="ads" /></a>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
 
         </>
 

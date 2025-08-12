@@ -56,24 +56,24 @@ export default function LeadNews() {
                     </div>
                 </Link>
             </div>
-            <div class="sublead-news">
-                <div class="row">
+            <div className="sublead-news">
+                <div className="row">
                     {state2.map((nc ,i ) => {
                         return (
-                            <div class="col-lg-4 col-md-6" key={i}>
-                                <div class="sublead-news-box">
+                            <div className="col-lg-4 col-md-6" key={i}>
+                                <div className="sublead-news-box">
                                     <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                        <div class="sublead-news-img">
+                                        <div className="sublead-news-img">
                                             {nc.ImageSmPath ?
                                                 <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" /> :
                                                 <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />}
 
                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                         </div>
-                                        <div class="Desc">
-                                            <h3 class="Title">{nc.ContentSubHeading ? (nc.ContentSubHeading + "/" + nc.ContentHeading) : (nc.ContentHeading)} </h3>
-                                            <div class="news-Time">
-                                                <span class="time">{getTimeDistance(nc.created_at)}</span>
+                                        <div className="Desc">
+                                            <h3 className="Title">{nc.ContentSubHeading ? (nc.ContentSubHeading + "/" + nc.ContentHeading) : (nc.ContentHeading)} </h3>
+                                            <div className="news-Time">
+                                                <span className="time">{getTimeDistance(nc.created_at)}</span>
                                                 <span>{nc.CategoryName}</span>
                                             </div>
                                         </div>
