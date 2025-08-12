@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { scrollTop, ForLazyLoaderImg, getTimeDistance } from '../AllFunctions'
 
 var lazyloaded = false
 export default function DInternationalSec() {
     const [international, setInternational] = useState([])
     const [international2, setInternational2] = useState([])
-    const [international3, setInternational3] = useState([])
+
     useEffect(() => {
         axios
             .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory4.json`)
             .then(({ data }) => {
 
-                setInternational(data.data.slice(0, 1))
-                setInternational2(data.data.slice(1, 2))
-                setInternational3(data.data.slice(2, 5))
+                setInternational(data.data.slice(0, 6))
+                setInternational2(data.data[7])
+
                 setTimeout(function () {
                     lazyloaded = false
                     ForLazyLoaderImg(lazyloaded)
@@ -26,114 +26,79 @@ export default function DInternationalSec() {
     }, [])
     return (
         <>
-            <section className="Country">
-                <div className="SectionTitle"><h3><Link to="/international" onClick={scrollTop}><span className="ColorBox"></span>আন্তর্জাতিক</Link></h3></div>
-                <div className="DCountry">
-                    <div className="row">
-                        <div className="col-lg-8 col-12">
-                            {international.map((nc) => {
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <Link to="/international" onClick={scrollTop}>
+                            <h2>আন্তর্জাতিক</h2>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            {/* Content section */}
+            <div className="row">
+                <div className="col-lg-8 order-lg-1 order-2">
+                    <div className="othersTwo-list-wrap">
+                        <div className="row">
+                            {international.map((nc, i) => {
                                 return (
-                                    <div className="DCountryTop">
-                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop}>
-                                            <div className="row">
-                                                <div className="col-lg-8 col-12">
-                                                    <div className="Imgresize">
-                                                        <figure className="ImgViewer">
-                                                            <picture className="FixingRatio">
-                                                                <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img100 ImgRatio" />
+                                    <div className="col-lg-6" key={i}>
+                                        <div className="othersTwo-list">
+                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                <div className="row gx-3">
+                                                    <div className="col-lg-5 col-sm-3 col-5">
+                                                        <div className="othersTwo-list-img">
+                                                            {nc.ImageThumbPath ?
+                                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" /> :
+                                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" />}
 
-                                                                {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                            </picture>
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-4 col-12">
-                                                    <div className="Desc">
-                                                        <div className="NewsTitle">
-                                                            {/* <h3 className="Title">{nc.ContentHeading}</h3> */}
-                                                            {nc.ContentSubHeading == null ?
-                                                                <h3 className="Title">{nc.ContentHeading} </h3> :
-                                                                <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
-                                                            }
+                                                            {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                         </div>
-                                                        <div className="Brief">
-                                                            <p>{nc.ContentBrief}</p>
+                                                    </div>
+                                                    <div className="col-lg-7 col-sm-9 col-7">
+                                                        <div className="Desc">
+                                                            <h3 className="Title">{nc.ContentSubHeading ? (nc.ContentSubHeading + "/" + nc.ContentHeading) : (nc.ContentHeading)}</h3>
+                                                            <div className="news-Time">
+                                                                <span className="time">{getTimeDistance(nc.created_at)}</span>
+                                                                <span>{nc.CategoryName}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </Link>
+                                            </Link>
+                                        </div>
                                     </div>
                                 )
                             })}
 
-                        </div>
-                        <div className="col-lg-4 col-12  ">
-                            {international2.map((nc) => {
-                                return (<div className="DCountryList align-self-stretch">
-                                    <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop}>
-                                        <div className="row">
-                                            <div className="col-lg-12 col-5">
-                                                <div className="Imgresize">
-                                                    <figure className="ImgViewer">
-                                                        <picture className="FixingRatio">
-                                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img100 ImgRatio" />
-                                                            {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                        </picture>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-12 col-7">
-                                                <div className="Desc">
-                                                    {/* <h3 className="Title">{nc.ContentHeading}</h3> */}
-                                                    {nc.ContentSubHeading == null ?
-                                                        <h3 className="Title">{nc.ContentHeading} </h3> :
-                                                        <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
-                                                    }
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                </div>)
-                            })}
 
                         </div>
-                        {international3.map((nc) => {
-                            return (
-                                <div className="col-lg-4 col-12 border-right-inner mt-3 ">
-                                    <div className="DCountryList ">
-                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop}>
-                                            <div className="row">
-                                                <div className="col-lg-12 col-5">
-                                                    <div className="Imgresize">
-                                                        <figure className="ImgViewer">
-                                                            <picture className="FixingRatio">
-                                                                <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img100 ImgRatio" />
-
-                                                                {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                            </picture>
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-12 col-7">
-                                                    <div className="Desc">
-                                                        {/* <h3 className="Title">{nc.ContentHeading}</h3> */}
-                                                        {nc.ContentSubHeading == null ?
-                                                        <h3 className="Title">{nc.ContentHeading} </h3> :
-                                                        <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
-                                                    }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </div>
-                            )
-                        })
-                        }
                     </div>
                 </div>
-            </section>
+                <div className="col-lg-4 order-lg-2 order-1">
+                    <div className="others-Two-lead-wrap">
+                        <div className="others-Two-lead">
+                            <Link to={"/" + international2.Slug + "/news/" + international2.ContentID} onClick={scrollTop}>
+                                <div className="other-Two-lead-img">
+                                    {international2.ImageBgPath ?
+                                        <img src={process.env.REACT_APP_IMG_Path + international2.ImageBgPath} alt={international2.ContentHeading} title={international2.ContentHeading} className="img-fluid w-100" /> :
+                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={international2.ContentHeading} title={international2.ContentHeading} className="img-fluid w-100" />}
+
+                                    {international2.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
+                                </div>
+                                <div className="Desc">
+                                    <h3 className="Title">{international2.ContentSubHeading ? (international2.ContentSubHeading + "/" + international2.ContentHeading) : (international2.ContentHeading)}</h3>
+                                    <p className="Brief">{international2.ContentBrief}</p>
+                                    <div className="news-Time">
+                                        <span className="time">{getTimeDistance(international2.created_at ? international2.created_at : "")}</span>
+                                        <span>{international2.CategoryName}</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </>
 

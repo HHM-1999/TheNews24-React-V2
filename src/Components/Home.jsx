@@ -5,14 +5,11 @@ import { Link } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import VideoSec from './HomeContent/VideoSec'
 import DCountry from './HomeContent/DCountry'
-import DDivisionSearch from './HomeContent/DDivisionSearch'
 import DNational from './HomeContent/DNational'
 import DInternationalSec from './HomeContent/DInternationalSec'
-import OnlinePoll from './HomeContent/OnlinePoll'
 import OpinionSec from './HomeContent/OpinionSec'
 import DPoliticsSec from './HomeContent/DPoliticsSec'
 import DJob from './HomeContent/DJob'
-import DBusiness from './HomeContent/DBusiness'
 import DEntertainment from './HomeContent/DEntertainment'
 import Lifestyle from './HomeContent/Lifestyle'
 import Crime from './HomeContent/Crime'
@@ -23,13 +20,11 @@ import Health from './HomeContent/Health'
 import Law from './HomeContent/Law'
 import DEducation from './HomeContent/DEducation'
 import PhotoSection from './HomeContent/PhotoSection'
-import PrayerTime from './HomeContent/PrayerTime'
 // import Event from './HomeContent/Event'
 import HomeLdJson from './HomeContent/HomeLdJson'
-import FBpagePlugin from './FBpagePlugin'
+import DTrade from './HomeContent/DTrade'
 // import Ramadan from './HomeContent/Ramadan'
 // import LazyLoaderGIF from '../icon/lazyComponentLoaderGIF.gif'
-// import RLoader from './RLoader'
 
 // var allComponentsLoaded = false
 export default function Home() {
@@ -83,196 +78,37 @@ export default function Home() {
                         <section class="national-news-area">
                             <DNational />
                         </section>
-                    </>
-
-
-                    <>
-                        <section>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-lg-9 col-12">
-
-                                        {/* <DInternationalSec /> */}
-                                    </div>
-                                    <div className="col-lg-3 col-sm-12">
-                                        {/* <OnlinePoll /> */}
-                                        <div className="DRightSideAdd mt-2">
-                                            {/* <Link to="">
-                                                <img src={"/media/Advertisement/ispahani.gif"} alt='ads' title='ads' />
-                                            </Link> */}
-                                        </div>
-                                    </div>
-                                </div>
+                        <section class="others-two-area">
+                            <div class="container">
+                                <DInternationalSec />
                             </div>
                         </section>
-
-                        <section>
-                            <div className="DBGWhite">
-                                {/* <OpinionSec /> */}
-
+                        <section class="opinion-area">
+                            <div class="container">
+                                <OpinionSec />
                             </div>
                         </section>
-
-
-                    </>
-
-                    <>
-
-                        <div className="container">
-                            <section className="International + Economics + Politics">
-                                <div className="row">
-                                    <div className="col-lg-4 col-12 BorderRight2">
-                                        {/* 
-                                        <DPoliticsSec /> */}
-
+                        <section class="common-post-area">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <DPoliticsSec />
                                     </div>
-                                    <div className="col-lg-4 col-12 BorderRight2 " >
-
-                                        {/* <DJob /> */}
-
-
-
+                                    <div class="col-lg-4">
+                                        <DJob />
                                     </div>
-                                    <div className="col-lg-4 col-12">
-
-                                        {/* <DBusiness /> */}
-
-
-
+                                    <div class="col-lg-4">
+                                        <DTrade />
                                     </div>
-                                </div>
-                            </section>
-                        </div>
-                        <section className="container">
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <div className="DAdd2 d-flex  justify-content-center">
-                                        {/* <Link to="">
-                                            <img src={"/media/Advertisement/2148954953036687476.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                        </Link> */}
-                                    </div>
-                                    {/* <Ads /> */}
-                                </div>
-                            </div>
-                        </section>
-
-                        <section className="Entertainment">
-                            {/* <DEntertainment /> */}
-                        </section>
-                        <>
-                            {/* <Ads /> */}
-                            <div className="DAdd2 d-flex mt-2  justify-content-center">
-                                {/* <Link to="">
-                                    <img src={"media/Advertisement/adertisementHome.jpg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                </Link> */}
-                            </div>
-                        </>
-
-                        <div className="container">
-                            <section className="Sports">
-                                {/* <Sports /> */}
-                            </section>
-                        </div>
-
-                    </>
-
-
-
-                    <section className="Lifestyle">
-                        {/* <Lifestyle /> */}
-                    </section>
-                    <section className="container">
-                        <div className="row">
-                            <div className="col-md-12 mt-2">
-                                {/* <Ads /> */}
-                                <div className="DAdd2 d-flex  justify-content-center">
-                                    {/* <Link to="">
-                                        <img src={"/media/Advertisement/12565849791804438290.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                    </Link> */}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <>
-                        <div className="container">
-                            <section className=" + Economics + Politics">
-                                <div className="row">
-                                    <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                        {/* <Crime /> */}
-                                    </div>
-                                    <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                        {/* <Technology /> */}
-                                    </div>
-                                    <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                        {/* <DForeign /> */}
-                                    </div>
-                                    <div className="col-lg-3 col-12 mt-3 ">
-                                        {/* <Religion /> */}
-                                    </div>
-                                    <div className="col-lg-3 col-12 BorderRight2">
-                                        {/* <Health /> */}
-
-                                    </div>
-                                    <div className="col-lg-3 col-12 BorderRight2">
-
-                                        {/* <Law /> */}
-
-
-                                    </div>
-                                    <div className="col-lg-3 col-12">
-                                        {/* <DEducation /> */}
-                                    </div>
-                                    <div className="col-lg-3 col-12">
-                                        {/* <Cultural /> */}
-                                        {/* <div className="ads-section">
-                                            <div className="DAdd2 d-flex  justify-content-center">
-                                                <Link to="">
-                                                    <img src={"/media/Advertisement/15824348306179494464.gif"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                                </Link>
-                                            </div>
-                                        </div> */}
-
-
-
-
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <section className="container">
-                            <div className="row">
-                                <div className="col-md-12">
-                                    {/* <Ads /> */}
-                                    {/* <div className="DAdd2 d-flex  justify-content-center">
-                                        <Link to="">
-                                            <img src={"/media/Advertisement/ads.jpeg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                        </Link>
-                                    </div> */}
-                                </div>
-                            </div>
-                        </section>
-                        <section className="PhotoGallery">
-                            <div className="container">
-                                <div className="DPhotoGallery">
-                                    <div className="row">
-                                        <div className="col-lg-9 col-12">
-                                            {/* <PhotoSection /> */}
-                                        </div>
-                                        <div className="col-lg-3 col-12 MT100">
-                                            {/* <div className="DRightSideAdd">
-                                                <Link to="">
-                                                    <img src={"/media/Advertisement/300x250.gif"} alt='ads' title='ads' />
-                                                </Link>
-                                            </div> */}
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </section>
 
                     </>
+
+
+
+
 
                 </>
 

@@ -165,19 +165,22 @@ export default function Header() {
                                                         <a className="nav-link" href="/international">আন্তর্জাতিক</a>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/entertainment">বিনোদন</a>
+                                                        <a className="nav-link" href="/crime">অপরাধ</a>
                                                     </li>
                                                     <li className="nav-item">
                                                         <a className="nav-link" href="/trade">বাণিজ্য</a>
                                                     </li>
                                                     <li className="nav-item">
+                                                        <a className="nav-link" href="/entertainment">বিনোদন</a>
+                                                    </li>
+                                                    <li className="nav-item">
                                                         <a className="nav-link" href="/sports">খেলাধুলা</a>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/opinion">মতামত</a>
+                                                        <a className="nav-link" href="/lifestyle">জীবনযাপন</a>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/crime">অপরাধ</a>
+                                                        <a className="nav-link" href="/opinion">মতামত</a>
                                                     </li>
                                                
                                                     <li className="nav-item dropdown">
@@ -220,20 +223,18 @@ export default function Header() {
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
-                                                                            <li><a className="dropdown-item" href="#">লাইফস্টাইল</a>
-                                                                            </li>
-                                                                            <li><a className="dropdown-item" href="#">কৃষি</a> </li>
-                                                                            <li><a className="dropdown-item" href="#">লাইফস্টাইল</a>
+                                                                            <li><Link className="dropdown-item" to="/agriculture" onClick={scrollTop}>কৃষি</Link> </li>
+                                                                            <li><Link className="dropdown-item" to="#" onClick={scrollTop}>লাইফস্টাইল</Link>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
-                                                                            <li><a className="dropdown-item" href="#">দ্য
-                                                                                নিউজ স্পেশাল</a></li>
-                                                                            <li><a className="dropdown-item" href="#">পাঠকের
-                                                                                সংবাদ</a></li>
-                                                                            <li><a className="dropdown-item" href="/archives">আর্কাইভ</a>
+                                                                            <li><Link className="dropdown-item" to="/the-news-special" onClick={scrollTop}>দ্য
+                                                                                নিউজ স্পেশাল</Link></li>
+                                                                            <li><Link className="dropdown-item" to="/reader-s-news" onClick={scrollTop}>পাঠকের
+                                                                                সংবাদ</Link></li>
+                                                                            <li><Link className="dropdown-item" to="/archives" onClick={scrollTop}>আর্কাইভ</Link>
                                                                             </li>
                                                                         </ul>
                                                                     </div>

@@ -3,13 +3,15 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg, getTimeDistance } from '../AllFunctions'
 var lazyloaded = false
-export default function DJob() {
+export default function DTrade() {
+
     const [News, setNews] = useState([])
     const [News2, setNews2] = useState([])
 
+
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory19.json`)
+            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory8.json`)
             .then(({ data }) => {
                 setNews(data.data[0])
                 setNews2(data.data.slice(1, 4))
@@ -21,14 +23,12 @@ export default function DJob() {
 
             })
     }, [])
-
     return (
         <>
-
             <div class="common-post-listBox">
                 <div class="section-heading">
-                    <Link to="/jobs" onClick={scrollTop}>
-                        <h2>চাকরি </h2>
+                    <Link to="/trade" onClick={scrollTop}>
+                        <h2>বাণিজ্য</h2>
                     </Link>
                 </div>
                 <div class="common-single-post-wrap">
@@ -85,6 +85,7 @@ export default function DJob() {
                     })}
                 </div>
             </div>
+
         </>
 
     )
