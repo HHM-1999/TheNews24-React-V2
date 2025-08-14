@@ -40,7 +40,7 @@ export default function Footer() {
                             <div class="col-lg-4 col-md-6  border-right-inner">
                                 <div class="footer-info">
                                     <div class="footer-logo">
-                                        <a href="<?php echo $sSiteURL; ?>">
+                                        <a href="/">
                                             <img class="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
                                         </a>
                                     </div>

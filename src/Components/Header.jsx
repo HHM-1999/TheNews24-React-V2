@@ -6,7 +6,8 @@ import ePper from '../assets/media/common/E_paper2.png'
 import archive from '../assets/media/common/archive2.png'
 import map from '../assets/media/common/Map2.png'
 import moment from 'moment-hijri';
-
+import axios from 'axios'
+import Marquee from 'react-fast-marquee'
 const date1 = new Date();
 let bnDate = getDate(date1, { format: 'D' })
 let bnMonth = getMonth(date1, { format: 'MMMM' })
@@ -27,22 +28,45 @@ var sticky2 = 0
 export default function Header() {
 
     let navigate = useNavigate();
-    const [showSubCat, setShowSubCat] = useState(false);
-    const [showSubCat1, setShowSubCat1] = useState(false);
-    const [showSubCat2, setShowSubCat2] = useState(false);
-    // const [showSubCat3, setShowSubCat3] = useState(false);
-    // const [showSubCat4, setShowSubCat4] = useState(false);
-    // const [showSubCat5, setShowSubCat5] = useState(false);
-    const [showSubCat6, setShowSubCat6] = useState(false);
-    const [showSubCat7, setShowSubCat7] = useState(false);
+    const [scroll, setScroll] = useState([])
+    const [breaking, setBreaking] = useState([])
+    const [ticker, setTicker] = useState(false)
+    const [showDesktopSearch, setShowDesktopSearch] = useState(false);
+    const [showMobileSearch, setShowMobileSearch] = useState(false);
+
+    function toggleSearch() {
+        setShowDesktopSearch(prev => !prev);
+        setShowMobileSearch(prev => !prev);
+    }
+
+    // const [showSubCat, setShowSubCat] = useState(false);
+    // const [showSubCat1, setShowSubCat1] = useState(false);
+    // const [showSubCat2, setShowSubCat2] = useState(false);
+    // const [showSubCat6, setShowSubCat6] = useState(false);
+    // const [showSubCat7, setShowSubCat7] = useState(false);
     useEffect(() => {
         window.addEventListener('scroll', myFixedNav);
         navbar = document.getElementById("myHeader");
-        // sticky = navbar.offsetTop;
         navbarMobile = document.getElementById("myHeader2");
-        // sticky2 = navbarMobile.offsetTop;
-
-    }, [])
+    
+        const fetchData = async () => {
+            try {
+                const breakingRes = await axios.get(`${process.env.REACT_APP_API_URL}active-breaking`);
+                const breakingData = breakingRes.data.breaking;
+                setBreaking(breakingData);
+    
+                if (breakingData.length === 0) {
+                    const scrollRes = await axios.get(`${process.env.REACT_APP_API_URL}json/file/generateActiveScroll.json`);
+                    setScroll(scrollRes.data.data || []);
+                }
+            } catch (err) {
+                console.error("Error loading breaking/scroll data", err);
+            }
+        };
+    
+        fetchData();
+    }, []);
+    
 
     function myFixedNav() {
         navbar = document.getElementById("myHeader");
@@ -109,7 +133,7 @@ export default function Header() {
             navigate('/search/' + txt);
         }
     }
-    
+
     return (
         <>
             <header className="header-area">
@@ -118,7 +142,7 @@ export default function Header() {
                         <div className="row">
                             <div className="col-lg-6 d-flex align-items-center">
                                 <div className="header-date">
-                                <i className="fas fa-calendar"></i>&nbsp;{banglaDateConvetar(currentDay)}, {banglaDateConvetar(currentDate)}, {BNDATEs}
+                                    <i className="fas fa-calendar"></i>&nbsp;{banglaDateConvetar(currentDay)}, {banglaDateConvetar(currentDate)}, {BNDATEs}
                                 </div>
                             </div>
                             <div className="col-lg-6 d-flex align-items-center justify-content-end">
@@ -182,7 +206,7 @@ export default function Header() {
                                                     <li className="nav-item">
                                                         <a className="nav-link" href="/opinion">মতামত</a>
                                                     </li>
-                                               
+
                                                     <li className="nav-item dropdown">
                                                         <a className="nav-link dropdown-toggle" href="#">অন্যান্য</a>
                                                         <div className="dropdown-menu megamenu" role="menu">
@@ -241,9 +265,9 @@ export default function Header() {
                                                         </div>
                                                     </li>
                                                     <li className="nav-item search-sticky">
-                                                        <div className="search-btn">
+                                                        <div className="search-btn" >
                                                             <span className="icon-wrap">
-                                                                <span className="search-input">
+                                                                <span className="search-input" >
                                                                     <form onSubmit={handelSubmit}>
                                                                         <span className="srch-close-btn"><i
                                                                             className="far fa-times-circle"></i></span>
@@ -279,6 +303,7 @@ export default function Header() {
                                                             </div>
                                                         </form>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -292,42 +317,52 @@ export default function Header() {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-10 m-auto">
-                                    <div className="DScrollSection">
-                                        <div className="ScrollHeading d-flex align-items-center">
-                                            <p>ব্রেকিং নিউজ:</p>
+                                    {breaking.length > 0 ?
+                                        <div className="DScrollSection">
+                                            <div className="ScrollHeading d-flex align-items-center">
+                                                <p>ব্রেকিং নিউজ:</p>
+                                            </div>
+                                            <div className="ScrollSubject">
+                                                <marquee>
+                                                    {breaking.map((nd) => {
+                                                        return (
+                                                            <React.Fragment key={nd.BreakingID}>
+                                                                <a href={nd.ScrollUrl === null ? '/' : nd.ScrollUrl} onClick={scrollTop}><span><div className="SquareIcon">*</div>{nd.BreakingHead}</span></a>
+                                                            </React.Fragment>
+                                                        )
+                                                    })}
+                                                </marquee>
+                                            </div>
                                         </div>
-                                        <div className="ScrollSubject">
-                                            <marquee>
-                                                <a href=""><span>
-                                                    <div className="SquareIcon">*</div> সামনে ৫-৬ দিন অত্যন্ত গুরুত্বপূর্ণ: প্রেস
-                                                    সচিব
-                                                </span></a><a href=""><span>
-                                                    <div className="SquareIcon">*</div> জুলাই সনদ বাস্তবায়নের দাবিতে রাজধানীর
-                                                    শাহবাগে
-                                                    অবরোধ, যানজটে দুর্ভোগ
-                                                </span></a><a href=""><span>
-                                                    <div className="SquareIcon">*</div> প্লট বরাদ্দে জালিয়াতির মামলায় সাবেক
-                                                    প্রধানমন্ত্রী শেখ হাসিনা, ছেলে সজীব ওয়াজেদ জয় ও মেয়ে সায়মা ওয়াজেদ পুতুলের
-                                                    আনুষ্ঠানিক বিচার শুরু
-                                                </span></a><a href=""><span>
-                                                    <div className="SquareIcon">*</div> ব্লগার অভিজিৎ হত্যা মামলা: জামিন পেলেন
-                                                    যাবজ্জীবন
-                                                    সাজাপ্রাপ্ত শফিউর রহমান ফারাবি
-                                                </span></a><a href=""><span>
-                                                    <div className="SquareIcon">*</div> এবার ফিলিস্তিনকে স্বীকৃতি দেওয়ার পরিকল্পনার
-                                                    কথা
-                                                    জানাল কানাডা
-                                                </span></a>
-                                            </marquee>
-                                        </div>
-                                    </div>
+                                        :
+                                        <>
+                                            {scroll.length > 0 ?
+                                                <div className="DScrollSection">
+                                                    <div className="ScrollHeading d-flex align-items-center">
+                                                        <p>শিরোনাম:</p>
+                                                    </div>
+                                                    <div className="ScrollSubject">
+                                                        <marquee>
+                                                            {scroll.map((nd) => {
+                                                                return (
+                                                                    <React.Fragment key={nd.ScrollID}>
+                                                                        <a href={nd.ScrollUrl === null ? '/' : nd.ScrollUrl} onClick={scrollTop}><span><div className="SquareIcon">*</div>{nd.ScrollHead}</span></a>
+                                                                    </React.Fragment>
+                                                                )
+                                                            })}
+                                                        </marquee>
+                                                    </div>
+                                                </div> : false
+                                            }
+                                        </>}
+
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* <!--mobile-navbar-part-start--> */}
-                    <div className="mobile-menu-area d-block d-lg-none">
+                    <div className="mobile-menu-area d-block d-lg-none hide" id="mobile-nav">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-12">
@@ -343,17 +378,18 @@ export default function Header() {
                                             </div>
                                             <div className="search-btn">
                                                 <span className="icon-wrap">
-                                                    <span className="search-input">
-                                                        <form action="#" method="GET" novalidate="novalidate">
-                                                            <span className="srch-close-btn"><i className="far fa-times-circle"></i></span>
-                                                            <input type="text" name="q" className="form-control" value=""
-                                                                id="search-terms" placeholder="লিখুন..." />
+                                                    <span className={`search-input ${showDesktopSearch ? 'show' : 'hide'}`}>
+                                                        <form onSubmit={handelSubmit}>
+                                                            <span className="srch-close-btn" onClick={toggleSearch}><i className="far fa-times-circle"></i></span>
+                                                            <input type="text" name="q" className="form-control" placeholder="লিখুন..." />
                                                             <button type="submit" className="btn srch-sub-btn">খুঁজুন</button>
                                                         </form>
                                                     </span>
-                                                    <a className="nav-link search-button"> <i className="fas fa-search"></i>
+                                                    <a className="nav-link search-button" onClick={toggleSearch}>
+                                                        <i className="fas fa-search"></i>
                                                     </a>
                                                 </span>
+
                                             </div>
                                         </div>
                                     </div>
