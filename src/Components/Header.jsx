@@ -224,8 +224,6 @@ export default function Header() {
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
                                                                             <li><Link className="dropdown-item" to="/agriculture" onClick={scrollTop}>কৃষি</Link> </li>
-                                                                            <li><Link className="dropdown-item" to="#" onClick={scrollTop}>লাইফস্টাইল</Link>
-                                                                            </li>
                                                                         </ul>
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>

@@ -382,6 +382,7 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
 .common-post-area {padding: 30px 0;}
 
 .common-single-post-wrap { border-bottom: 1px solid var(--border-color); padding-bottom:15px; margin-bottom:15px;}
+.common-single-post-wrap .Desc{height: 75px;}
 .common-single-post-wrap-img{overflow: hidden;border-radius:5px;}
 .common-single-post-wrap-img img { aspect-ratio: 1.62; object-fit: cover; object-position: center; width: 100%; transition: all 0.5s ease;border-radius:5px;}
 .common-single-post-wrap .Desc .Title{ font-size: 20px; margin-top: 10px; font-weight: 700; }
@@ -594,7 +595,7 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
 
     .lead-right-wrap { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px;}
     .lead-left-small-list .Desc .Title{ font-size: 18px; }
-    .lead-right-news-box .row { --bs-gutter-x: 0.5rem; }
+    /* .lead-right-news-box .row { --bs-gutter-x: 0.5rem; } */
     .lead-right-wrap .lead-right-news-box { flex: 0 0 49%; }
     .lead-right-news-box a { display: flex; gap: 10px; }
     .lead-right-news-box a .lead-right-news-img { flex: 0 0 130px;}
@@ -779,9 +780,7 @@ margin-top: 100px;
 	margin-bottom: 5px
 }
 
-.row {
-	--bs-gutter-x: 1.35rem;
-}
+
 
 .DImgZoomBlock {
 	position: relative;

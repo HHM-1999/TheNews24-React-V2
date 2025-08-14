@@ -75,7 +75,7 @@ export default function DNational() {
                                                     <div className="col-7 col-lg-12">
                                                         <div className="Desc">
                                                             <h3 className="Title">{national1.ContentSubHeading ? (national1.ContentSubHeading + "/" + national1.ContentHeading) : (national1.ContentHeading)}</h3>
-                                                            <p className="Brief"></p>
+                                                            <p className="Brief">{national1.ContentBrief}</p>
                                                             <div className="news-Time">
                                                                 <span className="time">{getTimeDistance(national1.created_at ? national1.created_at : "")}</span>
                                                                 <span>{national1.CategoryName}</span>

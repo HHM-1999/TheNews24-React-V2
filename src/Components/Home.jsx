@@ -11,13 +11,6 @@ import DPoliticsSec from './HomeContent/DPoliticsSec'
 import DJob from './HomeContent/DJob'
 import DEntertainment from './HomeContent/DEntertainment'
 import Lifestyle from './HomeContent/Lifestyle'
-import Crime from './HomeContent/Crime'
-import Technology from './HomeContent/Technology'
-import DForeign from './HomeContent/DForeign'
-import Religion from './HomeContent/Religion'
-import Health from './HomeContent/Health'
-import Law from './HomeContent/Law'
-import DEducation from './HomeContent/DEducation'
 import PhotoSection from './HomeContent/PhotoSection'
 // import Event from './HomeContent/Event'
 import HomeLdJson from './HomeContent/HomeLdJson'
@@ -54,10 +47,8 @@ export default function Home() {
         <>
             <main>
                 {/* <Event /> */}
-
                 <>
-
-                    <DocumentTitle title='The News 24 || দ্য নিউজ ২৪' />
+                    <DocumentTitle title='The News 24 ::  দ্য নিউজ ২৪' />
                     <HomeLdJson />
                     <section className='container'>
                         <LeadNewsSection />
@@ -100,6 +91,26 @@ export default function Home() {
                                         <DTrade />
                                     </div>
                                 </div>
+                            </div>
+                        </section>
+                        <section class="entertainment-area">
+                            <div class="container">
+                                <DEntertainment />
+                            </div>
+                        </section>
+                        <section class="sports-area">
+                            <div class="container">
+                                <Sports />
+                            </div>
+                        </section>
+                        <section class="life-style-area">
+                            <div class="container">
+                                <Lifestyle />
+                            </div>
+                        </section>
+                        <section class="Photogallery-area">
+                            <div class="container">
+                                <PhotoSection />
                             </div>
                         </section>
 
