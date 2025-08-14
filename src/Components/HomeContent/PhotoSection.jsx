@@ -36,7 +36,7 @@ export default function PhotoSection() {
                 <div class="col-lg-8">
                     {photoStory ?
                         <div class="Photogallery-wrap">
-                            <Link to={"/" + "photo-feature" + "/news/" + photoStory.PhotoFeatureID} onClick={scrollTop}>
+                            <Link to={'/photo-feature/news/' + photoStory.PhotoFeatureID} onClick={scrollTop}>
                                 <div class="Photogallery-img">
                                     <div class="Photogallery-overlay"></div>
                                     <picture>
@@ -62,7 +62,7 @@ export default function PhotoSection() {
                                 return (
                                     <div class="col-lg-12 col-sm-6" key={nc.PhotoFeatureID}>
                                         <div class="Photogallery-wrap">
-                                            <Link to={"/" + "photo-feature" + "/news/" + nc.PhotoFeatureID} onClick={scrollTop}>
+                                            <Link to={"/photo-feature/news/" + nc.PhotoFeatureID} onClick={scrollTop}>
                                                 <div class="Photogallery-img">
                                                     <div class="Photogallery-overlay"></div>
                                                     <picture>

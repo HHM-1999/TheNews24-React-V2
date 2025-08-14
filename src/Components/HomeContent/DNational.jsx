@@ -133,7 +133,7 @@ export default function DNational() {
                         </div>
                         <FBpagePlugin />
                         <div class="DRightSideAdd mt-2">
-                            <a href="#"><img src={Ads} alt="ads" title="ads" /></a>
+                            <Link to="#" onClick={scrollTop}><img src={Ads} alt="ads" title="ads" /></Link>
                         </div>
                     </div>
                 </div>
