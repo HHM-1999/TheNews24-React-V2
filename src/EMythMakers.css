@@ -1324,15 +1324,6 @@ a.close-search {
 	width: 728px;
 } */
 
-.DRightSideAdd {
-	margin-top: 15px;
-	display: flex;
-	justify-content: center;
-}
-
-.DRightSideAdd.PT30 {
-	padding-top: 30px;
-}
 
 .fb-page {
 	margin-top: 0px;

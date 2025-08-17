@@ -227,7 +227,7 @@ export default function Category() {
                                         </div>
                                     </div>
                                     <div className="col-lg-3 col-sm-12">
-                                        <div className="DRightSideAdd d-flex justify-content-center">
+                                        <div className="DRightSideAdd d-flex justify-content-center mb-3 mt-3">
                                             <Link to="/">
                                                 <img src="/media/Advertisement/Advertisement(300X90).png" alt="Advertisement" title="Advertisement" />
                                             </Link>
