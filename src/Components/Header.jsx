@@ -30,14 +30,21 @@ export default function Header() {
     let navigate = useNavigate();
     const [scroll, setScroll] = useState([])
     const [breaking, setBreaking] = useState([])
-    const [ticker, setTicker] = useState(false)
-    const [showDesktopSearch, setShowDesktopSearch] = useState(false);
-    const [showMobileSearch, setShowMobileSearch] = useState(false);
+    const [isSearchBoxActive, setIsSearchBoxActive] = useState(false);
+    const [isToggleActive, setIsToggleActive] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    function toggleSearch() {
-        setShowDesktopSearch(prev => !prev);
-        setShowMobileSearch(prev => !prev);
-    }
+    // 2. Function to toggle the state.
+    const toggleSubMenu = () => {
+      setIsOpen(!isOpen);
+    };
+  
+    // Assuming scrollTop is defined elsewhere
+    const handleLinkClick = () => {
+        setIsOpen(false); // Set the state to false to close the menu
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+      };
+
 
     // const [showSubCat, setShowSubCat] = useState(false);
     // const [showSubCat1, setShowSubCat1] = useState(false);
@@ -48,13 +55,13 @@ export default function Header() {
         window.addEventListener('scroll', myFixedNav);
         navbar = document.getElementById("myHeader");
         navbarMobile = document.getElementById("myHeader2");
-    
+
         const fetchData = async () => {
             try {
                 const breakingRes = await axios.get(`${process.env.REACT_APP_API_URL}active-breaking`);
                 const breakingData = breakingRes.data.breaking;
                 setBreaking(breakingData);
-    
+
                 if (breakingData.length === 0) {
                     const scrollRes = await axios.get(`${process.env.REACT_APP_API_URL}json/file/generateActiveScroll.json`);
                     setScroll(scrollRes.data.data || []);
@@ -63,10 +70,10 @@ export default function Header() {
                 console.error("Error loading breaking/scroll data", err);
             }
         };
-    
+
         fetchData();
     }, []);
-    
+
 
     function myFixedNav() {
         navbar = document.getElementById("myHeader");
@@ -131,6 +138,7 @@ export default function Header() {
         const txt = e.target.q.value;
         navigate('/search/' + txt)
     }
+
     return (
         <>
             <header className="header-area">
@@ -177,31 +185,31 @@ export default function Header() {
                                             <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                                                 <ul className="navbar-nav">
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/national">জাতীয়</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/national">জাতীয়</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/politics">রাজনীতি</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/politics">রাজনীতি</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/international">আন্তর্জাতিক</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/international">আন্তর্জাতিক</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/crime">অপরাধ</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/crime">অপরাধ</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/trade">বাণিজ্য</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/trade">বাণিজ্য</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/entertainment">বিনোদন</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/entertainment">বিনোদন</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/sports">খেলাধুলা</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/sports">খেলাধুলা</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/lifestyle">জীবনযাপন</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/lifestyle">জীবনযাপন</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link" onClick={scrollTop}  to="/opinion">মতামত</Link>
+                                                        <Link className="nav-link" onClick={scrollTop} to="/opinion">মতামত</Link>
                                                     </li>
 
                                                     <li className="nav-item dropdown">
@@ -238,12 +246,12 @@ export default function Header() {
                                                                                 জলবায়ু</Link>
                                                                             </li>
                                                                             <li><Link className="dropdown-item" to="/agriculture" onClick={scrollTop}>কৃষি</Link> </li>
-                                                                            
+
                                                                         </ul>
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
-                                                                         
+
                                                                             <li><Link className="dropdown-item" to="/the-news-special" onClick={scrollTop}>দ্য
                                                                                 নিউজ স্পেশাল</Link></li>
                                                                             <li><Link className="dropdown-item" to="/reader-s-news" onClick={scrollTop}>পাঠকের
@@ -252,7 +260,7 @@ export default function Header() {
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
-                                                                           
+
                                                                             <li><Link className="dropdown-item" to="/archives" onClick={scrollTop}>আর্কাইভ</Link>
                                                                             </li>
                                                                         </ul>
@@ -261,12 +269,13 @@ export default function Header() {
                                                             </div>
                                                         </div>
                                                     </li>
+
                                                     <li className="nav-item search-sticky">
                                                         <div className="search-btn" >
                                                             <span className="icon-wrap">
-                                                                <span className="search-input" >
+                                                                <span className={`search-input ${isSearchBoxActive ? 'search-box' : ''}`} >
                                                                     <form onSubmit={handelSubmit} action="/search" method="get">
-                                                                        <span className="srch-close-btn"><i
+                                                                        <span className="srch-close-btn" onClick={() => setIsSearchBoxActive(false)}><i
                                                                             className="far fa-times-circle"></i></span>
                                                                         <input type="text" name="q" className="form-control" aria-describedby="button-addon3"
                                                                             id="search-terms" placeholder="লিখুন..." />
@@ -274,8 +283,8 @@ export default function Header() {
                                                                             className="btn srch-sub-btn" aria-label="submit">খুঁজুন</button>
                                                                     </form>
                                                                 </span>
-                                                                <a className="nav-link search-button"> <i onClick={mobileHeaderSearch} className="fas fa-search"></i>
-                                                                </a>
+                                                                <Link className="nav-link search-button" to="#"> <i className="fas fa-search"  onClick={() => setIsSearchBoxActive(true)}></i>
+                                                                </Link>
                                                             </span>
                                                         </div>
                                                     </li>
@@ -288,7 +297,7 @@ export default function Header() {
                                                             alt="English" title='English' />English</a>
                                                     </div>
                                                     <div className="header-search">
-                                                        <form  onSubmit={handelSubmit} action="/search" method="get">
+                                                        <form onSubmit={handelSubmit} action="/search" method="get">
                                                             <div className="input-group">
                                                                 <input type="text" name="q" className="form-control"
                                                                     aria-label="Recipient's username"
@@ -296,7 +305,7 @@ export default function Header() {
                                                                 <div className="header-search-icon">
                                                                     <i className="fa-solid fa-magnifying-glass"></i>
                                                                 </div>
-                                                                <button className="input-group-text"  type="submit" aria-label="submit" id="basic-addon2">খুঁজুন</button>
+                                                                <button className="input-group-text" type="submit" aria-label="submit" id="basic-addon2">খুঁজুন</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -365,7 +374,7 @@ export default function Header() {
                                 <div className="col-lg-12">
                                     <div className="mobile-topbar">
                                         <div className="d-flex justify-content-between align-items-center">
-                                            <div className="bars">
+                                            <div className="bars" onClick={() => setIsToggleActive(true)}>
                                                 <i className="fas fa-bars"></i>
                                             </div>
                                             <div className="logo">
@@ -375,119 +384,119 @@ export default function Header() {
                                             </div>
                                             <div className="search-btn">
                                                 <span className="icon-wrap">
-                                                    <span className={`search-input ${showDesktopSearch ? 'show' : 'hide'}`}>
+                                                    <span className={`search-input ${isSearchBoxActive ? 'search-box' : ''}`}>
                                                         <form onSubmit={handelSubmit} action="/search" method="get">
-                                                            <span className="srch-close-btn" onClick={toggleSearch}><i className="far fa-times-circle"></i></span>
+                                                            <span className="srch-close-btn" onClick={() => setIsSearchBoxActive(false)}><i className="far fa-times-circle"></i></span>
                                                             <input type="text" name="q" className="form-control" placeholder="লিখুন..." />
-                                                            <button type="submit" className="btn srch-sub-btn">খুঁজুন</button>
+                                                            <button type="submit" className="btn srch-sub-btn" >খুঁজুন</button>
                                                         </form>
                                                     </span>
-                                                    <a className="nav-link search-button" onClick={toggleSearch}>
+                                                    <Link className="nav-link search-button" to={"#"} onClick={() => setIsSearchBoxActive(true)}>
                                                         <i className="fas fa-search"></i>
-                                                    </a>
+                                                    </Link>
                                                 </span>
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="mobile-menu-overlay"></div>
-                                    <div className="mobile-menu-main">
-                                        <a href="">
+                                    <div className={`mobile-menu-overlay ${isToggleActive ? 'active' : ''}`}></div>
+                                    <div className={`mobile-menu-main ${isToggleActive ? 'active' : ''}`}>
+                                        <a href="/">
                                             <div className="logo">
                                                 <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
                                             </div>
                                         </a>
-                                        <div className="close-mobile-menu"><i className="fas fa-times"></i></div>
+                                        <div className="close-mobile-menu" onClick={() => setIsToggleActive(false)}><i className="fas fa-times"></i></div>
                                         <div className="header-extra-wrap">
                                             <div className="extr">
                                                 <a href="#"> <img src="media/imgAll/icon/E_paper2.png" alt="" />ই-পেপার</a>
-                                                <a href="#"> <img src="media/imgAll/icon/archive2.png" alt="" />আর্কাইভ</a>
+                                                <Link to="/archives" onClick={() => setIsToggleActive(false)} > <img src="media/imgAll/icon/archive2.png" alt="" onClick={scrollTop} />আর্কাইভ</Link>
                                                 <a className="langu" href="#"> <img src="media/imgAll/icon/Map2.png" alt="" />English</a>
                                             </div>
                                         </div>
                                         <div className="menu-body">
                                             <div className="menu-list">
                                                 <ul className="list-unstyled">
-                                                    <li className="sub-mobile-menu">
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)} >
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/national" onClick={scrollTop}>জাতীয়</Link>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mobile-menu">
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)} >
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/politics" onClick={scrollTop} >রাজনীতি</Link>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mobile-menu">
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/international" onClick={scrollTop}> আন্তর্জাতিক </Link>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mobile-menu">
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/entertainment" onClick={scrollTop}>বিনোদন</Link>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mobile-menu">
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/trade" onClick={scrollTop}> বাণিজ্য </Link>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mobile-menu">
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/sports" onClick={scrollTop}>খেলাধুলা</Link>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mobile-menu">
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/opinion" onClick={scrollTop}>মতামত</Link>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mobile-menu">
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/crime" onClick={scrollTop}>অপরাধ</Link>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mobile-menu">
+                                                    <li className={`sub-mobile-menu ${isOpen ? 'open' : ''}`}>
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="#" onClick={scrollTop}>অন্যান্য</Link>
-                                                            <span className="accordion-click"><i className="fas fa-angle-down"></i></span>
+                                                            <span className="accordion-click" onClick={toggleSubMenu}> <i className={isOpen ? "fas fa-angle-up" : "fas fa-angle-down"}></i></span>
                                                         </div>
-                                                        <ul className="list-unstyled">
-                                                            <li>
+                                                        <ul className="list-unstyled"  style={{ display: isOpen ? 'block' : 'none' }}>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/court-law" onClick={scrollTop}>আইন ও বিচার</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/education" onClick={scrollTop}>শিক্ষা</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/motivation" onClick={scrollTop}>অনুপ্রেরণা</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/jobs" onClick={scrollTop}>চাকরি</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/health" onClick={scrollTop}>স্বাস্থ্য</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/photo-feature" onClick={scrollTop}>ছবিঘর</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/technology" onClick={scrollTop}>তথ্য প্রযুক্তি</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/environment-and-climate" onClick={scrollTop}>পরিবেশ ও জলবায়ু</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/lifestyle" onClick={scrollTop}>জীবনযাপন</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/agriculture" onClick={scrollTop}>কৃষি</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/the-news-special" onClick={scrollTop}>দ্য নিউজ স্পেশাল</Link>
                                                             </li>
-                                                            <li>
+                                                            <li  onClick={() => setIsToggleActive(false)}>
                                                                 <Link to="/archives" onClick={scrollTop}>আর্কাইভ</Link>
                                                             </li>
                                                         </ul>
