@@ -177,82 +177,82 @@ export default function Header() {
                                             <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                                                 <ul className="navbar-nav">
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/national">জাতীয়</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/national">জাতীয়</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/politics">রাজনীতি</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/politics">রাজনীতি</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/international">আন্তর্জাতিক</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/international">আন্তর্জাতিক</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/crime">অপরাধ</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/crime">অপরাধ</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/trade">বাণিজ্য</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/trade">বাণিজ্য</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/entertainment">বিনোদন</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/entertainment">বিনোদন</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/sports">খেলাধুলা</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/sports">খেলাধুলা</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/lifestyle">জীবনযাপন</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/lifestyle">জীবনযাপন</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link" href="/opinion">মতামত</a>
+                                                        <Link className="nav-link" onClick={scrollTop}  to="/opinion">মতামত</Link>
                                                     </li>
 
                                                     <li className="nav-item dropdown">
-                                                        <a className="nav-link dropdown-toggle" href="#">অন্যান্য</a>
+                                                        <Link className="nav-link dropdown-toggle" to="#" onClick={scrollTop}>অন্যান্য</Link>
                                                         <div className="dropdown-menu megamenu" role="menu">
                                                             <div className="container">
                                                                 <div className="row gx-3">
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
-                                                                            <li><a className="dropdown-item" href="#">আইন ও
-                                                                                বিচার</a></li>
-                                                                            <li><a className="dropdown-item" href="#">শিক্ষা</a>
+                                                                            <li><Link className="dropdown-item" to="/court-law" onClick={scrollTop}>আইন ও
+                                                                                বিচার</Link></li>
+                                                                            <li><Link className="dropdown-item" to="/education" onClick={scrollTop}>শিক্ষা</Link>
                                                                             </li>
-                                                                            <li><a className="dropdown-item"
-                                                                                href="/motivation">অনুপ্রেরণা</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
-                                                                        <ul className="nav flex-column">
-                                                                            <li><a className="dropdown-item" href="#">চাকরি</a></li>
-                                                                            <li><a className="dropdown-item" href="#">স্বাস্থ্য</a>
-                                                                            </li>
-                                                                            <li><a className="dropdown-item" href="#">ছবিঘর</a>
+                                                                            <li><Link className="dropdown-item"
+                                                                                to="/motivation" onClick={scrollTop}>অনুপ্রেরণা</Link>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
-                                                                            <li><a className="dropdown-item" href="#">তথ্য
-                                                                                প্রযুক্তি</a>
+                                                                            <li><Link className="dropdown-item" to="/jobs" onClick={scrollTop}>চাকরি</Link></li>
+                                                                            <li><Link className="dropdown-item" to="/health" onClick={scrollTop}>স্বাস্থ্য</Link>
                                                                             </li>
-                                                                            <li><a className="dropdown-item" href="#">পরিবেশ ও
-                                                                                জলবায়ু</a>
-                                                                            </li>
-                                                                            <li><a className="dropdown-item" href="#">তথ্য
-                                                                                প্রযুক্তি</a>
+                                                                            <li><Link className="dropdown-item" to="/photo-feature" onClick={scrollTop}>ছবিঘর</Link>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
+                                                                            <li><Link className="dropdown-item" to="/technology" onClick={scrollTop}>তথ্য
+                                                                                প্রযুক্তি</Link>
+                                                                            </li>
+                                                                            <li><Link className="dropdown-item" to="/environment-and-climate" onClick={scrollTop}>পরিবেশ ও
+                                                                                জলবায়ু</Link>
+                                                                            </li>
                                                                             <li><Link className="dropdown-item" to="/agriculture" onClick={scrollTop}>কৃষি</Link> </li>
+                                                                            
                                                                         </ul>
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
                                                                         <ul className="nav flex-column">
+                                                                         
                                                                             <li><Link className="dropdown-item" to="/the-news-special" onClick={scrollTop}>দ্য
                                                                                 নিউজ স্পেশাল</Link></li>
                                                                             <li><Link className="dropdown-item" to="/reader-s-news" onClick={scrollTop}>পাঠকের
                                                                                 সংবাদ</Link></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
+                                                                        <ul className="nav flex-column">
+                                                                           
                                                                             <li><Link className="dropdown-item" to="/archives" onClick={scrollTop}>আর্কাইভ</Link>
                                                                             </li>
                                                                         </ul>
@@ -410,90 +410,85 @@ export default function Header() {
                                                 <ul className="list-unstyled">
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#">জাতীয়</a>
+                                                            <Link to="/national" onClick={scrollTop}>জাতীয়</Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#">রাজনীতি</a>
+                                                            <Link to="/politics" onClick={scrollTop} >রাজনীতি</Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#"> আন্তর্জাতিক </a>
+                                                            <Link to="/international" onClick={scrollTop}> আন্তর্জাতিক </Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#">বিনোদন</a>
+                                                            <Link to="/entertainment" onClick={scrollTop}>বিনোদন</Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#"> বাণিজ্য </a>
+                                                            <Link to="/trade" onClick={scrollTop}> বাণিজ্য </Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#">খেলাধুলা</a>
+                                                            <Link to="/sports" onClick={scrollTop}>খেলাধুলা</Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#">মতামত</a>
+                                                            <Link to="/opinion" onClick={scrollTop}>মতামত</Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#">অপরাধ</a>
+                                                            <Link to="/crime" onClick={scrollTop}>অপরাধ</Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu">
                                                         <div className="sub-menu-mobile-link">
-                                                            <a href="#">ব্যবসা</a>
-                                                        </div>
-                                                    </li>
-                                                    <li className="sub-mobile-menu">
-                                                        <div className="sub-menu-mobile-link">
-                                                            <a href="#">অন্যান্য</a>
+                                                            <Link to="#" onClick={scrollTop}>অন্যান্য</Link>
                                                             <span className="accordion-click"><i className="fas fa-angle-down"></i></span>
                                                         </div>
                                                         <ul className="list-unstyled">
                                                             <li>
-                                                                <a href="">আইন ও বিচার</a>
+                                                                <Link to="/court-law" onClick={scrollTop}>আইন ও বিচার</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">শিক্ষা</a>
+                                                                <Link to="/education" onClick={scrollTop}>শিক্ষা</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">অনুপ্রেরণা</a>
+                                                                <Link to="/motivation" onClick={scrollTop}>অনুপ্রেরণা</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">চাকরি</a>
+                                                                <Link to="/jobs" onClick={scrollTop}>চাকরি</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">স্বাস্থ্য</a>
+                                                                <Link to="/health" onClick={scrollTop}>স্বাস্থ্য</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">ছবিঘর</a>
+                                                                <Link to="/photo-feature" onClick={scrollTop}>ছবিঘর</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">তথ্য প্রযুক্তি</a>
+                                                                <Link to="/technology" onClick={scrollTop}>তথ্য প্রযুক্তি</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">পরিবেশ ও জলবায়ু</a>
+                                                                <Link to="/environment-and-climate" onClick={scrollTop}>পরিবেশ ও জলবায়ু</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">লাইফস্টাইল</a>
+                                                                <Link to="/lifestyle" onClick={scrollTop}>জীবনযাপন</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">কৃষি</a>
+                                                                <Link to="/agriculture" onClick={scrollTop}>কৃষি</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">দ্য নিউজ স্পেশাল</a>
+                                                                <Link to="/the-news-special" onClick={scrollTop}>দ্য নিউজ স্পেশাল</Link>
                                                             </li>
                                                             <li>
-                                                                <a href="">আর্কাইভ</a>
+                                                                <Link to="/archives" onClick={scrollTop}>আর্কাইভ</Link>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -502,11 +497,11 @@ export default function Header() {
                                         </div>
                                         <div className="social-icon">
                                             <ul className="list-unstyled">
-                                                <li><a href="#" target="_blank"><i className="fa-brands fa-facebook-f"></i></a></li>
+                                                <li><a href="https://www.facebook.com/thenews24digital/" target="_blank"><i className="fa-brands fa-facebook-f"></i></a></li>
                                                 <li><a href="#" target="_blank"><i className="fa-brands fa-whatsapp"></i></a></li>
                                                 <li><a href="#" target="_blank"><i className="fa-brands fa-x-twitter"></i></a></li>
                                                 <li><a href="#" target="_blank"><i className="fa-brands fa-instagram"></i></a></li>
-                                                <li><a href="#" target="_blank"><i className="fa-brands fa-youtube"></i></a></li>
+                                                <li><a href="https://www.youtube.com/@thenewsdhaka/" target="_blank"><i className="fa-brands fa-youtube"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
