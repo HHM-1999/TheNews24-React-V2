@@ -7,7 +7,7 @@ import archive from '../assets/media/common/archive2.png'
 import map from '../assets/media/common/Map2.png'
 import moment from 'moment-hijri';
 import axios from 'axios'
-import Marquee from 'react-fast-marquee'
+
 const date1 = new Date();
 let bnDate = getDate(date1, { format: 'D' })
 let bnMonth = getMonth(date1, { format: 'MMMM' })
@@ -128,12 +128,9 @@ export default function Header() {
 
     const handelSubmit = (e) => {
         e.preventDefault();
-        const txt = e.target.q.value.trim();
-        if (txt) {
-            navigate('/search/' + txt);
-        }
+        const txt = e.target.q.value;
+        navigate('/search/' + txt)
     }
-
     return (
         <>
             <header className="header-area">
@@ -268,7 +265,7 @@ export default function Header() {
                                                         <div className="search-btn" >
                                                             <span className="icon-wrap">
                                                                 <span className="search-input" >
-                                                                    <form onSubmit={handelSubmit}>
+                                                                    <form onSubmit={handelSubmit} action="/search" method="get">
                                                                         <span className="srch-close-btn"><i
                                                                             className="far fa-times-circle"></i></span>
                                                                         <input type="text" name="q" className="form-control" aria-describedby="button-addon3"
@@ -291,15 +288,15 @@ export default function Header() {
                                                             alt="English" title='English' />English</a>
                                                     </div>
                                                     <div className="header-search">
-                                                        <form action="">
+                                                        <form  onSubmit={handelSubmit} action="/search" method="get">
                                                             <div className="input-group">
-                                                                <input type="text" className="form-control"
+                                                                <input type="text" name="q" className="form-control"
                                                                     aria-label="Recipient's username"
                                                                     aria-describedby="basic-addon2" />
                                                                 <div className="header-search-icon">
                                                                     <i className="fa-solid fa-magnifying-glass"></i>
                                                                 </div>
-                                                                <span className="input-group-text" id="basic-addon2">খুঁজুন</span>
+                                                                <button className="input-group-text"  type="submit" aria-label="submit" id="basic-addon2">খুঁজুন</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -379,7 +376,7 @@ export default function Header() {
                                             <div className="search-btn">
                                                 <span className="icon-wrap">
                                                     <span className={`search-input ${showDesktopSearch ? 'show' : 'hide'}`}>
-                                                        <form onSubmit={handelSubmit}>
+                                                        <form onSubmit={handelSubmit} action="/search" method="get">
                                                             <span className="srch-close-btn" onClick={toggleSearch}><i className="far fa-times-circle"></i></span>
                                                             <input type="text" name="q" className="form-control" placeholder="লিখুন..." />
                                                             <button type="submit" className="btn srch-sub-btn">খুঁজুন</button>

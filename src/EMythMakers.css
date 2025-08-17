@@ -26,6 +26,7 @@ picture img {
 }
 
 /*common*/
+
 .subheadTitle{color: var(--primary)}
 .sticky{position:fixed;background:var(--white-color);top:0 !important;z-index:9999999;margin-top:0;left:0;right:0;box-shadow: 0 0 2px 0 #00000051;}
 .navbar-toggler:focus{box-shadow:none;}
@@ -171,7 +172,7 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
 .mobile-menu-area .mobile-menu-main .social-icon ul li a:hover { background-color: var(--primary); color: var(--white-color); border-color: var(--primary); }
 .mobile-menu-overlay { transition-duration: 0.3s; visibility: hidden; opacity: 0; }
 .mobile-menu-overlay.active { visibility: visible; opacity: 1; }
-.mobile-menu-main.active {left: 0 !important; }
+/* .mobile-menu-main.active {left: 0 !important; } */
 .mobile-menu-area .mobile-menu-search { padding: 0 20px 16px; }
 .mobile-menu-area .mobile-menu-search input { width: 100%; height: 45px; border: 1px solid var(--primary); border-radius: 5px; padding: 0 20px; transition: var(--transision); background-color: var(--section-background); }
 .mobile-menu-area .mobile-menu-search input:focus { border-color: var(--black-color); }
@@ -187,12 +188,12 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
 .mobile-menu-area .menu-body { padding: 0 20px; }
 .mobile-menu-area .mobile-menu-main .menu-body .menu-list ul li ul li { border-top: 1px solid var(--border-color); }
 .mobile-menu-area .mobile-menu-main .menu-body .menu-list ul li ul li ul { padding-left: 0; display: none; }
-.search-input.hide {
+/* .search-input.hide {
     display: none;
 }
 .search-input.show {
     display: block;
-}
+} */
 
 /* leadnews-wrap  */
 .leadnews-wrap { padding: 30px 0; }
@@ -816,26 +817,14 @@ margin-top: 100px;
 	background-color: #F00000;
 	border: 1px solid #ddd;
 }
-
-/*========= Header & Footer ========*/
-.show {
-	display: block;
-}
-
-.hide {
-	display: none;
-}
-
-
-
 /* Mobile nav */
-.show {
+/* .show {
 	display: inline;
 }
 
 .Hide {
 	display: none;
-}
+} */
 
 .sticky2 {
 	position: fixed;
@@ -849,14 +838,7 @@ margin-top: 100px;
 	font-size: 17px;
 }
 
-.show {
-	display: inline;
-	font-size: 26px;
-}
 
-.hide {
-	display: none;
-}
 
 .MobileShow {
 	display: none;
@@ -3481,7 +3463,7 @@ h2.LatestNewsH {
 }
 
 .archiveListNews p {
-	margin-top: 2px;
+	margin-top: 0px;
 	-webkit-line-clamp: 2;
 	font-size: 15px;
 	line-height: 20px;
@@ -3489,13 +3471,9 @@ h2.LatestNewsH {
 
 .archiveListNews .pDate {
 	position: absolute;
-	bottom: 1px;
+	bottom: -2px;
 	left: 12px;
 	color: #2a2a2a;
-}
-
-.archiveListNews .Desc {
-	padding: 5px 0;
 }
 .col-lg-6.col-sm-12:nth-child(1) .archiveListNews{
 	border-top: none;
