@@ -50,9 +50,7 @@ export default function Home() {
                 <>
                     <DocumentTitle title='The News 24 ::  দ্য নিউজ ২৪' />
                     <HomeLdJson />
-                    <section className='container'>
                         <LeadNewsSection />
-                    </section>
                     <>
                         <div className="video-area">
                             <div class="container">

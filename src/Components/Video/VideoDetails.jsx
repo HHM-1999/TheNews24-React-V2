@@ -116,7 +116,7 @@ export default function VideoDetails() {
                         <div className="DVideoCatListTop4 mb-5">
                             <div className="SectionSBorder2">
                                 <div className="SPSecTitle">
-                                    <h2>আরও দেখুন</h2>
+                                    <h2>আরও দেখুন :</h2>
                                 </div>
                             </div>
                             <div className="row">

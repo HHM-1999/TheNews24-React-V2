@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
-import { useState } from "react";
-import { EmailShareButton, FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
-import { EmailIcon, FacebookIcon, LinkedinIcon, TwitterIcon, WhatsappIcon } from "react-share";
+// import { useState } from "react";
+// import { EmailShareButton, FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+// import { EmailIcon, FacebookIcon, LinkedinIcon, TwitterIcon, WhatsappIcon } from "react-share";
 
 export default function ShareThisPopup({ title, url }) {
     // return (
@@ -47,7 +47,7 @@ export default function ShareThisPopup({ title, url }) {
         if (!existingScript) {
           const script = document.createElement("script");
           script.id = scriptId;
-          script.src = "https://platform-api.sharethis.com/js/sharethis.js#property=6809e6d0eebbe9001a9ff1c8&product=inline-share-buttons&source=platform";
+          script.src = "https://platform-api.sharethis.com/js/sharethis.js#property=68a2bc3929e65322fc130579&product=sop";
           script.onload = () => resolve(true);
           document.body.appendChild(script);
         } else {
@@ -66,6 +66,7 @@ export default function ShareThisPopup({ title, url }) {
   return (
     <div className="DSocialTop d-flex justify-content-start gap-2 mt-3 mb-2">
         <div class="sharethis-inline-share-buttons" url={url} title={title}></div>
+        
       {/* <div className="sharethis-inline-share-buttons" data-url={url} data-title={title}></div> */}
     </div>
   

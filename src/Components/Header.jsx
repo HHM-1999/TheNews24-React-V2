@@ -256,6 +256,7 @@ export default function Header() {
                                                                                 নিউজ স্পেশাল</Link></li>
                                                                             <li><Link className="dropdown-item" to="/reader-s-news" onClick={scrollTop}>পাঠকের
                                                                                 সংবাদ</Link></li>
+                                                                                <li><Link className="dropdown-item" to="/video" onClick={scrollTop}>ভিডিও</Link></li>
                                                                         </ul>
                                                                     </div>
                                                                     <div className="col-md-3" style={{ flex: "0 0 20%", maxWidth: "20%" }}>
@@ -368,7 +369,7 @@ export default function Header() {
                     </div>
 
                     {/* <!--mobile-navbar-part-start--> */}
-                    <div className="mobile-menu-area d-block d-lg-none hide" id="mobile-nav">
+                    <div className="mobile-menu-area d-block d-lg-none hide" id="myHeader2">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-12">

@@ -75,18 +75,18 @@ export default function Footer() {
                         <div class="row">
                             <div class="col-12">
                                 <ul class="DFooterMiddleListItems">
-                                    <li><a href="#">দ্য নিউজ</a></li>
-                                    <li><a href="#">আমাদের সম্পর্কে</a></li>
-                                    <li><a href="#">যোগাযোগ করুন</a></li>
-                                    <li><a href="#">বিজ্ঞাপন দিন</a></li>
-                                    <li><a href="#">সম্পাদকীয় নীতি</a></li>
-                                    <li><a href="#">গোপনীয়তা নীতি</a></li>
-                                    <li><a href="#">শর্তাবলী</a></li>
-                                    <li><a href="#">কপিরাইট নীতি</a></li>
-                                    <li><a href="#">পাঠকের অধিকার</a></li>
-                                    <li><a href="#">অভিযোগ দায়ের</a></li>
-                                    <li><a href="#">সাইট ম্যাপ</a></li>
-                                    <li><a href="#">সাবস্ক্রিপশন</a></li>
+                                    <li><Link onClick={scrollTop} to="#">দ্য নিউজ</Link></li>
+                                    <li><Link onClick={scrollTop} to="/aboutUs">আমাদের সম্পর্কে</Link></li>
+                                    <li><Link onClick={scrollTop} to="#">যোগাযোগ করুন</Link></li>
+                                    <li><Link onClick={scrollTop} to="/advertise">বিজ্ঞাপন দিন</Link></li>
+                                    <li><Link onClick={scrollTop} to="#">সম্পাদকীয় নীতি</Link></li>
+                                    <li><Link onClick={scrollTop} to="/terms-service">গোপনীয়তা নীতি</Link></li>
+                                    <li><Link onClick={scrollTop} to="/privacy-policy">শর্তাবলী</Link></li>
+                                    <li><Link onClick={scrollTop} to="#">কপিরাইট নীতি</Link></li>
+                                    <li><Link onClick={scrollTop} to="#">পাঠকের অধিকার</Link></li>
+                                    <li><Link onClick={scrollTop} to="#">অভিযোগ দায়ের</Link></li>
+                                    <li><Link onClick={scrollTop} to="#">সাইট ম্যাপ</Link></li>
+                                    <li><Link onClick={scrollTop} to="#">সাবস্ক্রিপশন</Link></li>
                                 </ul>
                             </div>
                         </div>

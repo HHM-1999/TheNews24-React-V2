@@ -27,9 +27,9 @@ export default function OpinionSec() {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <a href="#">
+                        <Link to="/opinion" onClick={scrollTop}>
                             <h2>মতামত</h2>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

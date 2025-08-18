@@ -433,8 +433,8 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
 
 .sports-list-wrap .col-lg-4:not(:last-child) { border-right: 1px solid var(--border-color); }
 .sports-list-img { overflow: hidden; position: relative;border-radius:5px;}
-.sports-list-img img{aspect-ratio:1.3; object-fit: cover; object-position: center; width:100%; transition: all 0.5s ease;border-radius:5px;}
-.sports-list .Desc { position: absolute; bottom: 0; padding: 10px; background: linear-gradient(180deg, rgba(68, 53, 21, 0) 1%, rgba(14, 14, 14, 0.83) 60%); }
+.sports-list-img img{aspect-ratio:1.3; object-fit: cover; object-position: center; width:100%; transition: all 0.5s ease;border-radius:5px; }
+.sports-list .Desc { position: absolute; bottom: 0; padding: 10px; background: linear-gradient(180deg, rgba(68, 53, 21, 0) 1%, rgba(14, 14, 14, 0.83) 60%);width: 100%;}
 .sports-list .Desc .Title { font-weight: 700; color: var(--white-color); }
 .sports-list:hover .sports-list-img img{transform: scale(1.1);}
 /* .sports-list:hover .Desc .Title{color: var(--primary);} */
@@ -494,6 +494,7 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
 /* lineVote  */
 .SPSecTitle3 { background-color: var(--primary); text-align: center; }
 .SPSecTitle3 h2 { font-size: 18px; color: var(--white-color); padding: 7px; }
+.SPSecTitle h2 { font-size: 23px; color: #000; padding: 7px; }
 .DOnlineVote .opinion-submit-msg,.DOnlineVote2 .opinion-submit-msg { background: #f00000; color: #fff; padding: 5px 10px; text-align: center }
 .lineVote-img img { aspect-ratio:2; object-fit: cover; object-position: center; width: 100%; }
 .Question { background: #fff; border-bottom: 1px solid #e2e2e2; border-left: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; padding: 10px }
@@ -644,6 +645,12 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
     .footer-logo img{ width: 150px; }
     .DRightSideAdd {display:flex;justify-content:center; }
     .fb-page {display:flex!important;justify-content:center; }
+	#btnDiv2 .ButtonBG {
+		color: #fff;
+		background: var(--primary);
+		border-radius: 0;
+		padding: 4px 20px;
+	}
 }
 
  
@@ -904,7 +911,7 @@ margin-top: 100px;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	font-family: sans-serif !important;
+	font-family: "Noto Serif Bengali"
 
 }
 
@@ -917,7 +924,7 @@ margin-top: 100px;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	font-family: SolaimanLipi !important;
+	font-family: "Noto Serif Bengali"
 }
 
 
@@ -1316,7 +1323,7 @@ margin-top: 100px;
 }
 
 .DCatStyle2Top:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DCatStyle2Top .ImgViewer {
@@ -1348,7 +1355,7 @@ margin-top: 100px;
 }
 
 .DCatStyle2List .Title:hover {
-	color: #0074ed;
+	color: var(--primary);
 }
 .advertise-page{
 	margin: 60px 0;
@@ -1503,7 +1510,7 @@ margin-top: 100px;
 }
 
 .SpecialEventTop:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 .SpecialEventTop .Desc .Title  .subheadTitle{
 	font-size: 18px;
@@ -1518,7 +1525,7 @@ margin-top: 100px;
 }
 
 .SpecialEventList:hover .col-7 .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .SpecialEventTop .Brief p {
@@ -1774,7 +1781,7 @@ margin-top: 100px;
 }
 
 .DCatStyle5List:hover .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DCatStyle5List picture img {
@@ -1807,9 +1814,17 @@ margin-top: 100px;
 	vertical-align: top;
 	margin-right: 10px;
 	margin-top: 8px;
-	background-color: #F00000;
+	background-color: var(--primary);
 }
-
+.ColorBox {
+	width: 25px;
+	height: 10px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 10px;
+	margin-top: 15px;
+	background-color: var(--primary);
+}
 .SectionTitle h3::before,
 .SectionTitle h3::after {
 	content: '';
@@ -1826,7 +1841,7 @@ margin-top: 100px;
 }
 
 .SectionTitle h3::after {
-	background: #F00000 !important;
+	background: var(--primary) !important;
 	width: 140px;
 }
 
@@ -1857,7 +1872,7 @@ margin-top: 100px;
 	vertical-align: top;
 	margin-right: 10px;
 	margin-top: 8px;
-	background-color: #F00000;
+	background-color: var(--primary);
 }
 
 .SectionTitleEn h3::before,
@@ -1875,11 +1890,21 @@ margin-top: 100px;
 }
 
 .SectionTitleEn h3::after {
-	background: #F00000 !important;
+	background: var(--primary) !important;
 	width: 140px;
 }
-
-
+.PhotoGalleryList .col-lg-12.col-sm-9.col-7.textBorder2 .Desc .Title {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.4;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: all 0.3s ease;
+	padding: 5px 0 20px 0;
+}
 
 
 
@@ -1921,7 +1946,7 @@ margin-top: 100px;
 }
 
 .DCatStyle1Top:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DCatStyle1Top .ImgViewer::after {
@@ -1952,7 +1977,7 @@ margin-top: 100px;
 }
 
 .DCatStyle1ListItem:hover .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DCatStyle1ListItem .col-lg-4 {
@@ -2026,11 +2051,6 @@ margin-top: 100px;
 	#btnDiv {
 		text-align: center;
 	}
-
-	.DCountryTop .col-lg-4 {
-		/* padding-left: 15px; */
-	}
-
 	.navbar .navbar-collapse {
 		overflow-y: scroll;
 		/* position: relative; */
@@ -2255,6 +2275,12 @@ margin-top: 100px;
 		border-bottom: none;
 		border-right: none;
 	}
+	.ContentDetails h1 {
+		font-size: 30px !important;
+		line-height: 38px !important;
+		margin-top: 14px;
+		margin-bottom: 8px;
+	}
 
 }
 
@@ -2361,9 +2387,9 @@ margin-top: 100px;
 
 #btnDiv2 .ButtonBG {
 	color: #fff;
-	background: #F00000;
-	border-radius: 0;
-	padding: 4px 60px;
+	background: var(--primary);
+	border-radius: 5px;
+	padding: 4px 20px;
 }
 
 .warningHeader {
@@ -2459,7 +2485,7 @@ margin-top: 100px;
 }
 
 .DRelatedNews.Title i {
-	color: #0074ed;
+	color: var(--primary);
 	padding-right: 10px;
 	font-size: 17px;
 }
@@ -2529,10 +2555,10 @@ margin-top: 100px;
 
 .DSecTitle2 h2 {
 	color: #fff;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
-	line-height: 22px;
-	padding: 8px 5px 6px;
+	line-height: 28px;
+	padding: 8px 20px;
 	text-align: center;
 }
 
@@ -2551,7 +2577,7 @@ margin-top: 100px;
 }
 
 .DLeftSideNews a:hover {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 /* .ContentDetails {position: relative;} */
@@ -2576,7 +2602,7 @@ margin-top: 100px;
 	font-weight: 600;
 	line-height: 28px;
 	margin: 0px 0 15px;
-	color: #0074ed;
+	color: var(--primary);
 }
 
 #contentDetails h1 {
@@ -2652,7 +2678,7 @@ margin-top: 100px;
 }
 
 .DBottomNews a:hover {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DBottomNews .col-12:nth-child(3) .DTop3List .textBorder {
@@ -2874,11 +2900,11 @@ p.img-caption {
 	left: 4px;
 	right: 4px;
 	border-radius: 100%;
-	border: 1px dashed #0a1633;
+	border: 1px dashed var(--primary);
 	text-align: center;
 	line-height: 40px;
 	font-style: normal;
-	color: #0a1633;
+	color: var(--primary);
 }
 
 .astrodivider span {
@@ -2890,7 +2916,7 @@ p.img-caption {
 	left: 50%;
 	margin-left: -25px;
 	border-radius: 100%;
-	box-shadow: 0 2px 4px #0a1633;
+	box-shadow: 0 2px 4px var(--primary);
 	background: #fff;
 }
 
@@ -2906,7 +2932,7 @@ p.img-caption {
 	width: 100%;
 	height: 25px;
 	border-radius: 125px/12px;
-	box-shadow: 0 0 8px #0a1633;
+	box-shadow: 0 0 8px var(--primary);
 }
 
 .astrodivider {
@@ -2951,7 +2977,7 @@ p.img-caption {
 	display: block;
 	width: 100%;
 	height: 2px;
-	background: #898989;
+	background: #dddcdc;
 	position: absolute;
 	top: 47%;
 	left: 0;
@@ -2977,13 +3003,13 @@ p.img-caption {
 
 .DTitleInner:after {
 	width: 18px;
-	border-right: 2px solid #898989;
+	border-right: 2px solid #dddcdc;
 	margin-right: -20px;
 }
 
 .DTitleInner:before {
 	width: 20px;
-	border-left: 2px solid #898989;
+	border-left: 2px solid #dddcdc;
 	margin-left: -20px;
 }
 
@@ -2995,7 +3021,7 @@ p.img-caption {
 
 .DTitle,
 .DTitle a {
-	color: #F00000;
+	color: var(--primary);
 }
 
 .DCatLeadTop {
@@ -3014,7 +3040,7 @@ p.img-caption {
 }
 
 .DCatLeadTop:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DCatLeadTop .Desc .Brief p {
@@ -3033,7 +3059,7 @@ p.img-caption {
 }
 
 .DCatTop2:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DCatTop3tList {
@@ -3054,7 +3080,7 @@ p.img-caption {
 }
 
 .DCatTop3tList :hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DCatTop3 {
@@ -3088,12 +3114,12 @@ p.img-caption {
 }
 
 .DCatNewsList .Desc .Title {
-	font-size: 20px;
-	line-height: 28px;
+	font-size: 17px;
+	line-height: 27px;
 }
 
 .DCatNewsList:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 #btnDiv .ButtonBG {
@@ -3113,9 +3139,9 @@ p.img-caption {
 }
 
 .MostPopularTab .nav-tabs .nav-item .nav-link {
-	background: #fff;
+	background: var(--primary);
 	font-weight: 600;
-	color: #000;
+	color: #fff;
 	text-align: center;
 	font-size: 18px;
 }
@@ -3150,14 +3176,14 @@ p.img-caption {
 }
 
 .MostPopularTabList:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 /* Latest News */
 h2.LatestNewsH {
 	font-size: 22px;
 	margin-bottom: 10px;
-	border-left: 4px solid #F00000;
+	border-left: 4px solid var(--primary);
 	padding-left: 10px;
 }
 
@@ -3694,7 +3720,7 @@ h2.LatestNewsH {
 }
 
 .SectionSBorder2 {
-	border-bottom: 1px solid #F00000;
+	border-bottom: 2px solid var(--primary);
 	padding-bottom: 5px;
 	margin-bottom: 20px;
 }
@@ -3767,7 +3793,7 @@ h2.LatestNewsH {
 
 .DDivisionNav .dropdown-item:focus,
 .dropdown-item:hover {
-	color: #fff;
+	color: var(--primary);
 	text-decoration: none;
 }
 
@@ -3812,11 +3838,11 @@ h2.LatestNewsH {
 }
 
 .DivisionLeadNews:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DivisionListNews:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DivisionListNews {
@@ -3877,7 +3903,7 @@ h2.LatestNewsH {
 }
 
 .DistrictListNews:hover .Desc .Title {
-	color: #0074ed;
+	color: var(--primary);
 }
 
 .DivisionListNews .Desc .Title {
@@ -4268,7 +4294,7 @@ span.DFeatureIcon i.fa-solid.fa-expand {
 }
 
 .policy-list p a {
-	color: #e91e24;
+	color: var(--primary)
 }
 
 .policy-list p a:hover {
