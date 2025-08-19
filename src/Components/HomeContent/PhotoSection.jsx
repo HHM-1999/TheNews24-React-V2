@@ -41,8 +41,8 @@ export default function PhotoSection() {
                                     <div class="Photogallery-overlay"></div>
                                     <picture>
                                         {photoStory.ImageBgPath ?
-                                            <img src={process.env.REACT_APP_IMG_Path + photoStory.ImageBgPath} alt={photoStory.PhotoFeatureTitle} title={photoStory.PhotoFeatureTitle} className="img-fluid" /> :
-                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={photoStory.PhotoFeatureTitle} title={photoStory.PhotoFeatureTitle} className="img-fluid img100" />}
+                                            <img src={process.env.REACT_APP_IMG_Path + photoStory.ImageBgPath} alt={photoStory.PhotoFeatureTitle} title={photoStory.PhotoFeatureTitle} className="img-fluid" width={800} height={"100%"} /> :
+                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={photoStory.PhotoFeatureTitle} title={photoStory.PhotoFeatureTitle} className="img-fluid img100" width={800} height={"100%"} />}
                                         {photoStory.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                     </picture>
                                     <div class="Desc">
@@ -67,8 +67,8 @@ export default function PhotoSection() {
                                                     <div class="Photogallery-overlay"></div>
                                                     <picture>
                                                         {nc.ImageSmPath ?
-                                                            <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} className="img-fluid" /> :
-                                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} className="img-fluid img100" />}
+                                                            <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} className="img-fluid" width={300} height={"100%"} /> :
+                                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} className="img-fluid img100" width={300} height={"100%"} />}
 
                                                         {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                     </picture>

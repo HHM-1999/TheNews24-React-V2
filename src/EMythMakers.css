@@ -651,6 +651,7 @@ background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%)
 		border-radius: 0;
 		padding: 4px 20px;
 	}
+
 }
 
  
@@ -2276,6 +2277,15 @@ margin-top: 100px;
 		line-height: 38px !important;
 		margin-top: 14px;
 		margin-bottom: 8px;
+	}
+	/* SEO CSS */
+	.lead-left-big-img img{
+		width: 100% !important;
+		height: auto !important;
+	}
+	.lead-left-small-img img{
+		width: 100% !important;
+		height: auto !important;
 	}
 
 }

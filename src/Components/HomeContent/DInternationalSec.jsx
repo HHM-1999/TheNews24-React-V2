@@ -49,8 +49,8 @@ export default function DInternationalSec() {
                                                     <div className="col-lg-5 col-sm-3 col-5">
                                                         <div className="othersTwo-list-img">
                                                             {nc.ImageThumbPath ?
-                                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" /> :
-                                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" />}
+                                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={120} height={"100%"} /> :
+                                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={120} height={"100%"} />}
 
                                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                         </div>
@@ -81,8 +81,8 @@ export default function DInternationalSec() {
                             <Link to={"/" + international2.Slug + "/news/" + international2.ContentID} onClick={scrollTop}>
                                 <div className="other-Two-lead-img">
                                     {international2.ImageBgPath ?
-                                        <img src={process.env.REACT_APP_IMG_Path + international2.ImageBgPath} alt={international2.ContentHeading} title={international2.ContentHeading} className="img-fluid w-100" /> :
-                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={international2.ContentHeading} title={international2.ContentHeading} className="img-fluid w-100" />}
+                                        <img src={process.env.REACT_APP_IMG_Path + international2.ImageBgPath} alt={international2.ContentHeading} title={international2.ContentHeading} className="img-fluid w-100"  width={800} height={"100%"} /> :
+                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={international2.ContentHeading} title={international2.ContentHeading} className="img-fluid w-100"  width={800} height={"100%"}/>}
 
                                     {international2.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                 </div>

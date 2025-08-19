@@ -36,8 +36,8 @@ export default function DJob() {
                         <Link to={"/" + News.Slug + "/news/" + News.ContentID} onClick={scrollTop}>
                             <div class="common-single-post-wrap-img">
                                 {News.ImageBgPath ?
-                                    <img src={process.env.REACT_APP_IMG_Path + News.ImageBgPath} alt={News.ContentHeading} title={News.ContentHeading} className="img-fluid" /> :
-                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={News.ContentHeading} title={News.ContentHeading} className="img-fluid" />}
+                                    <img src={process.env.REACT_APP_IMG_Path + News.ImageBgPath} alt={News.ContentHeading} title={News.ContentHeading} className="img-fluid" width={800} height={"100%"} /> :
+                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={News.ContentHeading} title={News.ContentHeading} className="img-fluid" width={800} height={"100%"} />}
 
                                 {News.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                             </div>
@@ -62,8 +62,8 @@ export default function DJob() {
                                         <div class="col-5 col-lg-4">
                                             <div class="common-single-post-list-img">
                                                 {nc.ImageThumbPath ?
-                                                    <img src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" /> :
-                                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" />}
+                                                    <img src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={120} height={"100%"} /> :
+                                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={120} height={"100%"} />}
 
                                                 {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                             </div>

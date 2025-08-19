@@ -129,7 +129,7 @@ export default function DCountry() {
                                                     <div className="col-lg-5 col-sm-3 col-5">
                                                         <div className="othersTwo-list-img">
                                                             {nc.ImageThumbPath ?
-                                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" /> :
+                                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={120} height={"100%"} className="img-fluid" /> :
                                                                 <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" />}
 
                                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
@@ -161,8 +161,8 @@ export default function DCountry() {
                             <Link to={"/" + country2.Slug + "/news/" + country2.ContentID} onClick={scrollTop}>
                                 <div className="other-Two-lead-img">
                                     {country2.ImageBgPath ?
-                                        <img src={process.env.REACT_APP_IMG_Path + country2.ImageBgPath} alt={country2.ContentHeading} title={country2.ContentHeading} className="img-fluid w-100" /> :
-                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={country2.ContentHeading} title={country2.ContentHeading} className="img-fluid w-100" />}
+                                        <img src={process.env.REACT_APP_IMG_Path + country2.ImageBgPath} alt={country2.ContentHeading} title={country2.ContentHeading} className="img-fluid w-100" width={800} height={"100%"} /> :
+                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={country2.ContentHeading} title={country2.ContentHeading} className="img-fluid w-100" width={800} height={"100%"} />}
 
                                     {country2.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                 </div>

@@ -45,8 +45,8 @@ export default function Sports() {
                                     <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
                                         <div class="sports-lead-img">
                                             {nc.ImageBgPath ?
-                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" /> :
-                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />}
+                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={800} height={"100%"} /> :
+                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={800} height={"100%"} />}
 
                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                         </div>
@@ -81,8 +81,8 @@ export default function Sports() {
                                                 <div class="col-5 col-lg-12">
                                                     <div class="sports-list-imgBox">
                                                         {nc.ImageSmPath ?
-                                                            <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" /> :
-                                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />}
+                                                            <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={300} height={"100%"} /> :
+                                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={300} height={"100%"} />}
 
                                                         {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                     </div>

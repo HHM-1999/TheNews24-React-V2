@@ -50,7 +50,7 @@ export default function OnlinePoll() {
                             <div className="Imgresize">
                                 <figure className="ImgViewer">
                                     <picture className="FixingRatio">
-                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_DOMAIN_URL + nc.image} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid img100 ImgRatio" />
+                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_DOMAIN_URL + nc.image} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid img100 ImgRatio"  />
                                     </picture>
                                 </figure>
                             </div>
