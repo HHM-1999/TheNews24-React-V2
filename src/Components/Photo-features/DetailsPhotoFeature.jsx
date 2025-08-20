@@ -97,7 +97,7 @@ export default function DetailsPhotoFeature() {
                       <div className="DImgZoomBlock DetailsPF" style={{ display: "flex", alignItems: "center", justifyContent: "center", cursor: 'pointer' }}>
                         {contentID.ImageBgPath ?
                           <LightgalleryItem src={process.env.REACT_APP_IMG_Path + contentID.ImageBgPath} downloadUrl={process.env.REACT_APP_IMG_Path + contentID.ImageBgPath} thumb={process.env.REACT_APP_IMG_Path + contentID.ImageBgPath}>
-                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + contentID.ImageBgPath} alt={contentID.PhotoFeatureTitle} title={contentID.PhotoFeatureTitle} />
+                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + contentID.ImageBgPath} alt={contentID.PhotoFeatureTitle} title={contentID.PhotoFeatureTitle} width={800} height={"100%"} />
                             <span className='DFeatureIcon'><i className="fa-solid fa-expand"></i></span>
                           </LightgalleryItem> : ""}
                       </div>
@@ -113,7 +113,7 @@ export default function DetailsPhotoFeature() {
                               <div className="DFeatureImg page-break" key={nc.ImageID}>
                                 <div className="DImgZoomBlock DetailsPF" style={{ display: "flex", alignItems: "center", justifyContent: "center", cursor: 'pointer' }}>
                                   <LightgalleryItem src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} downloadUrl={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} thumb={process.env.REACT_APP_IMG_Path + nc.ImageBgPath}>
-                                    <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} />
+                                    <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} width={800} height={"100%"} />
                                     <span className='DFeatureIcon'><i className="fa-solid fa-expand"></i></span>
                                   </LightgalleryItem>
                                 </div>
@@ -153,7 +153,7 @@ export default function DetailsPhotoFeature() {
                                       <div className="row">
                                         <div className="col-lg-5 col-sm-4 col-5">
                                           <div className="DImgZoomBlock">
-                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} /></picture>
+                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} width={800} height={"100%"} /></picture>
                                             <div className="card-video-icon"><i className="fa-solid fa-camera"></i></div>
                                           </div>
                                         </div>

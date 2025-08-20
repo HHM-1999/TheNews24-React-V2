@@ -159,7 +159,7 @@ export default function Category() {
                                                             <div className="row">
                                                                 <div className="col-lg-8 col-12">
                                                                     <div className="DImgZoomBlock">
-                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture>
+                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} width={800} height={"100%"} /></picture>
                                                                         {catLeadNews1.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                     </div>
                                                                 </div>
@@ -182,7 +182,7 @@ export default function Category() {
                                                             <div className="row">
                                                                 <div className="col-lg-12 col-sm-4 col-5">
                                                                     <div className="DImgZoomBlock">
-                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews2.ImageSmPath} alt={catLeadNews2.ContentHeading} title={catLeadNews2.ContentHeading} /></picture>
+                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews2.ImageSmPath} alt={catLeadNews2.ContentHeading} title={catLeadNews2.ContentHeading} width={120} height={"100%"} /></picture>
                                                                         {catLeadNews2.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                     </div>
                                                                 </div>
@@ -208,7 +208,7 @@ export default function Category() {
                                                                     <div className="row">
                                                                         <div className="col-lg-12 col-sm-4 col-5">
                                                                             <div className="DImgZoomBlock">
-                                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={"100%"} /></picture>
                                                                                 {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                             </div>
                                                                         </div>
@@ -236,11 +236,10 @@ export default function Category() {
                                     </div>
                                 </div>
                             </section>
-
                             <div className="DBannerAdd d-flex justify-content-center">
                                 <Link to="/">
                                     <img src="/media/Advertisement/Advertisement(970X90).png" alt="Advertisement" title="Advertisement"
-                                        className="img-fluid img100" />
+                                        className="img-fluid img100" width={970} height={90} />
                                 </Link>
                             </div>
 
@@ -258,7 +257,7 @@ export default function Category() {
                                                                     <div className="row">
                                                                         <div className="col-lg-5 col-sm-4 col-5">
                                                                             <div className="DImgZoomBlock">
-                                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={120} height={"100%"}/></picture>
                                                                                 {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                             </div>
                                                                         </div>
@@ -284,9 +283,7 @@ export default function Category() {
                                     </div>
                                 </div>
                             </section>
-
                         </div>
-                   
                 </main>
                 : <ErrorPage />}
         </>

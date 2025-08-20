@@ -81,7 +81,7 @@ export default function DivisionSlug() {
                                                                             <Link to={"/" + nd.Slug + "/news/" + nd.ContentID} onClick={scrollTop}>
                                                                                 <div className="DImgBlock card-video-part">
                                                                                     <div className="DImgZoomBlock">
-                                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nd.ImageSmPath} alt={nd.ContentHeading} title={nd.ContentHeading} /></picture>
+                                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nd.ImageSmPath} alt={nd.ContentHeading} title={nd.ContentHeading}  width={300} height={"100%"}/></picture>
                                                                                         {nd.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                                     </div>
                                                                                 </div>

@@ -90,10 +90,10 @@ export default function TagPage() {
                                 {tags.map((nc) => {
                                     return (
                                         <React.Fragment key={nc.TagID}>
-                                            {nc.ImageThumbPath ? (
+                                            {nc.ImagePath ? (
                                                 <>
                                                     <div className="col-lg-2 col-sm-4 col-5">
-                                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Tag + nc.ImagePath} alt={nc.TagTitle} title={nc.TagTitle} className="img-fluid img100" />
+                                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Tag + nc.ImagePath} alt={nc.TagTitle} title={nc.TagTitle} className="img-fluid img100"  />
                                                     </div>
                                                     <div className="col-lg-10 col-sm-8 col-7">
                                                         <div className="Desc">
@@ -164,7 +164,7 @@ export default function TagPage() {
                                                 <div className="row">
                                                     <div className="col-sm-4 col-5 card-video-part">
                                                         <div className="DImgZoomBlock">
-                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={"100%"} /></picture>
                                                             {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                         </div>
                                                     </div>

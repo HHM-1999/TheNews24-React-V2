@@ -137,7 +137,7 @@ export default function DistrictSlug() {
                                                                 <div className="row">
                                                                     <div className="col-lg-5 col-sm-4 col-5 card-video-part">
                                                                         <div className="DImgZoomBlock">
-                                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={"100%"} /></picture>
                                                                             {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                         </div>
                                                                     </div>

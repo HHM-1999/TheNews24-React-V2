@@ -353,7 +353,7 @@ export default function Details() {
                                                     <>
                                                         <div className="DTopImg">
                                                             <div className="Details">
-                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" /></picture>
+                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" width={800} height={"100%"} /></picture>
                                                             </div>
                                                             {/* <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" /> */}
                                                             <div className="DetailsTopCap">
@@ -402,7 +402,7 @@ export default function Details() {
                                                     <div className="row">
                                                         <div className="col-md-12">
                                                             <div className="d-flex  justify-content-center">
-                                                                <Link to="/"><img src={"/media/Advertisement/IPF[300x250].gif"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
+                                                                <Link to="/"><img src={"/media/Advertisement/IPF[300x250].gif"} alt="Advertisement" title="Advertisement" className="img-fluid img100" width={300} height={250} /></Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -416,7 +416,7 @@ export default function Details() {
                                                     <div className="row">
                                                         <div className="col-md-12">
                                                             <div className="DAdd1 d-flex  justify-content-center">
-                                                                <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
+                                                                <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" width={300} height={250} /></Link>
                                                             </div>
                                                         </div>
                                                     </div>
