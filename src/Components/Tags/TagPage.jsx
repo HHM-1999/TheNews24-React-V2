@@ -126,7 +126,7 @@ export default function TagPage() {
                                                 </>) : (
                                                 <div className="col-12">
                                                     <div className="Desc">
-                                                        <h2 className="Title">{nc.TagTitle}</h2>
+                                                        {/* <h2 className="Title">{nc.TagTitle}</h2> */}
                                                         <div className="DSocialTop">
                                                             {/* social media button end */}
                                                             <FacebookShareButton url={pageURL} title={nc.TagTitle}>

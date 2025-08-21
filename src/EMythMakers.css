@@ -27,7 +27,7 @@ picture img {
 
 /*common*/
 
-.subheadTitle{color: var(--primary)}
+/* .subheadTitle{color: var(--primary)} */
 .sticky{position:fixed;background:var(--white-color);top:0 !important;z-index:9999999;margin-top:0;left:0;right:0;box-shadow: 0 0 2px 0 #00000051;}
 .navbar-toggler:focus{box-shadow:none;}
 
@@ -1618,13 +1618,6 @@ margin-top: 100px;
 	display: block;
 	text-align: center;
 	padding: 8px 5px 5px;
-}
-
-.DOnlineVote .Question h3 {
-	font-size: 16px;
-	font-weight: 600;
-	line-height: 23px;
-	height: 40px;
 }
 
 .DOnlineVote .VoteAnswer {
@@ -3425,7 +3418,7 @@ h2.LatestNewsH {
 }
 
 .DTagName i {
-	color: #F00000;
+	color: var(--primary);
 	font-size: 28px;
 	line-height: 36px;
 	margin-right: 10px;

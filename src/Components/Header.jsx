@@ -5,6 +5,7 @@ import { getDate, getMonth, getYear } from 'bangla-calendar';
 import ePper from '../assets/media/common/E_paper2.png'
 import archive from '../assets/media/common/archive2.png'
 import map from '../assets/media/common/Map2.png'
+import logo from '../assets/media/common/logo.gif'
 import moment from 'moment-hijri';
 import axios from 'axios'
 
@@ -174,7 +175,8 @@ export default function Header() {
                                         <div className="container-fluid">
                                             <a className="navbar-brand" href="/">
                                                 <div className="logo">
-                                                    <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
+                                                <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.gif"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
+                                                    {/* <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" /> */}
                                                 </div>
                                             </a>
                                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -380,7 +382,7 @@ export default function Header() {
                                             </div>
                                             <div className="logo">
                                                 <a href="/">
-                                                    <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
+                                                    <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.gif"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
                                                 </a>
                                             </div>
                                             <div className="search-btn">
@@ -404,7 +406,8 @@ export default function Header() {
                                     <div className={`mobile-menu-main ${isToggleActive ? 'active' : ''}`}>
                                         <a href="/">
                                             <div className="logo">
-                                                <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
+                                                {/* <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" /> */}
+                                                <img className="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.gif"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
                                             </div>
                                         </a>
                                         <div className="close-mobile-menu" onClick={() => setIsToggleActive(false)}><i className="fas fa-times"></i></div>

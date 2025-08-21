@@ -3,6 +3,7 @@ import axios from 'axios'
 import Marquee from "react-fast-marquee";
 import { scrollTop } from './AllFunctions';
 import { Link } from 'react-router-dom';
+import logo from '../assets/media/common/logo.gif'
 
 const { toBengaliNumber } = require('bengali-number');
 
@@ -41,7 +42,7 @@ export default function Footer() {
                                 <div class="footer-info">
                                     <div class="footer-logo">
                                         <a href="/">
-                                            <img class="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.png"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
+                                            <img class="img-fluid" src={process.env.REACT_APP_DOMAIN_URL + "media/common/logo.gif"} alt="The News 24 || দ্য নিউজ ২৪" title="The News 24 || দ্য নিউজ ২৪" />
                                         </a>
                                     </div>
 
@@ -97,7 +98,7 @@ export default function Footer() {
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 text-center">
-                                <p><span class="En">&copy;</span> &copy; {toBengaliNumber(years)} | <a href="/"> দ্য নিউজ ২৪ ডটকম</a>।
+                                <p><span class="En"></span> &copy; {toBengaliNumber(years)} | <a href="/"> দ্য নিউজ ২৪ ডটকম</a>।
                                     সর্বসত্ব ® সংরক্ষিত। রেজি. নং: ২৪৬ । প্রতিষ্ঠাতা ও প্রধান নির্বাহী: মো. আনোয়ারুল ইসলাম । উন্নয়নে:<a href="https://www.emythmakers.com/" target="_blank">
                                         ইমিথমেকারস</a>
                                 </p>

@@ -20,7 +20,7 @@ export default function OnlinePoll() {
                 if (data.poll_latest.length > 0) {
                     setPoll(data.poll_latest);
                     PollID = data.poll_latest[0].PollID
-                    
+
                 }
             });
     }, [])
@@ -46,24 +46,19 @@ export default function OnlinePoll() {
                     return (
                         <React.Fragment key={nc.PollID} >
                             <div id="opinion-submit-msg" className="opinion-submit-msg" style={{ display: 'none' }}><h4>আপনার মতামত জমা দেওয়া হয়েছে</h4></div>
-
-                            <div className="Imgresize">
-                                <figure className="ImgViewer">
-                                    <picture className="FixingRatio">
-                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_DOMAIN_URL + nc.image} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid img100 ImgRatio"  />
-                                    </picture>
-                                </figure>
-                            </div>
+                            {nc.image ?
+                                <img src={process.env.REACT_APP_DOMAIN_URL + nc.image} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid" /> :
+                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid" />}
                             <div className="Question" key={nc.PollID}>
                                 <h3>{nc.QuestionBn}</h3>
                                 <form onSubmit={resultSubmit}>
                                     <div className="VoteAnswer">
                                         <label className="form-check-label" htmlFor="radio1"><input type="radio" id="radio1" className="form-check-input" name="rdoPoll" value="1" />হ্যাঁ</label>
-                                     
+
                                         <label className="form-check-label" htmlFor="radio2"><input type="radio" id="radio2" className="form-check-input" name="rdoPoll" value="2" /> না</label>
-                                        
+
                                         <label className="form-check-label" htmlFor="radio3"><input type="radio" id="radio3" className="form-check-input" name="rdoPoll" value="3" /> মন্তব্য নেই</label>
-                                      
+
                                     </div>
                                     <div className="VoteSubmit">
                                         <button type="submit" name="submit" className="btn btn-success">ভোট দিন</button>
@@ -72,13 +67,13 @@ export default function OnlinePoll() {
                                         <Link to="/pollresult" className="btn btn-success" onClick={scrollTop}>পুরোনো ফলাফল</Link>
                                     </div>
                                     <div className="VoteSubmit mb-0">
-                                    <ShareThisPopup key={ nc.PollID} title={nc.QuestionBn} url={`${process.env.REACT_APP_FONT_DOMAIN_URL}opinion-poll/` + (nc.PollID)} elem={nc.PollID} />
+                                        <ShareThisPopup key={nc.PollID} title={nc.QuestionBn} url={`${process.env.REACT_APP_FONT_DOMAIN_URL}opinion-poll/` + (nc.PollID)} elem={nc.PollID} />
 
                                     </div>
                                     {/* <div className='VoteSubmit'>
                                         <DSocialShare title={nc.QuestionBn} contentID={nc.PollID} />
                                     </div> */}
-                                   
+
 
                                 </form>
                             </div>

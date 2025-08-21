@@ -37,7 +37,6 @@ export default function MainRouterLink() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/aboutUs" element={<AboutUs />} />
-
                 <Route path="/live" element={<Live />} />
                 <Route path="/pollresult" element={<OnlinePollDetails />} />
                 <Route path='/opinion-poll/:PollID' element={<OpinionPoll />} />
@@ -61,9 +60,7 @@ export default function MainRouterLink() {
                 <Route path="/terms-service" element={<Terms />} />
                 <Route path="/advertise" element={<AdvertisementPage />} />
                 <Route path="/namaj" element={<DPrayerTime />} />
-
                 <Route path="/*" element={<ErrorPage />} />
-
             </Routes>
             <Footer />
         </div>
