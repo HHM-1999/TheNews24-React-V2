@@ -196,6 +196,9 @@ export default function Header() {
                                                         <Link className="nav-link" onClick={scrollTop} to="/international">আন্তর্জাতিক</Link>
                                                     </li>
                                                     <li className="nav-item">
+                                                        <Link className="nav-link" onClick={scrollTop} to="/country">সারাদেশ</Link>
+                                                    </li>
+                                                    <li className="nav-item">
                                                         <Link className="nav-link" onClick={scrollTop} to="/crime">অপরাধ</Link>
                                                     </li>
                                                     <li className="nav-item">
@@ -434,6 +437,11 @@ export default function Header() {
                                                     <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
                                                         <div className="sub-menu-mobile-link">
                                                             <Link to="/international" onClick={scrollTop}> আন্তর্জাতিক </Link>
+                                                        </div>
+                                                    </li>
+                                                    <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
+                                                        <div className="sub-menu-mobile-link">
+                                                            <Link to="/country~" onClick={scrollTop}> সারাদেশ </Link>
                                                         </div>
                                                     </li>
                                                     <li className="sub-mobile-menu"  onClick={() => setIsToggleActive(false)}>
