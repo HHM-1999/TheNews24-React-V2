@@ -76,9 +76,9 @@ export default function Footer() {
                         <div class="row">
                             <div class="col-12">
                                 <ul class="DFooterMiddleListItems">
-                                    <li><Link onClick={scrollTop} to="#">দ্য নিউজ</Link></li>
+                                    <li><Link onClick={scrollTop} to="/the-news">দ্য নিউজ</Link></li>
                                     <li><Link onClick={scrollTop} to="/aboutUs">আমাদের সম্পর্কে</Link></li>
-                                    <li><Link onClick={scrollTop} to="#">যোগাযোগ করুন</Link></li>
+                                    <li><Link onClick={scrollTop} to="/contact-us">যোগাযোগ করুন</Link></li>
                                     <li><Link onClick={scrollTop} to="/advertise">বিজ্ঞাপন দিন</Link></li>
                                     <li><Link onClick={scrollTop} to="#">সম্পাদকীয় নীতি</Link></li>
                                     <li><Link onClick={scrollTop} to="/terms-service">গোপনীয়তা নীতি</Link></li>

@@ -28,6 +28,8 @@ import Terms from './Components/Terms'
 import AdvertisementPage from './Components/AdvertisementPage';
 import DPrayerTime from './Components/DPrayerTime';
 import OpinionPoll from './Components/OpinionPoll';
+import TheNews from './Components/TheNews';
+import ContactUs from './Components/ContactUs';
 
 
 export default function MainRouterLink() {
@@ -58,6 +60,8 @@ export default function MainRouterLink() {
                 <Route path="/search/:searchSlug" element={<SearchResult />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-service" element={<Terms />} />
+                <Route path="/the-news" element={<TheNews />} />
+                <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/advertise" element={<AdvertisementPage />} />
                 <Route path="/namaj" element={<DPrayerTime />} />
                 <Route path="/*" element={<ErrorPage />} />

@@ -4070,6 +4070,81 @@ span.DFeatureIcon i.fa-solid.fa-expand {
 	right: 10px;
 	color: #000;
 }
+/* the-news page */
+.news-details p {
+	padding-bottom: 20px;
+	font-size: 16px;
+	line-height: 27px;
+	font-weight: 400;
+	letter-spacing: .3px;
+	font-family: "Noto Serif Bengali", serif;
+}
+.news-area h3{
+	font-size: 19px;
+	line-height: 28px;
+	color: #000;
+	padding-bottom: 5px;
+	font-weight: 600;
+	font-family: "Noto Serif Bengali", serif;
+}
+.news-area p{
+	font-size: 17px;
+	line-height: 27px;
+	color: #333;
+	padding-bottom: 10px;
+	font-weight: 400;
+	font-family: "Noto Serif Bengali", serif;
+}
+.news-area p a{
+	font-size: 16px;
+	line-height: 27px;
+	color: #333;
+	padding-bottom: 10px;
+	font-weight: 400;
+}
+.news-area ul{
+	padding-bottom: 10px;
+}
+.news-area ul ol{
+	font-size: 16px;
+	line-height: 26px;
+	color: #333;
+	font-weight: 400;
+	font-family: "Noto Serif Bengali", serif;
+}
+/* contact page */
+.contact-area h3{
+	font-size: 19px;
+	line-height: 28px;
+	color: #000;
+	padding-bottom: 5px;
+	font-weight: 600;
+	font-family: "Noto Serif Bengali", serif;
+}
+.contact-area p {
+	font-size: 16px;
+	line-height: 27px;
+	color: #333;
+	font-weight: 400;
+	padding-bottom: 2px;
+}
+.contact-area ul ol{
+	font-size: 16px;
+	line-height: 26px;
+	color: #333;
+	font-weight: 400;
+	font-family: "Noto Serif Bengali", serif;
+}
+.contact-area ul li{
+	font-size: 16px;
+	line-height: 26px;
+	color: #333;
+	font-weight: 400;
+	font-family: "Noto Serif Bengali", serif;
+}
+.contact-area ul{
+	padding-left: 2rem;
+}
 
 /* ======================== loading ========================= */
 .loading {
