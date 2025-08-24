@@ -30,6 +30,11 @@ import DPrayerTime from './Components/DPrayerTime';
 import OpinionPoll from './Components/OpinionPoll';
 import TheNews from './Components/TheNews';
 import ContactUs from './Components/ContactUs';
+import CopyRight from './Components/CopyRight';
+import ReaderRight from './Components/ReaderRight';
+import FileComplaint from './Components/FileComplaint';
+import Sitemap from './Components/Sitemap';
+import Subscription from './Components/Subscription';
 
 
 export default function MainRouterLink() {
@@ -63,6 +68,11 @@ export default function MainRouterLink() {
                 <Route path="/the-news" element={<TheNews />} />
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/advertise" element={<AdvertisementPage />} />
+                <Route path="/copyright" element={<CopyRight />} />
+                <Route path="/reader-right" element={<ReaderRight />} />
+                <Route path="/fileComplaint" element={<FileComplaint />}/>
+                <Route path="/sitemep" element={<Sitemap />} />
+                <Route path="/subscription" element={<Subscription />} />
                 <Route path="/namaj" element={<DPrayerTime />} />
                 <Route path="/*" element={<ErrorPage />} />
             </Routes>

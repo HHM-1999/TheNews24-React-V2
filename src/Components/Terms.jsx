@@ -13,32 +13,27 @@ export default function Terms() {
             <main>
                 <div className="container">
                     <div className="TopHomeSection"></div>
-                    <DocumentTitle title=' দ্য নিউজ ২৪ ::   Terms and Conditions ' />
-                    <div className="SectionTitleEn"><h3><Link to="/terms-service" onClick={scrollTop}><span className="ColorBox"></span>Terms And Conditions for thenews24.com</Link></h3></div>
+                    <DocumentTitle title=' শর্তাবলী :: দ্য নিউজ ২৪' />
+                    <div className="SectionTitle"><h3><Link to="/terms-service" onClick={scrollTop}><span className="ColorBox"></span>শর্তাবলী</Link></h3></div>
                     <div className='row mt-5'>
-                        <div className='col-lg-8 col-12'>
+                        <div className='col-lg-8'>
                             <div className="policy-details">
-                                <p>Welcome to thenews24.com. By accessing or using our website, you agree to abide by the following terms and conditions:</p>
-                                <div className='policy-list'>
-                                    <ul>
-                                        <ol>1. Use of Content: The content provided on thenews24.com is for informational purposes only. You may not modify, reproduce, distribute, or sell any of the content without prior written permission from thenews24.com.</ol>
-                                        <ol>2. User Conduct: You agree to use thenews24.com for lawful purposes only. You must not engage in any activity that disrupts the functioning of the website or infringes upon the rights of others.</ol>
-                                        <ol>3. Intellectual Property: All content, trademarks, logos, and other intellectual property displayed on thenews24.com are owned by thenews24.com or third parties. You may not use or reproduce any of these without express permission.</ol>
-                                        <ol>4. Third-Party Links: thenews24.com may contain links to third-party websites. We are not responsible for the content or privacy practices of these websites.</ol>
-                                        <ol>5. Disclaimer of Warranties: thenews24.com is provided "as is" without any warranties, express or implied. We do not guarantee the accuracy, reliability, or completeness of any content on the website.</ol>
-                                        <ol>6. Limitation of Liability: thenews24.com shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of your use of the website.</ol>
-                                        <ol>7. Changes to Terms: thenews24.com reserves the right to modify or replace these terms and conditions at any time. Your continued use of the website after any such changes constitutes acceptance of the new terms.</ol>
-                                        <ol>8. Governing Law: These terms and conditions shall be governed by and construed in accordance with the laws of Bangladesh.</ol>
+                                <h1>“দ্য নিউজ” ওয়েবসাইট ব্যবহারের মাধ্যমে আপনি আমাদের শর্তাবলীর সাথে সম্মত হচ্ছেন। এই শর্তগুলো পাঠক ও প্রকাশকের অধিকার নিশ্চিত করে।</h1>
+                                <h2>মূল শর্ত</h2>
+                                <div className="policy-list-area">
+                                    <ul className='mb-3'>
+                                        <ol>১. কনটেন্ট শুধুমাত্র ব্যক্তিগত তথ্যের জন্য ব্যবহারযোগ্য</ol>
+                                        <ol>২. অননুমোদিত কপি বা পুনঃপ্রকাশ নিষিদ্ধ</ol>
+                                        <ol>৩. বিজ্ঞাপন ও লিঙ্কে ক্লিক করলে বাহ্যিক সাইটে যেতে পারেন, সেক্ষেত্রে দায়ভার ব্যবহারকারীর</ol>
+                                        <ol>৪. কোনো অনৈতিক বা অবৈধ কাজে আমাদের প্ল্যাটফর্ম ব্যবহার করা যাবে না</ol>
                                     </ul>
-                                    <p>If you have any questions or concerns about these terms and conditions, please contact us at <a href="mailto:hello@thenews24.com" target="_blank"  rel="noreferrer">[hello@thenews24.com]</a>.</p>
+                                    <p>আমাদের শর্তাবলী পাঠক ও প্রকাশকের পারস্পরিক আস্থা রক্ষার জন্য প্রণীত।</p>
                                 </div>
+                                
                             </div>
                         </div>
                         <div className="col-lg-4 col-12">
                             <FBpagePlugin />
-                            <div className='mt-5'>
-                            <LeadLatestNews />
-                            </div>
                         </div>
                     </div>
                 </div>

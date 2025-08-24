@@ -81,13 +81,13 @@ export default function Footer() {
                                     <li><Link onClick={scrollTop} to="/contact-us">যোগাযোগ করুন</Link></li>
                                     <li><Link onClick={scrollTop} to="/advertise">বিজ্ঞাপন দিন</Link></li>
                                     <li><Link onClick={scrollTop} to="#">সম্পাদকীয় নীতি</Link></li>
-                                    <li><Link onClick={scrollTop} to="/terms-service">গোপনীয়তা নীতি</Link></li>
-                                    <li><Link onClick={scrollTop} to="/privacy-policy">শর্তাবলী</Link></li>
-                                    <li><Link onClick={scrollTop} to="#">কপিরাইট নীতি</Link></li>
-                                    <li><Link onClick={scrollTop} to="#">পাঠকের অধিকার</Link></li>
-                                    <li><Link onClick={scrollTop} to="#">অভিযোগ দায়ের</Link></li>
-                                    <li><Link onClick={scrollTop} to="#">সাইট ম্যাপ</Link></li>
-                                    <li><Link onClick={scrollTop} to="#">সাবস্ক্রিপশন</Link></li>
+                                    <li><Link onClick={scrollTop} to="/privacy-policy">গোপনীয়তা নীতি</Link></li>
+                                    <li><Link onClick={scrollTop} to="/terms-service">শর্তাবলী</Link></li>
+                                    <li><Link onClick={scrollTop} to="/copyright">কপিরাইট নীতি</Link></li>
+                                    <li><Link onClick={scrollTop} to="/reader-right">পাঠকের অধিকার</Link></li>
+                                    <li><Link onClick={scrollTop} to="/fileComplaint">অভিযোগ দায়ের</Link></li>
+                                    <li><Link onClick={scrollTop} to="/sitemep">সাইট ম্যাপ</Link></li>
+                                    <li><Link onClick={scrollTop} to="/subscription">সাবস্ক্রিপশন</Link></li>
                                 </ul>
                             </div>
                         </div>
