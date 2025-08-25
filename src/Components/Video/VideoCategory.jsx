@@ -92,7 +92,7 @@ export default function VideoCategory() {
                                             <div className="DVideoCatTopInner align-self-stretch">
                                                 <Link to={"/video/show/" + leadVideoTop.WebTVID} onClick={scrollTop}>
                                                     <div className="DImgZoomBlock">
-                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + leadVideoTop.WebTVLinkCode + '/maxresdefault.jpg'} alt={leadVideoTop.WebTVHeading} title={leadVideoTop.WebTVHeading} /></picture>
+                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + leadVideoTop.WebTVLinkCode + '/maxresdefault.jpg'} alt={leadVideoTop.WebTVHeading} title={leadVideoTop.WebTVHeading} width="555" height={"312"} /></picture>
                                                         <div className="card-videoGallery-icon"><i className="fa-solid fa-play"></i></div>
                                                     </div>
                                                     <div className="Desc">

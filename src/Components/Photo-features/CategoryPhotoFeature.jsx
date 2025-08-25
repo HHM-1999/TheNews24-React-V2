@@ -188,7 +188,7 @@ export default function CategoryPhotoFeature() {
                                                             <div className="row">
                                                                 <div className="col-lg-5 col-sm-4 col-5">
                                                                     <div className="DImgZoomBlock">
-                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} width={800} height={"100%"} /></picture>
+                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} width={190} height={115} /></picture>
                                                                         <div className="card-video-icon"><i className="fa-solid fa-camera"></i></div>
                                                                     </div>
                                                                 </div>

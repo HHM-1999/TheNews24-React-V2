@@ -82,7 +82,7 @@ export default function VideoGallery() {
                                         <div className="row">
                                             <div className="col-lg-8 col-12">
                                                 <div className="DImgZoomBlock">
-                                                    <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + leadVideoTop.WebTVLinkCode + '/maxresdefault.jpg'} alt={leadVideoTop.WebTVHeading} title={leadVideoTop.WebTVHeading} /></picture>
+                                                    <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + leadVideoTop.WebTVLinkCode + '/maxresdefault.jpg'} alt={leadVideoTop.WebTVHeading} title={leadVideoTop.WebTVHeading} width="555" height="312" /></picture>
                                                     <div className="card-videoGallery-icon"><i className="fa-solid fa-play"></i></div>
                                                 </div>
                                             </div>
@@ -109,7 +109,7 @@ export default function VideoGallery() {
                                                             <div className="row">
                                                                 <div className="col-lg-12 col-sm-4 col-5">
                                                                     <div className="DImgZoomBlock">
-                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/maxresdefault.jpg'} alt={nc.WebTVHeading} title={nc.WebTVHeading} /></picture>
+                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/maxresdefault.jpg'} alt={nc.WebTVHeading} title={nc.WebTVHeading} width="365" height="148"/></picture>
                                                                         <div className="card-videoGallery-icon"><i className="fa-solid fa-play"></i></div>
                                                                     </div>
                                                                 </div>
@@ -150,7 +150,7 @@ export default function VideoGallery() {
                                                     <div className="row">
                                                         <div className="col-lg-12 col-sm-4 col-5 videoIcon">
                                                             <div className="DImgZoomBlock">
-                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={"https://img.youtube.com/vi/" + nc.WebTVLinkCode + "/0.jpg"} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid img100" /></picture>
+                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={"https://img.youtube.com/vi/" + nc.WebTVLinkCode + "/0.jpg"} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid img100" width={300} height={170} /></picture>
                                                             <div className="card-videoGallery-icon"><i className="fa-solid fa-play"></i></div>
                                                             </div>
 

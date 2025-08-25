@@ -172,7 +172,7 @@ export default function Archives() {
                                         <div className="row">
                                             <div className="col-sm-4 col-5 card-video-part">
                                                 <div className="DImgZoomBlock">
-                                                    <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={120} height={"100%"} /></picture>
+                                                    <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={205} height={"115"} /></picture>
                                                     {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                 </div>
                                             </div>

@@ -24,7 +24,7 @@ export default function CategoryPopular({ catLatest, catSlug }) {
                                                 <div className="row">
                                                     <div className="col-lg-5 col-sm-4 col-5">
                                                         <div className="DImgZoomBlock">
-                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={120} height={"100%"}/></picture>
+                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={120} height={73}/></picture>
                                                             {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                         </div>
                                                     </div>
