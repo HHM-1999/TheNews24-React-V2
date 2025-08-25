@@ -5671,6 +5671,10 @@ h2.LatestNewsH {
 	/* padding: 10px 0; */
 	border-bottom: 1px solid #e2e2e2;
 }
+.DLeftSideNews .DTop3List {
+	padding: 10px 0;
+	border-bottom: 1px solid #e2e2e2;
+}
 
 .DTop3List.homePage picture img {
 	aspect-ratio: 1.777;
