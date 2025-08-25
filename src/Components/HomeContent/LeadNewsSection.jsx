@@ -7,7 +7,6 @@ export default function LeadNewsSection() {
 
     return (
         <>
-
             <div class="leadnews-wrap">
                 <div class="container">
                     <div class="row gx-3">

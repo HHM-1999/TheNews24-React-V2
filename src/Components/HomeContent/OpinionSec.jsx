@@ -45,8 +45,8 @@ export default function OpinionSec() {
                                                 <div class="col-lg-3 d-flex justify-content-center">
                                                     <div class="opinion-img">
                                                         {nc.ImageSmPath == null ?
-                                                            <img src={WriterDefaultImg} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={"100%"} /> :
-                                                            <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={"100%"} className="img-fluid" />
+                                                            <img src={WriterDefaultImg} alt={nc.ContentHeading} title={nc.ContentHeading} width={90} height={90} /> :
+                                                            <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={90} height={90} className="img-fluid" />
                                                         }
                                                         {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                     </div>

@@ -47,8 +47,8 @@ export default function OnlinePoll() {
                         <React.Fragment key={nc.PollID} >
                             <div id="opinion-submit-msg" className="opinion-submit-msg" style={{ display: 'none' }}><h4>আপনার মতামত জমা দেওয়া হয়েছে</h4></div>
                             {nc.image ?
-                                <img src={process.env.REACT_APP_DOMAIN_URL + nc.image} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid" /> :
-                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid" />}
+                                <img src={process.env.REACT_APP_DOMAIN_URL + nc.image} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid" width={302} height={170} /> :
+                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.QuestionBn} title={nc.QuestionBn} className="img-fluid" width={302} height={170} />}
                             <div className="Question" key={nc.PollID}>
                                 <h3>{nc.QuestionBn}</h3>
                                 <form onSubmit={resultSubmit}>

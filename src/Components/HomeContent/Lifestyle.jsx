@@ -41,8 +41,8 @@ export default function Lifestyle() {
                                     <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
                                         <div class="life-style-list-img">
                                             {nc.ImageBgPath ?
-                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={800} height={"100%"} /> :
-                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={800} height={"100%"} />}
+                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={320} height={457} /> :
+                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={320} height={457} />}
 
                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                             <div class="Desc">

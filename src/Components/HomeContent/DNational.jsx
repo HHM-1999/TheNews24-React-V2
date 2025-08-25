@@ -43,8 +43,8 @@ export default function DNational() {
                                         <Link to={"/" + national.Slug + "/news/" + national.ContentID} onClick={scrollTop}>
                                             <div className="national-img">
                                                 {national.ImageBgPath ?
-                                                    <img src={process.env.REACT_APP_IMG_Path + national.ImageBgPath} alt={national.ContentHeading} title={national.ContentHeading} className="img-fluid" width={800} height={"100%"} /> :
-                                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={national.ContentHeading} title={national.ContentHeading} className="img-fluid img100" width={800} height={"100%"} />}
+                                                    <img src={process.env.REACT_APP_IMG_Path + national.ImageBgPath} alt={national.ContentHeading} title={national.ContentHeading} className="img-fluid" width={627} height={388} /> :
+                                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={national.ContentHeading} title={national.ContentHeading} className="img-fluid img100" width={627} height={388} />}
 
                                                 {national.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                 <div className="Desc">
@@ -66,8 +66,8 @@ export default function DNational() {
                                                     <div className="col-5 col-lg-12">
                                                         <div className="national-leadTwo-img">
                                                             {national1.ImageSmPath ?
-                                                                <img src={process.env.REACT_APP_IMG_Path + national1.ImageSmPath} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid" width={300} height={"100%"}/> :
-                                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid img100" width={300} height={"100%"} />}
+                                                                <img src={process.env.REACT_APP_IMG_Path + national1.ImageSmPath} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid" width={302} height={186}/> :
+                                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid img100" width={302} height={186} />}
 
                                                             {national1.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                         </div>
@@ -102,8 +102,8 @@ export default function DNational() {
                                                         <div className="col-5 col-lg-12">
                                                             <div className="national-list-img">
                                                                 {nc.ImageSmPath ?
-                                                                    <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={300} height={"100%"} /> :
-                                                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={300} height={"100%"} />}
+                                                                    <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={302} height={186} /> :
+                                                                    <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={302} height={186} />}
 
                                                                 {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                             </div>

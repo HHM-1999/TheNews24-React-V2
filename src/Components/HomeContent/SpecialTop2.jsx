@@ -32,8 +32,8 @@ export default function SpecialTop2() {
                                     <div class="col-5 col-lg-12">
                                         <div class="lead-right-news-img">
                                             {nc.ImageSmPath ?
-                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} style={{width: "300px", height:"100%"}} className="img-fluid" /> :
-                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} style={{width: "300px", height:"100%"}} className="img-fluid" />}
+                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={190} className="img-fluid" /> :
+                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={190} className="img-fluid" />}
 
                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
 

@@ -42,9 +42,8 @@ export default function DEntertainment() {
                             <div class="col-lg-8">
                                 <div class="entertainment-lead-img">
                                     {entertainment.ImageBgPath ?
-                                        <img src={process.env.REACT_APP_IMG_Path + entertainment.ImageBgPath} alt={entertainment.ContentHeading} title={entertainment.ContentHeading}    width={800} height={"100%"} /> :
-                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={entertainment.ContentHeading} title={entertainment.ContentHeading} className="img-fluid" width={800} height={"100%"} />}
-
+                                        <img src={process.env.REACT_APP_IMG_Path + entertainment.ImageBgPath} alt={entertainment.ContentHeading} title={entertainment.ContentHeading}    width="845" height="522" /> :
+                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={entertainment.ContentHeading} title={entertainment.ContentHeading} className="img-fluid" width="845" height="522" />}
                                     {entertainment.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                 </div>
                             </div>
@@ -75,8 +74,8 @@ export default function DEntertainment() {
                                             <div class="col-5 col-lg-12">
                                                 <div class="entertainment-list-img">
                                                     {nc.ImageSmPath ?
-                                                        <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={"100%"} className="img-fluid"   /> :
-                                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={"100%"} className="img-fluid img100" />}
+                                                        <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={186} className="img-fluid"   /> :
+                                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={186} className="img-fluid img100" />}
 
                                                     {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                 </div>

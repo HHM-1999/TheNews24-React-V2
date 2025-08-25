@@ -1797,7 +1797,7 @@ picture img {
 	aspect-ratio: 1.62;
 	object-fit: cover;
 	object-position: center;
-	width: 100%;
+	width: 100% !important;
 	transition: all 0.5s ease;
 	border-radius: 5px;
 }
@@ -2184,6 +2184,10 @@ picture img {
 	color: #fff;
 	padding: 5px 10px;
 	text-align: center
+}
+.DOnlineVote img{
+	aspect-ratio: 1.67;
+	width: 100% !important;
 }
 
 .lineVote-img img {
@@ -2720,6 +2724,10 @@ picture img {
 
 	.entertainment-lead .Desc .Title {
 		margin-top: 10px;
+	}
+	.entertainment-lead-img img {
+		width: 100% !important;
+		aspect-ratio: 1.62 !important;
 	}
 
 	.entertainment-list-wrap .entertainment-list {
@@ -4524,6 +4532,10 @@ picture img {
 		min-width: 300px;
 		display: flex;
 		justify-content: center;
+	}
+	.entertainment-lead .entertainment-lead-img img {
+		width: 100% !important;
+		height: auto;
 	}
 
 

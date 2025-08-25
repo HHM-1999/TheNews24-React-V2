@@ -28,8 +28,8 @@ export default function LeadNews() {
                 <Link to={"/" + state.Slug + "/news/" + state.ContentID} onClick={scrollTop}>
                     <div class="lead-news-img">
                         {state.ImageBgPath ?
-                            <img src={process.env.REACT_APP_IMG_Path + state.ImageBgPath} alt={state.ContentHeading} title={state.ContentHeading} style={{width: "800px", height:"100%"}} className="img-fluid" /> :
-                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={state.ContentHeading} title={state.ContentHeading} style={{width: "800px", height:"100%"}} className="img-fluid img100" />}
+                            <img src={process.env.REACT_APP_IMG_Path + state.ImageBgPath} alt={state.ContentHeading} title={state.ContentHeading} width={632} height={390} className="img-fluid" /> :
+                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={state.ContentHeading} title={state.ContentHeading} width={632} height={390} className="img-fluid img100" />}
 
                         {state.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
 
@@ -65,8 +65,8 @@ export default function LeadNews() {
                                     <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
                                         <div className="sublead-news-img">
                                             {nc.ImageSmPath ?
-                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" style={{width: "300px", height:"100%"}} /> :
-                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" style={{width: "300px", height:"100%"}}/>}
+                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={195} height={120} /> :
+                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={195} height={120}/>}
 
                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                         </div>

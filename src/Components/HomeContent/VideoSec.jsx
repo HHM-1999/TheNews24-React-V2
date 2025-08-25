@@ -45,7 +45,7 @@ export default function VideoSec() {
                                             <Link to={"/video/show/" + Leadvideos.WebTVID} onClick={scrollTop}>
                                                 <div class="video-big-img">
                                                     {Leadvideos.WebTVLinkCode ?
-                                                        <img src={'https://img.youtube.com/vi/' + Leadvideos.WebTVLinkCode + '/0.jpg'} width={800} height={450} alt={Leadvideos.WebTVHeading} title={Leadvideos.WebTVHeading} className="img-fluid" /> :
+                                                        <img src={'https://img.youtube.com/vi/' + Leadvideos.WebTVLinkCode + '/0.jpg'} width={632} height={390} alt={Leadvideos.WebTVHeading} title={Leadvideos.WebTVHeading} className="img-fluid"   /> :
                                                         <img src={process.env.REACT_APP_LAZYL_IMG} width={800} height={450} alt={Leadvideos.WebTVHeading} title={Leadvideos.WebTVHeading} className="img-fluid" />}
                                                     <div class="video-btn">
                                                         <div class="icon-wrap">
@@ -69,7 +69,7 @@ export default function VideoSec() {
                                                         <Link to={"/video/show/" + nc.WebTVID} onClick={scrollTop}>
                                                             <div class="video-small-img-wrap">
                                                                 {nc.WebTVLinkCode ?
-                                                                    <img src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={300} height={169} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid" /> :
+                                                                    <img src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={308} height={187} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid" /> :
                                                                     <img src={process.env.REACT_APP_LAZYL_IMG} width={300} height={169} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid" />}
                                                                 <div class="video-btn">
                                                                     <div class="icon-wrap">
