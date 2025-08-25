@@ -35,6 +35,7 @@ import ReaderRight from './Components/ReaderRight';
 import FileComplaint from './Components/FileComplaint';
 import Sitemap from './Components/Sitemap';
 import Subscription from './Components/Subscription';
+import EditorialPolicy from './Components/EditorialPolicy';
 
 
 export default function MainRouterLink() {
@@ -68,6 +69,7 @@ export default function MainRouterLink() {
                 <Route path="/the-news" element={<TheNews />} />
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/advertise" element={<AdvertisementPage />} />
+                <Route path="/editorial-policy" element={<EditorialPolicy />} />
                 <Route path="/copyright" element={<CopyRight />} />
                 <Route path="/reader-right" element={<ReaderRight />} />
                 <Route path="/fileComplaint" element={<FileComplaint />}/>

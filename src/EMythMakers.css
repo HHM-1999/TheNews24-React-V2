@@ -3781,6 +3781,14 @@ picture img {
 .advertise-page {
 	margin: 60px 0;
 }
+.tempoHead{
+	padding: 50px 0;
+}
+.tempoHead h2 {
+	font-size: 22px;
+	color: #1407ae;
+	font-weight: 600;
+}
 
 
 /*============= Latest News =============*/

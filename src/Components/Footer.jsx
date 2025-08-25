@@ -80,7 +80,7 @@ export default function Footer() {
                                     <li><Link onClick={scrollTop} to="/aboutUs">আমাদের সম্পর্কে</Link></li>
                                     <li><Link onClick={scrollTop} to="/contact-us">যোগাযোগ করুন</Link></li>
                                     <li><Link onClick={scrollTop} to="/advertise">বিজ্ঞাপন দিন</Link></li>
-                                    <li><Link onClick={scrollTop} to="#">সম্পাদকীয় নীতি</Link></li>
+                                    <li><Link onClick={scrollTop} to="/editorial-policy">সম্পাদকীয় নীতি</Link></li>
                                     <li><Link onClick={scrollTop} to="/privacy-policy">গোপনীয়তা নীতি</Link></li>
                                     <li><Link onClick={scrollTop} to="/terms-service">শর্তাবলী</Link></li>
                                     <li><Link onClick={scrollTop} to="/copyright">কপিরাইট নীতি</Link></li>
