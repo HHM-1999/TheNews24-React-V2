@@ -5248,7 +5248,10 @@ picture img {
 .DSocialTop button:hover {
 	transform: scale3d(1.5, 1.5, 1.5);
 }
-
+.DSocialTop{
+	position: relative;
+	z-index: 99;
+}
 .DSocialTop,
 .DAdditionalInfo {
 	text-align: center;
