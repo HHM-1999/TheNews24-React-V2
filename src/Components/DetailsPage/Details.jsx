@@ -380,7 +380,7 @@ export default function Details() {
                                             <div className="col-lg-8 col-12 mt-3">
                                                 {news.is_live_content === 1 && news.is_live_now === 1 ?
                                                     <div className="row">
-                                                        <div className="col-lg-12">
+                                                        <div className="col-lg-12 mb-3">
                                                             <div className="separator"></div>
                                                             <div className="auto-update-wrapper">
                                                                 <span className="title">
