@@ -25,27 +25,27 @@ export default function DPoliticsSec() {
 
     return (
         <>
-            <div class="common-post-listBox">
-                <div class="section-heading">
+            <div className="common-post-listBox">
+                <div className="section-heading">
                     <Link to="/politics" onClick={scrollTop}>
                         <h2>রাজনীতি</h2>
                     </Link>
                 </div>
-                <div class="common-single-post-wrap">
+                <div className="common-single-post-wrap">
                     {News ?
                         <Link to={"/" + News.Slug + "/news/" + News.ContentID} onClick={scrollTop}>
-                            <div class="common-single-post-wrap-img">
+                            <div className="common-single-post-wrap-img">
                                 {News.ImageBgPath ?
                                     <img src={process.env.REACT_APP_IMG_Path + News.ImageBgPath} alt={News.ContentHeading} title={News.ContentHeading} className="img-fluid" width={410} height={254} /> :
                                     <img src={process.env.REACT_APP_LAZYL_IMG} alt={News.ContentHeading} title={News.ContentHeading} className="img-fluid" width={410} height={254} />}
 
                                 {News.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                             </div>
-                            <div class="Desc">
-                                <h3 class="Title">{News.ContentSubHeading ? (News.ContentSubHeading + "/" + News.ContentHeading) : (News.ContentHeading)}
+                            <div className="Desc">
+                                <h3 className="Title">{News.ContentSubHeading ? (News.ContentSubHeading + "/" + News.ContentHeading) : (News.ContentHeading)}
                                 </h3>
-                                <div class="news-Time">
-                                    <span class="time">{getTimeDistance(News.created_at ? News.created_at : "")}</span>
+                                <div className="news-Time">
+                                    <span className="time">{getTimeDistance(News.created_at ? News.created_at : "")}</span>
                                     <span>{News.CategoryName}</span>
                                 </div>
                             </div>
@@ -53,14 +53,14 @@ export default function DPoliticsSec() {
                         : false}
 
                 </div>
-                <div class="common-single-post-list-wrap">
+                <div className="common-single-post-list-wrap">
                     {News2.map((nc, i) => {
                         return (
-                            <div class="common-single-post-list" key={i}>
+                            <div className="common-single-post-list" key={i}>
                                 <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                    <div class="row gx-3">
-                                        <div class="col-5 col-lg-4">
-                                            <div class="common-single-post-list-img">
+                                    <div className="row gx-3">
+                                        <div className="col-5 col-lg-4">
+                                            <div className="common-single-post-list-img">
                                                 {nc.ImageThumbPath ?
                                                     <img src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={126} height={84} /> :
                                                     <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={126} height={84} />}
@@ -68,12 +68,12 @@ export default function DPoliticsSec() {
                                                 {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                             </div>
                                         </div>
-                                        <div class="col-7 col-lg-8">
-                                            <div class="Desc">
-                                                <h3 class="Title">{nc.ContentSubHeading ? (nc.ContentSubHeading + "/" + nc.ContentHeading) : (nc.ContentHeading)}
+                                        <div className="col-7 col-lg-8">
+                                            <div className="Desc">
+                                                <h3 className="Title">{nc.ContentSubHeading ? (nc.ContentSubHeading + "/" + nc.ContentHeading) : (nc.ContentHeading)}
                                                 </h3>
-                                                <div class="news-Time">
-                                                    <span class="time">{getTimeDistance(nc.created_at ? nc.created_at : "")}</span>
+                                                <div className="news-Time">
+                                                    <span className="time">{getTimeDistance(nc.created_at ? nc.created_at : "")}</span>
                                                     <span>{nc.CategoryName}</span>
                                                 </div>
                                             </div>

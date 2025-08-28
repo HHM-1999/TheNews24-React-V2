@@ -7,16 +7,16 @@ export default function LeadNewsSection() {
 
     return (
         <>
-            <div class="leadnews-wrap">
-                <div class="container">
-                    <div class="row gx-3">
-                        <div class="col-lg-3 order-lg-1 order-2">
+            <div className="leadnews-wrap">
+                <div className="container">
+                    <div className="row gx-3">
+                        <div className="col-lg-3 order-lg-1 order-2">
                             <SpecialTop1 />
                         </div>
-                        <div class="col-lg-6 order-lg-2 order-1">
+                        <div className="col-lg-6 order-lg-2 order-1">
                             <LeadNews />
                         </div>
-                        <div class="col-lg-3 order-3">
+                        <div className="col-lg-3 order-3">
                             <SpecialTop2 />
                         </div>
                     </div>

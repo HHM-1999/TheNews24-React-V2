@@ -312,7 +312,7 @@ export default function Details() {
                 let newDiv = `<div className="dCaption2" style="${pstyle}">${image}<p className="img-caption">${caption}</p></div>`
                 contentImages[index].outerHTML = newDiv
             } else {
-                let newDiv = `<div class="dCaption2" style="${pstyle}">${image}</div>`
+                let newDiv = `<div className="dCaption2" style="${pstyle}">${image}</div>`
                 contentImages[index].outerHTML = newDiv
             }
         }
@@ -320,7 +320,7 @@ export default function Details() {
         let contentIframes = document.querySelectorAll(`#contentDetails.ContentDetails${id} p iframe`)
         for (let index = 0; index < contentIframes.length; index++) {
             let iframe = contentIframes[index].outerHTML
-            let newDiv = `<div class="embed-responsive embed-responsive-16by9">${iframe}</div>`
+            let newDiv = `<div className="embed-responsive embed-responsive-16by9">${iframe}</div>`
             contentIframes[index].outerHTML = newDiv
             // console.log(iframe);
         } //internal video from iframe

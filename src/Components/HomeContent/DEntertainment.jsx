@@ -26,9 +26,9 @@ export default function DEntertainment() {
     return (
         <>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="section-heading">
                         <Link to="/entertainment" onClick={scrollTop}>
                             <h2>বিনোদন</h2>
                         </Link>
@@ -36,23 +36,23 @@ export default function DEntertainment() {
                 </div>
             </div>
             {entertainment ?
-                <div class="entertainment-lead">
+                <div className="entertainment-lead">
                     <Link to={"/" + entertainment.Slug + "/news/" + entertainment.ContentID} onClick={scrollTop}>
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="entertainment-lead-img">
+                        <div className="row">
+                            <div className="col-lg-8">
+                                <div className="entertainment-lead-img">
                                     {entertainment.ImageBgPath ?
                                         <img src={process.env.REACT_APP_IMG_Path + entertainment.ImageBgPath} alt={entertainment.ContentHeading} title={entertainment.ContentHeading}    width="845" height="522" /> :
                                         <img src={process.env.REACT_APP_LAZYL_IMG} alt={entertainment.ContentHeading} title={entertainment.ContentHeading} className="img-fluid" width="845" height="522" />}
                                     {entertainment.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                 </div>
                             </div>
-                            <div class="col-lg-4 d-flex align-items-center order-lg-first">
-                                <div class="Desc">
-                                    <h3 class="Title">{entertainment.ContentHeading}</h3>
-                                    <p class="Brief">{entertainment.ContentBrief}</p>
-                                    <div class="news-Time">
-                                        <span class="time">{getTimeDistance(entertainment.created_at ? entertainment.created_at : "")}</span>
+                            <div className="col-lg-4 d-flex align-items-center order-lg-first">
+                                <div className="Desc">
+                                    <h3 className="Title">{entertainment.ContentHeading}</h3>
+                                    <p className="Brief">{entertainment.ContentBrief}</p>
+                                    <div className="news-Time">
+                                        <span className="time">{getTimeDistance(entertainment.created_at ? entertainment.created_at : "")}</span>
                                         <span>{entertainment.CategoryName}</span>
                                     </div>
                                 </div>
@@ -63,16 +63,16 @@ export default function DEntertainment() {
                 : false
             }
 
-            <div class="entertainment-list-wrap">
-                <div class="row">
+            <div className="entertainment-list-wrap">
+                <div className="row">
                     {entertainment2.map((nc) => {
                         return (
-                            <div class="col-lg-3" key={nc.ContentID}>
-                                <div class="entertainment-list">
+                            <div className="col-lg-3" key={nc.ContentID}>
+                                <div className="entertainment-list">
                                     <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                        <div class="row">
-                                            <div class="col-5 col-lg-12">
-                                                <div class="entertainment-list-img">
+                                        <div className="row">
+                                            <div className="col-5 col-lg-12">
+                                                <div className="entertainment-list-img">
                                                     {nc.ImageSmPath ?
                                                         <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={186} className="img-fluid"   /> :
                                                         <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={186} className="img-fluid img100" />}
@@ -80,10 +80,10 @@ export default function DEntertainment() {
                                                     {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                 </div>
                                             </div>
-                                            <div class="col-7 col-lg-12">
-                                                <div class="Desc">
-                                                    <h3 class="Title">{nc.ContentHeading}</h3>
-                                                    <div class="news-Time"><span class="time">{getTimeDistance(nc.created_at ? nc.created_at : "")}</span><span>{nc.CategoryName}</span>
+                                            <div className="col-7 col-lg-12">
+                                                <div className="Desc">
+                                                    <h3 className="Title">{nc.ContentHeading}</h3>
+                                                    <div className="news-Time"><span className="time">{getTimeDistance(nc.created_at ? nc.created_at : "")}</span><span>{nc.CategoryName}</span>
                                                     </div>
                                                 </div>
                                             </div>

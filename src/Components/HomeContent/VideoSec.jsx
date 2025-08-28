@@ -29,30 +29,30 @@ export default function VideoSec() {
 
     return (
         <>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="section-heading">
                         <h2><Link to="/video" onClick={scrollTop}>ভিডিও</Link></h2>
                     </div>
                 </div>
-                <div class="video-wrap">
-                    <div class="row gx-3">
-                        <div class="col-lg-9">
-                            <div class="row gx-3">
-                                <div class="col-lg-8">
+                <div className="video-wrap">
+                    <div className="row gx-3">
+                        <div className="col-lg-9">
+                            <div className="row gx-3">
+                                <div className="col-lg-8">
                                     {Leadvideos ?
-                                        <div class="video-big-box">
+                                        <div className="video-big-box">
                                             <Link to={"/video/show/" + Leadvideos.WebTVID} onClick={scrollTop}>
-                                                <div class="video-big-img">
+                                                <div className="video-big-img">
                                                     {Leadvideos.WebTVLinkCode ?
                                                         <img src={'https://img.youtube.com/vi/' + Leadvideos.WebTVLinkCode + '/0.jpg'} width={632} height={390} alt={Leadvideos.WebTVHeading} title={Leadvideos.WebTVHeading} className="img-fluid"   /> :
                                                         <img src={process.env.REACT_APP_LAZYL_IMG} width={800} height={450} alt={Leadvideos.WebTVHeading} title={Leadvideos.WebTVHeading} className="img-fluid" />}
-                                                    <div class="video-btn">
-                                                        <div class="icon-wrap">
-                                                            <i class="fa-solid fa-play"></i>
+                                                    <div className="video-btn">
+                                                        <div className="icon-wrap">
+                                                            <i className="fa-solid fa-play"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="Desc">
+                                                    <div className="Desc">
                                                         <h3 className="Title">{Leadvideos.WebTVHeading}</h3>
                                                     </div>
                                                 </div>
@@ -60,24 +60,24 @@ export default function VideoSec() {
                                         </div>
                                         : false}
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="row gx-3">
+                                <div className="col-lg-4">
+                                    <div className="row gx-3">
                                         {videos.map((nc,i) => {
                                             return (
-                                                <div class="col-md-6 col-lg-12" key={i}>
-                                                    <div class="video-small-list">
+                                                <div className="col-md-6 col-lg-12" key={i}>
+                                                    <div className="video-small-list">
                                                         <Link to={"/video/show/" + nc.WebTVID} onClick={scrollTop}>
-                                                            <div class="video-small-img-wrap">
+                                                            <div className="video-small-img-wrap">
                                                                 {nc.WebTVLinkCode ?
                                                                     <img src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={308} height={187} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid" /> :
                                                                     <img src={process.env.REACT_APP_LAZYL_IMG} width={300} height={169} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid" />}
-                                                                <div class="video-btn">
-                                                                    <div class="icon-wrap">
-                                                                        <i class="fa-solid fa-play"></i>
+                                                                <div className="video-btn">
+                                                                    <div className="icon-wrap">
+                                                                        <i className="fa-solid fa-play"></i>
                                                                     </div>
                                                                 </div>
-                                                                <div class="Desc">
-                                                                    <h3 class="Title">{nc.WebTVHeading} </h3>
+                                                                <div className="Desc">
+                                                                    <h3 className="Title">{nc.WebTVHeading} </h3>
                                                                 </div>
                                                             </div>
                                                         </Link>
@@ -91,7 +91,7 @@ export default function VideoSec() {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div className="col-lg-3">
                             <LeadLatestNews />
                         </div>
                     </div>

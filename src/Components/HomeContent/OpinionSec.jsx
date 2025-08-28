@@ -24,26 +24,26 @@ export default function OpinionSec() {
 
     return (
         <>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="section-heading">
                         <Link to="/opinion" onClick={scrollTop}>
                             <h2>মতামত</h2>
                         </Link>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="row">
+            <div className="row">
+                <div className="col-lg-9">
+                    <div className="row">
                         {state.map((nc) => {
                             return (
-                                <div class="col-md-6" key={nc.ContentID}>
-                                    <div class="opinion-box">
+                                <div className="col-md-6" key={nc.ContentID}>
+                                    <div className="opinion-box">
                                         <Link to={"/" + nc.Slug + "/news/" + nc.ContentID}  onClick={scrollTop}>
-                                            <div class="row">
-                                                <div class="col-lg-3 d-flex justify-content-center">
-                                                    <div class="opinion-img">
+                                            <div className="row">
+                                                <div className="col-lg-3 d-flex justify-content-center">
+                                                    <div className="opinion-img">
                                                         {nc.ImageSmPath == null ?
                                                             <img src={WriterDefaultImg} alt={nc.ContentHeading} title={nc.ContentHeading} width={90} height={90} /> :
                                                             <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={90} height={90} className="img-fluid" />
@@ -51,11 +51,11 @@ export default function OpinionSec() {
                                                         {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-9 d-flex aling-items-center">
-                                                    <div class="opinion-text">
-                                                        <div class="Desc">
-                                                            <h3 class="Title">{nc.ContentHeading}</h3>
-                                                            <p class="WriterName"><i class="fa fa-pencil" aria-hidden="true"></i>{nc.WriterName}</p>
+                                                <div className="col-lg-9 d-flex aling-items-center">
+                                                    <div className="opinion-text">
+                                                        <div className="Desc">
+                                                            <h3 className="Title">{nc.ContentHeading}</h3>
+                                                            <p className="WriterName"><i className="fa fa-pencil" aria-hidden="true"></i>{nc.WriterName}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -69,7 +69,7 @@ export default function OpinionSec() {
 
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-12">
+                <div className="col-lg-3 col-sm-12">
                     <OnlinePoll />
                 </div>
             </div>

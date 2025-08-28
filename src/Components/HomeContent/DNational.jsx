@@ -132,7 +132,7 @@ export default function DNational() {
                             <PrayerTime />
                         </div>
                         <FBpagePlugin />
-                        <div class="DRightSideAdd mt-2">
+                        <div className="DRightSideAdd mt-2">
                             <Link to="#" onClick={scrollTop}><img src={Ads} alt="ads" title="ads" /></Link>
                         </div>
                     </div>

@@ -27,34 +27,34 @@ export default function Sports() {
     }, [])
     return (
         <>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="section-heading">
                         <Link to="/sports" onClick={scrollTop}>
                             <h2>খেলাধুলা</h2>
                         </Link>
                     </div>
                 </div>
             </div>
-            <div class="sports-lead">
-                <div class="row">
+            <div className="sports-lead">
+                <div className="row">
                     {sports.map((nc) => {
                         return (
-                            <div class="col-lg-6">
-                                <div class="sports-lead-wrap">
+                            <div className="col-lg-6" key={nc.ContentID}>
+                                <div className="sports-lead-wrap">
                                     <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                        <div class="sports-lead-img">
+                                        <div className="sports-lead-img">
                                             {nc.ImageBgPath ?
                                                 <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={627} height={330} /> :
                                                 <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={627} height={330} />}
 
                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                         </div>
-                                        <div class="Desc">
-                                            <h3 class="Title">{nc.ContentHeading}</h3>
-                                            <p class="Brief">{nc.ContentBrief}</p>
-                                            <div class="news-Time">
-                                                <span class="time">{getTimeDistance(nc.created_at ? nc.created_at : "")}</span>
+                                        <div className="Desc">
+                                            <h3 className="Title">{nc.ContentHeading}</h3>
+                                            <p className="Brief">{nc.ContentBrief}</p>
+                                            <div className="news-Time">
+                                                <span className="time">{getTimeDistance(nc.created_at ? nc.created_at : "")}</span>
                                                 <span>{nc.CategoryName}</span>
                                             </div>
                                         </div>
@@ -69,17 +69,17 @@ export default function Sports() {
 
                 </div>
             </div>
-            <div class="sports-list-wrap">
-                <div class="row">
+            <div className="sports-list-wrap">
+                <div className="row">
                     {sports2.map((nc) => {
                         return (
-                            <div class="col-lg-3">
-                                <div class="sports-list">
+                            <div className="col-lg-3" key={nc.ContentID}>
+                                <div className="sports-list">
                                     <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                        <div class="sports-list-img">
-                                            <div class="row">
-                                                <div class="col-5 col-lg-12">
-                                                    <div class="sports-list-imgBox">
+                                        <div className="sports-list-img">
+                                            <div className="row">
+                                                <div className="col-5 col-lg-12">
+                                                    <div className="sports-list-imgBox">
                                                         {nc.ImageSmPath ?
                                                             <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={302} height={232} /> :
                                                             <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={302} height={232} />}
@@ -87,9 +87,9 @@ export default function Sports() {
                                                         {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                     </div>
                                                 </div>
-                                                <div class="col-7 col-lg-12">
-                                                    <div class="Desc">
-                                                        <h3 class="Title">{nc.ContentHeading}</h3>
+                                                <div className="col-7 col-lg-12">
+                                                    <div className="Desc">
+                                                        <h3 className="Title">{nc.ContentHeading}</h3>
                                                     </div>
                                                 </div>
                                             </div>

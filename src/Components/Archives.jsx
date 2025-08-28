@@ -138,7 +138,7 @@ export default function Archives() {
                                     <div className="col-sm-4 my-2">
                                         <label htmlFor="category_name">  সব ক্যাটাগরি :</label>
                                         <select defaultValue={'0'} name="category_name" className="form-control cboCatName">
-                                            <option value="0" disabled>সকল খবর</option>
+                                            <option value={"0"} disabled>সকল খবর</option>
                                             {allCategoryList.map((nc) => {
                                                 return (
                                                     <option key={nc.CategoryID} value={nc.CategoryID}>{nc.CategoryName}</option>

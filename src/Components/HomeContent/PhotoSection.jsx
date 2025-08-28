@@ -23,48 +23,48 @@ export default function PhotoSection() {
     return (
 
         <>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="section-heading">
                         <Link to="/photo-feature" onClick={scrollTop}>
                             <h2>ফটোগ্যালারি</h2>
                         </Link>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8">
+            <div className="row">
+                <div className="col-lg-8">
                     {photoStory ?
-                        <div class="Photogallery-wrap">
+                        <div className="Photogallery-wrap">
                             <Link to={'/photo-feature/news/' + photoStory.PhotoFeatureID} onClick={scrollTop}>
-                                <div class="Photogallery-img">
-                                    <div class="Photogallery-overlay"></div>
+                                <div className="Photogallery-img">
+                                    <div className="Photogallery-overlay"></div>
                                     <picture>
                                         {photoStory.ImageBgPath ?
                                             <img src={process.env.REACT_APP_IMG_Path + photoStory.ImageBgPath} alt={photoStory.PhotoFeatureTitle} title={photoStory.PhotoFeatureTitle} className="img-fluid" width={845} height={522} /> :
                                             <img src={process.env.REACT_APP_LAZYL_IMG} alt={photoStory.PhotoFeatureTitle} title={photoStory.PhotoFeatureTitle} className="img-fluid img100" width={845} height={522} />}
                                         {photoStory.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                     </picture>
-                                    <div class="Desc">
-                                        <h3 class="Title">{photoStory.PhotoFeatureTitle}</h3>
+                                    <div className="Desc">
+                                        <h3 className="Title">{photoStory.PhotoFeatureTitle}</h3>
                                     </div>
-                                    <div class="photo-icon"><i class="fas fa-image"></i></div>
+                                    <div className="photo-icon"><i className="fas fa-image"></i></div>
                                 </div>
                             </Link>
                         </div>
                         : false
                     }
                 </div>
-                <div class="col-lg-4">
-                    <div class="photo-list-wrap">
-                        <div class="row">
+                <div className="col-lg-4">
+                    <div className="photo-list-wrap">
+                        <div className="row">
                             {photoStory2.map((nc) => {
                                 return (
-                                    <div class="col-lg-12 col-sm-6" key={nc.PhotoFeatureID}>
-                                        <div class="Photogallery-wrap">
+                                    <div className="col-lg-12 col-sm-6" key={nc.PhotoFeatureID}>
+                                        <div className="Photogallery-wrap">
                                             <Link to={"/photo-feature/news/" + nc.PhotoFeatureID} onClick={scrollTop}>
-                                                <div class="Photogallery-img">
-                                                    <div class="Photogallery-overlay"></div>
+                                                <div className="Photogallery-img">
+                                                    <div className="Photogallery-overlay"></div>
                                                     <picture>
                                                         {nc.ImageSmPath ?
                                                             <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} className="img-fluid" width={410} height={254} /> :
@@ -72,10 +72,10 @@ export default function PhotoSection() {
 
                                                         {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                                     </picture>
-                                                    <div class="Desc">
-                                                        <h3 class="Title">{nc.PhotoFeatureTitle}</h3>
+                                                    <div className="Desc">
+                                                        <h3 className="Title">{nc.PhotoFeatureTitle}</h3>
                                                     </div>
-                                                    <div class="photo-icon"><i class="fas fa-image"></i></div>
+                                                    <div className="photo-icon"><i className="fas fa-image"></i></div>
                                                 </div>
                                             </Link>
                                         </div>

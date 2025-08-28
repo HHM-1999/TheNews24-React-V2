@@ -54,7 +54,7 @@ export default function DSocialShare({ title, contentID }) {
   return (
     <div className="DSocialTop gap-2 mt-2">
       {/* Share buttons */}
-      <div class="sharethis-inline-share-buttons"  data-url={pageURL} data-title={title}></div>
+      <div className="sharethis-inline-share-buttons"  data-url={pageURL} data-title={title}></div>
     </div>
   );
 }

@@ -53,61 +53,61 @@ export default function Home() {
                         <LeadNewsSection />
                     <>
                         <div className="video-area">
-                            <div class="container">
+                            <div className="container">
                                 <VideoSec />
                             </div>
                         </div>
-                        <section class="others-two-area">
-                            <div class="container">
+                        <section className="others-two-area">
+                            <div className="container">
                                 <DCountry />
                             </div>
                         </section>
 
-                        <section class="national-news-area">
+                        <section className="national-news-area">
                             <DNational />
                         </section>
-                        <section class="others-two-area">
-                            <div class="container">
+                        <section className="others-two-area">
+                            <div className="container">
                                 <DInternationalSec />
                             </div>
                         </section>
-                        <section class="opinion-area">
-                            <div class="container">
+                        <section className="opinion-area">
+                            <div className="container">
                                 <OpinionSec />
                             </div>
                         </section>
-                        <section class="common-post-area">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-4">
+                        <section className="common-post-area">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-lg-4">
                                         <DPoliticsSec />
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div className="col-lg-4">
                                         <DJob />
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div className="col-lg-4">
                                         <DTrade />
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="entertainment-area">
-                            <div class="container">
+                        <section className="entertainment-area">
+                            <div className="container">
                                 <DEntertainment />
                             </div>
                         </section>
-                        <section class="sports-area">
-                            <div class="container">
+                        <section className="sports-area">
+                            <div className="container">
                                 <Sports />
                             </div>
                         </section>
-                        <section class="life-style-area">
-                            <div class="container">
+                        <section className="life-style-area">
+                            <div className="container">
                                 <Lifestyle />
                             </div>
                         </section>
-                        <section class="Photogallery-area">
-                            <div class="container">
+                        <section className="Photogallery-area">
+                            <div className="container">
                                 <PhotoSection />
                             </div>
                         </section>

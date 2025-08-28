@@ -65,7 +65,7 @@ export default function ShareThisPopup({ title, url }) {
 
   return (
     <div className="DSocialTop d-flex justify-content-start gap-2 mt-3 mb-2">
-        <div class="sharethis-inline-share-buttons" url={url} title={title}></div>
+        <div className="sharethis-inline-share-buttons" url={url} title={title}></div>
         
       {/* <div className="sharethis-inline-share-buttons" data-url={url} data-title={title}></div> */}
     </div>

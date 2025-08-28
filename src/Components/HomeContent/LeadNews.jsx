@@ -24,29 +24,29 @@ export default function LeadNews() {
 
     return (
         <>
-            <div class="lead-news">
+            <div className="lead-news">
                 <Link to={"/" + state.Slug + "/news/" + state.ContentID} onClick={scrollTop}>
-                    <div class="lead-news-img">
+                    <div className="lead-news-img">
                         {state.ImageBgPath ?
                             <img src={process.env.REACT_APP_IMG_Path + state.ImageBgPath} alt={state.ContentHeading} title={state.ContentHeading} width={632} height={390} className="img-fluid" /> :
                             <img src={process.env.REACT_APP_LAZYL_IMG} alt={state.ContentHeading} title={state.ContentHeading} width={632} height={390} className="img-fluid img100" />}
 
                         {state.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
 
-                        <div class="Desc">
+                        <div className="Desc">
                             {/* live section segment */}
                             {state.is_live_content === 1 && state.is_live_now === 1 ?
-                                <h1 class="Title">
-                                    <div class="pulsate-wrap">
-                                        <div class="puls-content-wrap">
-                                            <div class="pulsate">
-                                                <div class="ringring"></div>
-                                                <div class="circle"></div>
+                                <h1 className="Title">
+                                    <div className="pulsate-wrap">
+                                        <div className="puls-content-wrap">
+                                            <div className="pulsate">
+                                                <div className="ringring"></div>
+                                                <div className="circle"></div>
                                             </div>
-                                            <span class="live-text">লাইভ</span>
+                                            <span className="live-text">লাইভ</span>
                                         </div>
                                     </div> {state.ContentSubHeading ? (state.ContentSubHeading + "/" + state.ContentHeading) : (state.ContentHeading)} </h1>
-                                : <h1 class="Title">
+                                : <h1 className="Title">
                                     {state.ContentSubHeading ? (state.ContentSubHeading + "/" + state.ContentHeading) : (state.ContentHeading)}</h1>}
                         </div>
 

@@ -83,35 +83,35 @@ export default function LeadLatestNews() {
                 </div>
                 <div className="allnews"><Link to="/archives" onClick={scrollTop}>সব খবর <i className="fa fa-angle-double-right"></i></Link></div>
             </section> */}
-            <div class="LatestNews">
-                <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+            <div className="LatestNews">
+                <ul className="nav nav-pills" id="pills-tab" role="tablist">
+                    <li className="nav-item" role="presentation">
+                        <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-home" type="button" role="tab"
                             aria-controls="pills-home" aria-selected="true">সর্বশেষ</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                    <li className="nav-item" role="presentation">
+                        <button className="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-profile" type="button" role="tab"
                             aria-controls="pills-profile" aria-selected="false">সর্বাধিক</button>
                     </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                <div className="tab-content" id="pills-tabContent">
+                    <div className="tab-pane fade show active" id="pills-home" role="tabpanel"
                         aria-labelledby="pills-home-tab">
-                        <div class="LatestNewsWrap">
+                        <div className="LatestNewsWrap">
                             <ul>
                                 {latest.map((nc, i) => {
 
                                     return (
-                                        <li>
-                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                                <div class="LastestNewsList">
-                                                    <div class="count">{toBengaliNumber(i + 1)}</div>
-                                                    <div class="Desc">
+                                        <li key={nc.ContentID}>
+                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop} >
+                                                <div className="LastestNewsList">
+                                                    <div className="count">{toBengaliNumber(i + 1)}</div>
+                                                    <div className="Desc">
                                                         {nc.ContentSubHeading == null ?
-                                                            <h3 class="Title">{nc.ContentHeading} </h3> :
-                                                            <h3 class="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
+                                                            <h3 className="Title">{nc.ContentHeading} </h3> :
+                                                            <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
                                                         }
                                                     </div>
                                                 </div>
@@ -123,24 +123,24 @@ export default function LeadLatestNews() {
 
                             </ul>
                         </div>
-                        <div class="allnews"><a href="/archives">সব খবর <i
-                            class="fa fa-angle-double-right"></i></a></div>
+                        <div className="allnews"><a href="/archives">সব খবর <i
+                            className="fa fa-angle-double-right"></i></a></div>
                     </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                    <div className="tab-pane fade" id="pills-profile" role="tabpanel"
                         aria-labelledby="pills-profile-tab">
-                        <div class="LatestNewsWrap">
+                        <div className="LatestNewsWrap">
                             <ul>
                                 {popular.map((nc, i) => {
 
                                     return (
-                                        <li>
+                                        <li key={nc.ContentID}>
                                             <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                                <div class="LastestNewsList">
-                                                    <div class="count">{toBengaliNumber(i + 1)}</div>
-                                                    <div class="Desc">
+                                                <div className="LastestNewsList">
+                                                    <div className="count">{toBengaliNumber(i + 1)}</div>
+                                                    <div className="Desc">
                                                         {nc.ContentSubHeading == null ?
-                                                            <h3 class="Title">{nc.ContentHeading} </h3> :
-                                                            <h3 class="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
+                                                            <h3 className="Title">{nc.ContentHeading} </h3> :
+                                                            <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
                                                         }
                                                     </div>
                                                 </div>
@@ -151,8 +151,8 @@ export default function LeadLatestNews() {
 
                             </ul>
                         </div>
-                        <div class="allnews"><a href="/archives">সব খবর <i
-                            class="fa fa-angle-double-right"></i></a></div>
+                        <div className="allnews"><a href="/archives">সব খবর <i
+                            className="fa fa-angle-double-right"></i></a></div>
                     </div>
                 </div>
             </div>
