@@ -221,7 +221,7 @@ export default function Details() {
                 let newDiv = `<div className="dCaption2" style="${pstyle}">${image}<p className="img-caption">${caption}</p></div>`
                 contentImages[index].outerHTML = newDiv
             } else {
-                let newDiv = `<div class="dCaption2" style="${pstyle}">${image}</div>`
+                let newDiv = `<div className="dCaption2" style="${pstyle}">${image}</div>`
                 contentImages[index].outerHTML = newDiv
             }
         }
@@ -229,7 +229,7 @@ export default function Details() {
         let contentIframes = document.querySelectorAll(`#contentDetails.ContentDetails${id} p iframe`)
         for (let index = 0; index < contentIframes.length; index++) {
             let iframe = contentIframes[index].outerHTML
-            let newDiv = `<div class="embed-responsive embed-responsive-16by9">${iframe}</div>`
+            let newDiv = `<div className="embed-responsive embed-responsive-16by9">${iframe}</div>`
             contentIframes[index].outerHTML = newDiv
             // console.log(iframe);
         } //internal video from iframe
@@ -255,7 +255,7 @@ export default function Details() {
         relatedNewsDiv.className = 'DRelatedNewsSection d-print-none';
         const para = document.createElement("p");
         para.className = 'DRelatedNews Title';
-        para.innerHTML = `<i class="fa-solid fa-list"></i> আরও পড়ুন:`
+        para.innerHTML = `<i className="fa-solid fa-list"></i> আরও পড়ুন:`
         relatedNewsDiv.appendChild(para);
 
         const relatedNewsMainDiv = document.createElement('div');
@@ -265,19 +265,19 @@ export default function Details() {
         let R_HTML = ''
         for (let i = 0; i < R_Arr.length; i++) {
             if (contentDetailsChildDiv !== null) {
-                R_HTML += `<div class="col-lg-3 col-12 d-flex ss">
-                    <div class="DRelatedNewsList align-self-stretch">
+                R_HTML += `<div className="col-lg-3 col-12 d-flex ss">
+                    <div className="DRelatedNewsList align-self-stretch">
                         <a href=${process.env.REACT_APP_FONT_DOMAIN_URL + R_Arr[i].Slug + "/news/" + R_Arr[i].ContentID}>
-                            <div class="row">
-                                <div class="col-lg-12 col-sm-4 col-5">
-                                    <div class="DImgZoomBlocktest">
+                            <div className="row">
+                                <div className="col-lg-12 col-sm-4 col-5">
+                                    <div className="DImgZoomBlocktest">
                                         <picture><img src=${process.env.REACT_APP_DOMAIN_URL + "media/imgAll/" + R_Arr[i].ImageSmPath} alt='${R_Arr[i].ContentHeading}' title='${R_Arr[i].ContentHeading}' /></picture>
-                                        ${R_Arr[i].ShowVideo === 1 || R_Arr[i].VideoID ? '<div class="card-video-icon"><i class="fa-solid fa-play"></i></div>' : ''}
+                                        ${R_Arr[i].ShowVideo === 1 || R_Arr[i].VideoID ? '<div className="card-video-icon"><i className="fa-solid fa-play"></i></div>' : ''}
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-sm-8 col-7">
-                                    <div class="Desc">
-                                        <h3 class="Title">${R_Arr[i].ContentHeading}</h3>
+                                <div className="col-lg-12 col-sm-8 col-7">
+                                    <div className="Desc">
+                                        <h3 className="Title">${R_Arr[i].ContentHeading}</h3>
                                     </div>
                                 </div>
                             </div>
