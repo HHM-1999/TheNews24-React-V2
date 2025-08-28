@@ -5416,7 +5416,7 @@ p.img-caption {
 	margin-bottom: 20px;
 }
 
-.SquareIcon {
+.auto-update-wrapper .SquareIcon {
 	color: #d40000;
 	display: inline-block;
 	width: 10px;
