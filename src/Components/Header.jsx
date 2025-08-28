@@ -5,9 +5,9 @@ import { getDate, getMonth, getYear } from 'bangla-calendar';
 import ePper from '../assets/media/common/E_paper2.png'
 import archive from '../assets/media/common/archive2.png'
 import map from '../assets/media/common/Map2.png'
-import logo from '../assets/media/common/logo.gif'
 import moment from 'moment-hijri';
 import axios from 'axios'
+import Marquee from "react-fast-marquee";
 
 const date1 = new Date();
 let bnDate = getDate(date1, { format: 'D' })
@@ -335,7 +335,7 @@ export default function Header() {
                                                 <p>ব্রেকিং নিউজ:</p>
                                             </div>
                                             <div className="ScrollSubject">
-                                                <marquee>
+                                                <Marquee Marquee delay='0' speed='70' direction="left" pauseOnHover={true} play={true}>
                                                     {breaking.map((nd) => {
                                                         return (
                                                             <React.Fragment key={nd.BreakingID}>
@@ -343,7 +343,7 @@ export default function Header() {
                                                             </React.Fragment>
                                                         )
                                                     })}
-                                                </marquee>
+                                                </Marquee>
                                             </div>
                                         </div>
                                         :
@@ -354,7 +354,7 @@ export default function Header() {
                                                         <p>শিরোনাম:</p>
                                                     </div>
                                                     <div className="ScrollSubject">
-                                                        <marquee>
+                                                        <Marquee delay='0' speed='70' direction="left" pauseOnHover={true} play={true}>
                                                             {scroll.map((nd) => {
                                                                 return (
                                                                     <React.Fragment key={nd.ScrollID}>
@@ -362,7 +362,7 @@ export default function Header() {
                                                                     </React.Fragment>
                                                                 )
                                                             })}
-                                                        </marquee>
+                                                        </Marquee>
                                                     </div>
                                                 </div> : false
                                             }

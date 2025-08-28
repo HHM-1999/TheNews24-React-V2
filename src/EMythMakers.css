@@ -5415,7 +5415,9 @@ p.img-caption {
 .separator {
 	margin-bottom: 20px;
 }
-
+.overlay {
+	position: relative !important;
+}
 .auto-update-wrapper .SquareIcon {
 	color: #d40000;
 	display: inline-block;
