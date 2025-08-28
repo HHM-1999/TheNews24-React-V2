@@ -521,7 +521,7 @@ picture img {
 	background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%);}
 	.DScrollSection{display:flex;}
 	.DScrollSection .ScrollHeading{background:var(--primary-color); padding-right:10px;}
-	.DScrollSection .ScrollHeading p{font-size:18px;color:var(--white-color); font-weight: 600; width: 100px;}
+	.DScrollSection .ScrollHeading p{font-size:18px;color:var(--white-color); font-weight: 600;}
 	
 	/* .DScrollSection .ScrollSubject{padding:0 10px;} */
 	/* .DScrollSection .ScrollSubject a span:hover{color:var(--primary);} */
@@ -531,9 +531,9 @@ picture img {
 	.DScroll marquee{scroll-behavior: smooth; display: flex;}
 	
 	.DScrollSection .ScrollSubject {position: relative; width: 100%;}
-	.DScrollSection .ScrollSubject::before { position: absolute; content: ""; top: 0; left: 0; height: 100%; width: 100px; background-image: linear-gradient(90deg,#002F9D,hsla(0,0%,100%,0)); z-index: 1; }
+	.DScrollSection .ScrollSubject::before { position: absolute; content: ""; top: 0; left: 0; height: 100%; width: 100px; background-image: linear-gradient(90deg,#002F9D,hsla(0,0%,100%,0)); z-index: 2; }
 	.DScrollSection .ScrollSubject::after { position: absolute; content: ""; top: 0; right: 0; height: 100%; width:100px; background-image: linear-gradient(270deg,#010062,hsla(0,0%,100%,0)); z-index:1; }
-	
+	.marquee-container{position:relative!important;}
 
 /* mobile-menu-area  */
 .mobile-menu-area {
