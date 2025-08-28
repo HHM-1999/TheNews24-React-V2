@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { scrollTop, ForLazyLoaderImg, banglaDateConvetar, getTimeDistance } from '../AllFunctions'
-import { format } from 'date-fns'
+import { scrollTop, ForLazyLoaderImg, getTimeDistance } from '../AllFunctions'
+
 var lazyloaded = false
 export default function LeadNews() {
     const [state, setState] = useState([])
@@ -35,7 +35,7 @@ export default function LeadNews() {
 
                         <div class="Desc">
                             {/* live section segment */}
-                            {state.live ?
+                            {state.is_live_content === 1 && state.is_live_now === 1 ?
                                 <h1 class="Title">
                                     <div class="pulsate-wrap">
                                         <div class="puls-content-wrap">
@@ -45,20 +45,17 @@ export default function LeadNews() {
                                             </div>
                                             <span class="live-text">লাইভ</span>
                                         </div>
-                                    </div>
-                                    {state.ContentSubHeading ? (state.ContentSubHeading + "/" + state.ContentHeading) : (state.ContentHeading)}</h1>
+                                    </div> {state.ContentSubHeading ? (state.ContentSubHeading + "/" + state.ContentHeading) : (state.ContentHeading)} </h1>
                                 : <h1 class="Title">
-                                    <div class="pulsate-wrap">
-
-                                    </div>
                                     {state.ContentSubHeading ? (state.ContentSubHeading + "/" + state.ContentHeading) : (state.ContentHeading)}</h1>}
                         </div>
+
                     </div>
                 </Link>
             </div>
             <div className="sublead-news">
                 <div className="row">
-                    {state2.map((nc ,i ) => {
+                    {state2.map((nc, i) => {
                         return (
                             <div className="col-lg-4 col-md-6" key={i}>
                                 <div className="sublead-news-box">
@@ -66,7 +63,7 @@ export default function LeadNews() {
                                         <div className="sublead-news-img">
                                             {nc.ImageSmPath ?
                                                 <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid" width={195} height={120} /> :
-                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={195} height={120}/>}
+                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" width={195} height={120} />}
 
                                             {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
                                         </div>

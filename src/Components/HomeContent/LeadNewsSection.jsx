@@ -11,7 +11,7 @@ export default function LeadNewsSection() {
                 <div class="container">
                     <div class="row gx-3">
                         <div class="col-lg-3 order-lg-1 order-2">
-                        <SpecialTop1 />
+                            <SpecialTop1 />
                         </div>
                         <div class="col-lg-6 order-lg-2 order-1">
                             <LeadNews />

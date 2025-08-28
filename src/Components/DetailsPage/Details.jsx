@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { format } from 'date-fns'
-import { banglaDateConvetar, ForLazyLoaderImg, scrollTop } from '../AllFunctions'
+import { banglaDateConvetar, ForLazyLoaderImg, scrollTop, timeAgo } from '../AllFunctions'
 import ErrorPage from '../ErrorPage'
 import DCatLatest from './DCatLatest'
 import DCatPopular from './DCatPopular'
@@ -11,6 +11,7 @@ import DFrom from './DFrom'
 import DSocialShare from './DSocialShare'
 import DfbComment from './DfbComment'
 import Ldjson from './Ldjson'
+import { toBengaliNumber } from 'bengali-number'
 // import RLoader from '../RLoader'
 // import RLoader from '../RLoader'
 var lazyloaded = false
@@ -32,6 +33,7 @@ export default function Details() {
     const [catLatest, setCatLatest] = useState([])
     const [catPopular, setCatPopular] = useState([])
     const [writer, setWriter] = useState([]);
+    const [count, setcount] = useState([])
     // const [isLoading, setisLoading] = useState(true)
     // const [isLoading, setisLoading] = useState(true)
 
@@ -83,6 +85,7 @@ export default function Details() {
                     if (data.contentDetails.length > 0) {
                         if (id !== data.contentDetails[0].contentID) {
                             setState(data.contentDetails);
+                            setcount(data.liveContents)
                             document.title = data.contentDetails[0].ContentHeading;
                             setTimeout(function () {
                                 contentLoaded = true
@@ -294,11 +297,7 @@ export default function Details() {
         <>
             {state ?
                 <main>
-
                     <div className="container">
-                        {/* <div className="LOGOIMG">
-                            <img src={process.env.REACT_APP_FONT_DOMAIN_URL + "media/common/logo.png"} width={187} height={68} alt="TheNews24 || দ্য নিউজ ২৪" title="TheNews24 || দ্য নিউজ ২৪" className="img-fluid img100" />
-                        </div> */}
                         <section>
                             <div className="row d-print-none">
                                 <div className="col-lg-12 col-12 my-2">
@@ -355,7 +354,6 @@ export default function Details() {
                                                             <div className="Details">
                                                                 <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" width={845} height={476} /></picture>
                                                             </div>
-                                                            {/* <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" /> */}
                                                             <div className="DetailsTopCap">
                                                                 <p className="DTopImgCaption">{news.ImageBgPathCaption}</p>
                                                                 {/* <p className="DTopImgCaption">{dateArray[i][1] && banglaDateConvetar(dateArray[i][1])}</p> */}
@@ -378,16 +376,53 @@ export default function Details() {
                                                 <DCatLatest catLatest={catLatest} catName={catName.CategoryName} catSlug={catSlug} />
                                             </div>
                                         </div>
-                                        <div className="row mt-3">
-                                            <div className="col-lg-9 col-12">
-                                                <div className={'ContentDetails page-break  ContentDetails' + news.ContentID} id="contentDetails">
-                                                    {/* {news.ContentSubHeading && <h3 className='DHeadingSubHeading'>{news.ContentSubHeading}</h3>}
-                                                    <h1>{news.DetailsHeading ? news.DetailsHeading : news.ContentHeading}</h1>
-                                                    {news.ContentShoulder && <h4 className='DHeadingContentShoulder'>{news.ContentShoulder}</h4>} */}
-                                                    {/* <DocumentTitle title={news.ContentHeading} /> */}
-                                                    <p dangerouslySetInnerHTML={{ __html: news.ContentDetails }}></p>
+                                        <div className="row">
+                                            <div className="col-lg-8 col-12 mt-3">
+                                                {news.is_live_content === 1 && news.is_live_now === 1 ?
+                                                    <div className="row">
+                                                        <div className="col-lg-12">
+                                                            <div className="separator"></div>
+                                                            <div className="auto-update-wrapper">
+                                                                <span className="title">
+                                                                    <div className="SquareIcon"></div>
+                                                                    {toBengaliNumber(count.length)}টি আপডেট
 
-                                                </div>
+                                                                </span>
+                                                            </div>
+                                                            <ul className="liveupdateList">
+                                                                {count && count.map((nc) => (
+                                                                    <li className="newsfeed" >
+                                                                        <div className="liveUpdates">
+                                                                            <div className="card-live__icon">
+                                                                                <svg className="icon icon--live-orange icon--primary icon--20" viewBox="0 0 20 20" version="1.1" aria-hidden="true">
+                                                                                    <title>live-orange</title>
+                                                                                    <g>
+                                                                                        <circle cx="10" cy="10" r="9" stroke="#d40000" strokeWidth="1.68" fill="#ffffff"></circle>
+                                                                                        <circle cx="10" cy="10" r="5" fill="#d40000"></circle>
+                                                                                    </g>
+                                                                                </svg>
+                                                                            </div>
+                                                                            <div className="card-live__last-updated">
+                                                                                <div className="date-relative">{timeAgo(nc.created_at)}</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="card-live__content-area">
+                                                                            <h2 className="Title">{nc.heading}</h2>
+                                                                            <div className={'ContentDetails page-break' + nc.ContentID} id={`contentDetails`}>
+                                                                                <div dangerouslySetInnerHTML={{ __html: nc.details }} id={`contentDetails ContentDetails${nc.ContentID}`} key={nc.ContentID}></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    :
+                                                    <div className={'ContentDetails page-break  ContentDetails' + news.ContentID} id="contentDetails">
+                                                        <p dangerouslySetInnerHTML={{ __html: news.ContentDetails }}></p>
+                                                    </div>
+                                                }
                                                 <div className="DTagsNews d-print-none">
                                                     {tagArray && tagArray[i].map((nc) => {
                                                         return (
@@ -397,7 +432,7 @@ export default function Details() {
                                                 </div>
                                                 <DfbComment contentID={news.ContentID} />
                                             </div>
-                                            <div className="col-lg-3 col-12 d-print-none">
+                                            <div className="col-lg-4 col-12 d-print-none">
                                                 <div className="DRightAds">
                                                     <div className="row">
                                                         <div className="col-md-12">
@@ -406,13 +441,6 @@ export default function Details() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    {/* <div className="row">
-                                                        <div className="col-md-12">
-                                                            <div className="DAdd1 d-flex  justify-content-center">
-                                                                <Link to="/"><img src={"/media/Advertisement/Advertisement(300X90).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
-                                                            </div>
-                                                        </div>
-                                                    </div> */}
                                                     <div className="row">
                                                         <div className="col-md-12">
                                                             <div className="DAdd1 d-flex  justify-content-center">

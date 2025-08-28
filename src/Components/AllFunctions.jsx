@@ -122,10 +122,95 @@ function banglaDateConvetar(engDate) {
     });
     return (engDate)
 }
-
+// function timeAgo(earlier, later = new Date()) {
+//     // Parse both as UTC timestamps
+//     const t1 = Date.parse(earlier);
+//     const t2 = Date.parse(later);
+  
+//     // Shift into Bangladesh (UTC+6) by adding 6h
+//     const BD_OFFSET_MS = 6 * 60 * 60 * 1000;
+//     let delta = (t2 + BD_OFFSET_MS) - (t1);
+  
+//     if (delta < 0) delta = 0;
+  
+//     // Define units
+//     const MS = {
+//       day:    24 * 60 * 60 * 1000,
+//       hour:   60 * 60 * 1000,
+//       minute: 60 * 1000,
+//       second: 1000,
+//     };
+  
+//     // Pick the largest whole unit
+//     for (const [unit, msPer] of Object.entries(MS)) {
+//       const amount = Math.floor(delta / msPer);
+//       if (amount > 0) {
+//         return amount === 1
+//           ? `1 ${unit} ago`
+//           : `${amount} ${unit}s ago`;
+//       }
+//     }
+  
+//     return "just now";
+//   }
+function timeAgo(earlier, later = new Date()) {
+    // Parse both as UTC timestamps
+    const t1 = Date.parse(earlier);
+    const t2 = Date.parse(later);
+  
+    // Shift into Bangladesh (UTC+6) by adding 6h
+    const BD_OFFSET_MS = 6 * 60 * 60 * 1000;
+    let delta = (t2 + BD_OFFSET_MS) - (t1);
+  
+    if (delta < 0) delta = 0;
+  
+    // Define units
+    const MS = {
+      day:    24 * 60 * 60 * 1000,
+      hour:   60 * 60 * 1000,
+      minute: 60 * 1000,
+      second: 1000,
+    };
+  
+    // English → Bangla digit converter
+    function toBanglaDigits(num) {
+      return num.toString().replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+    }
+  
+    // Pick the largest whole unit
+    for (const [unit, msPer] of Object.entries(MS)) {
+      const amount = Math.floor(delta / msPer);
+      if (amount > 0) {
+        if (unit === "day") {
+          return amount === 1
+            ? `${toBanglaDigits(amount)} দিন আগে`
+            : `${toBanglaDigits(amount)} দিন আগে`;
+        }
+        if (unit === "hour") {
+          return amount === 1
+            ? `${toBanglaDigits(amount)} ঘন্টা আগে`
+            : `${toBanglaDigits(amount)} ঘন্টা আগে`;
+        }
+        if (unit === "minute") {
+          return amount === 1
+            ? `${toBanglaDigits(amount)} মিনিট আগে`
+            : `${toBanglaDigits(amount)} মিনিট আগে`;
+        }
+        if (unit === "second") {
+          return amount === 1
+            ? `${toBanglaDigits(amount)} সেকেন্ড আগে`
+            : `${toBanglaDigits(amount)} সেকেন্ড আগে`;
+        }
+      }
+    }
+  
+    return "এইমাত্র";
+  }
+  
 export {
     ForLazyLoaderImg,
     scrollTop,
+    timeAgo,
     getTimeDistance,
     banglaDateConvetar
 }
