@@ -521,7 +521,7 @@ picture img {
 	background: linear-gradient(90deg,rgba(0, 84, 204, 1) 0%, rgba(1, 0, 98, 1) 50%);}
 	.DScrollSection{display:flex;}
 	.DScrollSection .ScrollHeading{background:var(--primary-color); padding-right:10px;}
-	.DScrollSection .ScrollHeading p{font-size:18px;color:var(--white-color); font-weight: 600;}
+	.DScrollSection .ScrollHeading p{font-size:18px;color:var(--white-color); font-weight: 600; width: 100px; padding: 7px 0;}
 	
 	/* .DScrollSection .ScrollSubject{padding:0 10px;} */
 	/* .DScrollSection .ScrollSubject a span:hover{color:var(--primary);} */
@@ -839,12 +839,16 @@ picture img {
 .leadnews-wrap {
 	padding: 30px 0;
 }
+.leadnews-wrap .sublead-news-box .Desc .Title {
+    height: 50px;
+}
 
 /* .leadnews-wrap .row{--bs-gutter-x: 1rem} */
 .lead-left-wrap {
 	border: 1px solid var(--border-color);
 	border-radius: 10px;
 }
+
 
 .lead-left-big {
 	margin-bottom: 5px;
