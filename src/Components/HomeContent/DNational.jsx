@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { scrollTop, ForLazyLoaderImg, getTimeDistance } from '../AllFunctions'
+import Ads from '../../assets/media/Advertisement/shopno.png'
+import { ForLazyLoaderImg, getTimeDistance, scrollTop } from '../AllFunctions'
 import FBpagePlugin from '../FBpagePlugin'
 import PrayerTime from './PrayerTime'
-import Ads from '../../assets/media/Advertisement/lab-pharmacy.jpeg'
 
 var lazyloaded = false
 export default function DNational() {
@@ -66,7 +66,7 @@ export default function DNational() {
                                                     <div className="col-5 col-lg-12">
                                                         <div className="national-leadTwo-img">
                                                             {national1.ImageSmPath ?
-                                                                <img src={process.env.REACT_APP_IMG_Path + national1.ImageSmPath} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid" width={302} height={186}/> :
+                                                                <img src={process.env.REACT_APP_IMG_Path + national1.ImageSmPath} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid" width={302} height={186} /> :
                                                                 <img src={process.env.REACT_APP_LAZYL_IMG} alt={national1.ContentHeading} title={national1.ContentHeading} className="img-fluid img100" width={302} height={186} />}
 
                                                             {national1.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
@@ -133,7 +133,7 @@ export default function DNational() {
                         </div>
                         <FBpagePlugin />
                         <div className="DRightSideAdd mt-2">
-                            <Link to="#" onClick={scrollTop}><img src={Ads} alt="ads" title="ads" /></Link>
+                            <a href="https://www.shwapno.com/" onClick={scrollTop} target='blank'><img src={Ads} alt="ads" title="ads" /></a>
                         </div>
                     </div>
                 </div>
