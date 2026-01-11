@@ -3,7 +3,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 import WriterDefaultImg from '../../assets/media/common/profile.png';
-import OnlinePoll from './OnlinePoll';
+// import OnlinePoll from './OnlinePoll';
+import JahanAds from './JahanAds';
 
 var lazyloaded = false
 export default function OpinionSec() {
@@ -25,22 +26,20 @@ export default function OpinionSec() {
     return (
         <>
             <div className="row">
-                <div className="col-lg-12">
-                    <div className="section-heading">
-                        <Link to="/opinion" onClick={scrollTop}>
-                            <h2>মতামত</h2>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-            <div className="row">
                 <div className="col-lg-9">
                     <div className="row">
+                        <div className="col-lg-12">
+                            <div className="section-heading">
+                                <Link to="/opinion" onClick={scrollTop}>
+                                    <h2>মতামত</h2>
+                                </Link>
+                            </div>
+                        </div>
                         {state.map((nc) => {
                             return (
                                 <div className="col-md-6" key={nc.ContentID}>
                                     <div className="opinion-box">
-                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID}  onClick={scrollTop}>
+                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
                                             <div className="row">
                                                 <div className="col-lg-3 d-flex justify-content-center">
                                                     <div className="opinion-img">
@@ -70,7 +69,8 @@ export default function OpinionSec() {
                     </div>
                 </div>
                 <div className="col-lg-3 col-sm-12">
-                    <OnlinePoll />
+                    {/* <OnlinePoll /> */}
+                    <JahanAds />
                 </div>
             </div>
 
