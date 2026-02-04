@@ -1854,7 +1854,9 @@ picture img {
 }
 
 .life-style-list-img img {
-	aspect-ratio: 0.7;
+	/* aspect-ratio: 0.7; */
+	object-fit: cover;
+	aspect-ratio: 1;
 	object-fit: cover;
 	object-position: center;
 	width: 100%;
@@ -4466,7 +4468,12 @@ picture img {
 	.DCatTop3tList .col-7 {
 		padding-left: 0;
 	}
-
+	.DCatTop3 .col-lg-4.col-12.d-flex.border-right-inner{
+		border-right :none !important;
+	}
+	.DBannerAdd2{
+		display: none !important;
+	}
 	.DCatTop3tList {
 		border-bottom: 1px solid #eee;
 		padding: 10px 0;

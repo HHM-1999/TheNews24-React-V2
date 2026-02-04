@@ -434,13 +434,13 @@ export default function Details() {
                                             </div>
                                             <div className="col-lg-4 col-12 d-print-none">
                                                 <div className="DRightAds">
-                                                    <div className="row">
+                                                    {/* <div className="row">
                                                         <div className="col-md-12">
                                                             <div className="d-flex  justify-content-center">
                                                                 <Link to="/"><img src={"/media/Advertisement/IPF[300x250].gif"} alt="Advertisement" title="Advertisement" className="img-fluid img100" width={300} height={250} /></Link>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                     <div className="row">
                                                         <div className="col-md-12">
                                                             <div className="DAdd1 d-flex  justify-content-center">

@@ -10,6 +10,7 @@ import ErrorPage from '../ErrorPage';
 import DivisionDistricName from '../Country/DivisionDistricName';
 import CatLdJson from './CatLdJson';
 import LeadLatestNews from '../HomeContent/LeadLatestNews';
+import InternationalpgAds from './InternationalpgAds';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -133,24 +134,24 @@ export default function Category() {
         <>
             {catName ?
                 <main>
-                 
-                        <div className="container">
-                            <h2 className="DTitle">
-                                {/* <Link to={'/' + catName.Slug} onClick={scrollTop}> */}
-                                <Link to={+ '/'} onClick={scrollTop}>
-                                    <span className="DTitleInner"><span className="DTitleInnerBar"><span>{catName.CategoryName}</span></span></span>
-                                </Link>
-                                <DocumentTitle title={`${catName.CategoryName} | ${catName.CategoryName} সর্বশেষ খবর ::  দ্য নিউজ ২৪`} />
-                                <CatLdJson CatNames={catName.CategoryName} CatNameSlug={catName.Slug} />
-                            </h2>
 
-                            <section>
-                                <div className="row">
-                                    <div className="col-lg-9 col-sm-12 DBorderRight">
-                                        <>
-                                            {catSlug === 'country' && <DivisionDistricName />}
-                                        </>
-                                        <div className="DcatTopArea">
+                    <div className="container">
+                        <h2 className="DTitle">
+                            {/* <Link to={'/' + catName.Slug} onClick={scrollTop}> */}
+                            <Link to={+ '/'} onClick={scrollTop}>
+                                <span className="DTitleInner"><span className="DTitleInnerBar"><span>{catName.CategoryName}</span></span></span>
+                            </Link>
+                            <DocumentTitle title={`${catName.CategoryName} | ${catName.CategoryName} সর্বশেষ খবর ::  দ্য নিউজ ২৪`} />
+                            <CatLdJson CatNames={catName.CategoryName} CatNameSlug={catName.Slug} />
+                        </h2>
+
+                        <section>
+                            <div className="row">
+                                <div className="col-lg-9 col-sm-12 DBorderRight">
+                                    <>
+                                        {catSlug === 'country' && <DivisionDistricName />}
+                                    </>
+                                    <div className="DcatTopArea">
                                         <div className="row">
                                             <div className="col-lg-8 col-12 d-flex ">
                                                 <div className="DCatLeadTop">
@@ -196,94 +197,108 @@ export default function Category() {
                                                 </div>
                                             </div>
                                         </div>
-                                        </div>
-                                        
-                                        <div className="DCatTop3">
-                                            <div className="row">
-                                                {catLeadNews3.map((nc) => {
-                                                    return (
-                                                        <div className="col-lg-4 col-12 d-flex border-right-inner" key={nc.ContentID}>
-                                                            <div className="DCatTop3tList align-self-stretch">
-                                                                <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                                                    <div className="row">
-                                                                        <div className="col-lg-12 col-sm-4 col-5">
-                                                                            <div className="DImgZoomBlock">
-                                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={170} /></picture>
-                                                                                {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="col-lg-12 col-sm-8 col-7">
-                                                                            <div className="Desc">
-                                                                                <h3 className="Title">{nc.ContentHeading}</h3>
-                                                                            </div>
+                                    </div>
+
+                                    <div className="DCatTop3">
+                                        <div className="row">
+                                            {catLeadNews3.map((nc) => {
+                                                return (
+                                                    <div className="col-lg-4 col-12 d-flex border-right-inner" key={nc.ContentID}>
+                                                        <div className="DCatTop3tList align-self-stretch">
+                                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                                <div className="row">
+                                                                    <div className="col-lg-12 col-sm-4 col-5">
+                                                                        <div className="DImgZoomBlock">
+                                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={170} /></picture>
+                                                                            {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                         </div>
                                                                     </div>
-                                                                </Link>
-                                                            </div>
+                                                                    <div className="col-lg-12 col-sm-8 col-7">
+                                                                        <div className="Desc">
+                                                                            <h3 className="Title">{nc.ContentHeading}</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
                                                         </div>
-                                                    )
-                                                })}
-                                            </div>
+                                                    </div>
+                                                )
+                                            })}
                                         </div>
                                     </div>
-                                    <div className="col-lg-3 col-sm-12">
+                                    {catSlug === 'international' ?
+                                        <div className="DBannerAdd2 d-flex justify-content-center mt-5 pt-5">
+                                            <Link to="/">
+                                                <img src="/media/Advertisement/Advertisement(728X90).png" alt="Advertisement" title="Advertisement"
+                                                    className="img-fluid img100" />
+                                            </Link>
+                                        </div>
+                                        : 
+                                        ""
+                                    }
+                                </div>
+                                <div className="col-lg-3 col-sm-12">
+                                    {catSlug === 'international' ? <InternationalpgAds /> :
                                         <div className="DRightSideAdd d-flex justify-content-center mb-3 mt-3">
                                             <Link to="/">
                                                 <img src="/media/Advertisement/Advertisement(300X90).png" alt="Advertisement" title="Advertisement" />
                                             </Link>
                                         </div>
-                                        <LeadLatestNews />
-                                    </div>
+                                    }
+                                    <LeadLatestNews />
                                 </div>
-                            </section>
+                            </div>
+                        </section>
+                        {catSlug === 'international' ? " " :
                             <div className="DBannerAdd d-flex justify-content-center">
                                 <Link to="/">
                                     <img src="/media/Advertisement/Advertisement(970X90).png" alt="Advertisement" title="Advertisement"
                                         className="img-fluid img100" width={970} height={90} />
                                 </Link>
                             </div>
+                        }
 
-                            <section>
-                                <div className="row">
-                                    <div className="col-lg-9 col-sm-12 mt-4 BorderRight">
-                                        <h2 className="LatestNewsH ">{catName.CategoryName} বিভাগের সব খবর</h2>
-                                        <section className="DCatNewsListArea">
-                                            <div className="row">
-                                                {catNewsMore.map((nc) => {
-                                                    return (
-                                                        <div className="col-lg-6 col-12 d-flex " key={nc.ContentID}>
-                                                            <div className="DCatNewsList border-bottom-inner align-self-stretch ">
-                                                                <Link to={"/" + catSlug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                                                    <div className="row">
-                                                                        <div className="col-lg-5 col-sm-4 col-5">
-                                                                            <div className="DImgZoomBlock">
-                                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={170}/></picture>
-                                                                                {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="col-lg-7 col-sm-8 col-7">
-                                                                            <div className="Desc">
-                                                                                <h3 className="Title">{nc.ContentHeading}</h3>
-                                                                            </div>
+                        <section>
+                            <div className="row">
+                                <div className="col-lg-9 col-sm-12 mt-4 BorderRight">
+                                    <h2 className="LatestNewsH ">{catName.CategoryName} বিভাগের সব খবর</h2>
+                                    <section className="DCatNewsListArea">
+                                        <div className="row">
+                                            {catNewsMore.map((nc) => {
+                                                return (
+                                                    <div className="col-lg-6 col-12 d-flex " key={nc.ContentID}>
+                                                        <div className="DCatNewsList border-bottom-inner align-self-stretch ">
+                                                            <Link to={"/" + catSlug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                                <div className="row">
+                                                                    <div className="col-lg-5 col-sm-4 col-5">
+                                                                        <div className="DImgZoomBlock">
+                                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} width={300} height={170} /></picture>
+                                                                            {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                         </div>
                                                                     </div>
-                                                                </Link>
-                                                            </div>
+                                                                    <div className="col-lg-7 col-sm-8 col-7">
+                                                                        <div className="Desc">
+                                                                            <h3 className="Title">{nc.ContentHeading}</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
                                                         </div>
-                                                    )
-                                                })}
-                                            </div>
-                                        </section>
-                                        {showMore ?
-                                            <div id="btnDiv" className="text-center mt-4 mb-4"><button id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG" onClick={toggleButtonState}>আরো পড়ুন</button></div>
-                                            : false}
-                                    </div>
-                                    <div className="col-lg-3 col-sm-12">
-                                        <CategoryPopular catLatest={catLatest} catSlug={catSlug} />
-                                    </div>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                    </section>
+                                    {showMore ?
+                                        <div id="btnDiv" className="text-center mt-4 mb-4"><button id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG" onClick={toggleButtonState}>আরো পড়ুন</button></div>
+                                        : false}
                                 </div>
-                            </section>
-                        </div>
+                                <div className="col-lg-3 col-sm-12">
+                                    <CategoryPopular catLatest={catLatest} catSlug={catSlug} />
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </main>
                 : <ErrorPage />}
         </>
