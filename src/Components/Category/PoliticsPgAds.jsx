@@ -1,5 +1,5 @@
 import React from 'react'
-import Ads from '../../assets/media/Advertisement/rajnitiAds.jpeg';
+import Ads from '../../assets/media/Advertisement/rajnitiAdsR1.png';
 
 const PoliticsPgAds = () => {
     return (
