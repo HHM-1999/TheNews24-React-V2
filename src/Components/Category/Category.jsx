@@ -11,6 +11,7 @@ import DivisionDistricName from '../Country/DivisionDistricName';
 import CatLdJson from './CatLdJson';
 import LeadLatestNews from '../HomeContent/LeadLatestNews';
 import InternationalpgAds from './InternationalpgAds';
+import PoliticsPgAds from './PoliticsPgAds';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -233,30 +234,56 @@ export default function Category() {
                                                     className="img-fluid img100" />
                                             </Link>
                                         </div>
-                                        : 
+                                        :
+                                        ""
+                                    }
+                                    {catSlug === 'politics' ?
+                                        <div className="DBannerAdd2 d-flex justify-content-center mt-5 pt-5">
+                                            <Link to="/">
+                                                <img src="/media/Advertisement/Advertisement(728X90).png" alt="Advertisement" title="Advertisement"
+                                                    className="img-fluid img100" />
+                                            </Link>
+                                        </div>
+                                        :
                                         ""
                                     }
                                 </div>
                                 <div className="col-lg-3 col-sm-12">
-                                    {catSlug === 'international' ? <InternationalpgAds /> :
+                                    {catSlug === 'international' ? (
+                                        <InternationalpgAds />
+                                    ) : catSlug === 'politics' ? (
+                                        <PoliticsPgAds />
+                                    ) : (
                                         <div className="DRightSideAdd d-flex justify-content-center mb-3 mt-3">
                                             <Link to="/">
-                                                <img src="/media/Advertisement/Advertisement(300X90).png" alt="Advertisement" title="Advertisement" />
+                                                <img
+                                                    src="/media/Advertisement/Advertisement(300X90).png"
+                                                    alt="Advertisement"
+                                                    title="Advertisement"
+                                                />
                                             </Link>
                                         </div>
-                                    }
+                                    )}
+
                                     <LeadLatestNews />
                                 </div>
+
                             </div>
                         </section>
-                        {catSlug === 'international' ? " " :
+                        {catSlug !== 'international' && catSlug !== 'politics' && (
                             <div className="DBannerAdd d-flex justify-content-center">
                                 <Link to="/">
-                                    <img src="/media/Advertisement/Advertisement(970X90).png" alt="Advertisement" title="Advertisement"
-                                        className="img-fluid img100" width={970} height={90} />
+                                    <img
+                                        src="/media/Advertisement/Advertisement(970X90).png"
+                                        alt="The News 24"
+                                        title="The News 24"
+                                        className="img-fluid img100"
+                                        width={970}
+                                        height={90}
+                                    />
                                 </Link>
                             </div>
-                        }
+                        )}
 
                         <section>
                             <div className="row">
