@@ -156,11 +156,11 @@ export default function Header() {
                                     <Link to="/live" onClick={scrollTop}><i className="fa-solid fa-play"></i><span>LIVE</span></Link>
                                 </div>
                                 <div className="header-social-icon">
-                                    <a href="https://www.facebook.com/thenews24digital/" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#" target="_blank"><i className="fa-brands fa-whatsapp"></i></a>
-                                    <a href="#" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
-                                    <a href="#" target="_blank"><i className="fa-brands fa-instagram"></i></a>
-                                    <a href="https://www.youtube.com/@thenewsdhaka/" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+                                    <a href="https://www.facebook.com/thenews24digital/" target="_blank"  rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#" target="_blank"  rel="noreferrer"><i className="fa-brands fa-whatsapp"></i></a>
+                                    <a href="#" target="_blank"  rel="noreferrer"><i className="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" target="_blank"  rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                                    <a href="https://www.youtube.com/@thenewsdhaka/" target="_blank"  rel="noreferrer"><i className="fa-brands fa-youtube"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -518,11 +518,11 @@ export default function Header() {
                                         </div>
                                         <div className="social-icon">
                                             <ul className="list-unstyled">
-                                                <li><a href="https://www.facebook.com/thenews24digital/" target="_blank"><i className="fa-brands fa-facebook-f"></i></a></li>
-                                                <li><a href="#" target="_blank"><i className="fa-brands fa-whatsapp"></i></a></li>
-                                                <li><a href="#" target="_blank"><i className="fa-brands fa-x-twitter"></i></a></li>
-                                                <li><a href="#" target="_blank"><i className="fa-brands fa-instagram"></i></a></li>
-                                                <li><a href="https://www.youtube.com/@thenewsdhaka/" target="_blank"><i className="fa-brands fa-youtube"></i></a></li>
+                                                <li><a href="https://www.facebook.com/thenews24digital/" target="_blank"  rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a></li>
+                                                <li><a href="#" target="_blank"  rel="noreferrer"><i className="fa-brands fa-whatsapp"></i></a></li>
+                                                <li><a href="#" target="_blank" rel="noreferrer" ><i className="fa-brands fa-x-twitter"></i></a></li>
+                                                <li><a href="#" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
+                                                <li><a href="https://www.youtube.com/@thenewsdhaka/" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>

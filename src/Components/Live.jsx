@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { scrollTop, banglaDateConvetar } from './AllFunctions'
+import { scrollTop } from './AllFunctions'
 import DocumentTitle from 'react-document-title'
 // import LatestPopularNews from './Category/LatestPopularNews'
 import LeadLatestNews from './HomeContent/LeadLatestNews'
@@ -10,7 +10,7 @@ export default function Live() {
     const [live, setLive] = useState([])
 
 
-    const PrintAble = () => { window.print(); };
+    // const PrintAble = () => { window.print(); };
     // const [isLoading, setisLoading] = useState(true)
     useEffect(() => {
         document.querySelectorAll('link[rel="canonical"]')[0].setAttribute('href', window.location.href)

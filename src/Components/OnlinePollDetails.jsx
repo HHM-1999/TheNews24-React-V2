@@ -5,11 +5,11 @@ import DocumentTitle from 'react-document-title'
 import { scrollTop } from './AllFunctions'
 import { toBengaliNumber } from 'bengali-number'
 import LeadLatestNews from './HomeContent/LeadLatestNews'
-import ShareThisPopup from './ShareThisPopup'
-import DSocialShare from './DetailsPage/DSocialShare'
+// import ShareThisPopup from './ShareThisPopup'
+// import DSocialShare from './DetailsPage/DSocialShare'
 var PollID = 0
 export default function OnlinePollDetails() {
-    const [poll, setPoll] = useState([])
+    // const [poll, setPoll] = useState([])
     const [pollResult, setPollResult] = useState([])
 
     useEffect(() => {
@@ -28,7 +28,7 @@ export default function OnlinePollDetails() {
             .get(`${process.env.REACT_APP_API_URL}latest-poll`)
             .then(({ data }) => {
                 if (data.poll_latest.length > 0) {
-                    setPoll(data.poll_latest);
+                    // setPoll(data.poll_latest);
                     PollID = data.poll_latest[0].PollID
                     
                 }
@@ -37,18 +37,18 @@ export default function OnlinePollDetails() {
         return () => clearTimeout(timer);
     }, [])
 
-    const resultSubmit = (e) => {
-        e.preventDefault()
-        var PollValue = parseInt(e.target.rdoPoll.value);
-        var formData = { 'pollID': PollID, 'PollValue': PollValue }
-        // console.log(formData)
-        axios
-            .post(`${process.env.REACT_APP_API_URL}poll-update`, formData)
-            .then(({ data }) => {
-                document.getElementById("opinion-submit-msg").style.display = "block";
-                e.target.submit.disabled = true;
-            });
-    }
+    // const resultSubmit = (e) => {
+    //     e.preventDefault()
+    //     var PollValue = parseInt(e.target.rdoPoll.value);
+    //     var formData = { 'pollID': PollID, 'PollValue': PollValue }
+    //     // console.log(formData)
+    //     axios
+    //         .post(`${process.env.REACT_APP_API_URL}poll-update`, formData)
+    //         .then(({ data }) => {
+    //             document.getElementById("opinion-submit-msg").style.display = "block";
+    //             e.target.submit.disabled = true;
+    //         });
+    // }
 
 
 

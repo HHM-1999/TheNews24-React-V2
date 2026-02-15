@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
@@ -10,7 +10,7 @@ var lazyloaded = false
 export default function VideoSec() {
     const [videos, setVideos] = useState([])
     const [Leadvideos, setLeadvideos] = useState([])
-    let sliderRef = useRef(null);
+    // let sliderRef = useRef(null);
     useEffect(() => {
         axios
             .get(`${process.env.REACT_APP_API_URL}json/file/generatePositionVideoCategory1.json`)

@@ -54,8 +54,8 @@ export default function DCountry() {
         var url = ""
         var division = e.target.division.value
         var district = e.target.district.value
-        if (division > '0') { url = '/' + 'divisions/' + division }
-        if (district > '0') { url = '/' + 'divisions/' + division + '/' + district }
+        if (division > '0') { url = '/divisions/' + division }
+        if (district > '0') { url = '/divisions/' + division + '/' + district }
         // console.log(url);
         window.location.href = url;
     }
@@ -93,11 +93,11 @@ export default function DCountry() {
                                     </select>
                                 </div>
                                 <div className="col-lg-3">
-                                    <select defaultValue={'0'} className="form-select"  name="district" id="district">
+                                    <select defaultValue={'0'} className="form-select" name="district" id="district">
                                         <option value="0" disabled selected>সব জেলা</option>
                                         {districtName.map((nc) => {
                                             return (
-                                                <option  data-id={nc.DistrictID} value={nc.DistrictSlug}>{nc.DistrictNameBn}</option>
+                                                <option data-id={nc.DistrictID} value={nc.DistrictSlug}>{nc.DistrictNameBn}</option>
                                             )
                                         })}
                                     </select>
