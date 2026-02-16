@@ -12,6 +12,7 @@ import CatLdJson from './CatLdJson';
 import LeadLatestNews from '../HomeContent/LeadLatestNews';
 import InternationalpgAds from './InternationalpgAds';
 import PoliticsPgAds from './PoliticsPgAds';
+import TradepgAds from './TradepgAds';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -247,13 +248,24 @@ export default function Category() {
                                         :
                                         ""
                                     }
+                                     {catSlug === 'trade' ?
+                                        <div className="DBannerAdd2 d-flex justify-content-center mt-5 pt-5">
+                                            <Link to="/">
+                                                <img src="/media/Advertisement/Advertisement(728X90).png" alt="Advertisement" title="Advertisement"
+                                                    className="img-fluid img100" />
+                                            </Link>
+                                        </div>
+                                        :
+                                        ""
+                                    }
                                 </div>
                                 <div className="col-lg-3 col-sm-12">
                                     {catSlug === 'international' ? (
                                         <InternationalpgAds />
                                     ) : catSlug === 'politics' ? (
-                                        <PoliticsPgAds />
-                                    ) : (
+                                        <PoliticsPgAds />)
+                                    : catSlug === 'trade' ? (<TradepgAds />) 
+                                     : (
                                         <div className="DRightSideAdd d-flex justify-content-center mb-3 mt-3">
                                             <Link to="/">
                                                 <img
@@ -270,7 +282,7 @@ export default function Category() {
 
                             </div>
                         </section>
-                        {catSlug !== 'international' && catSlug !== 'politics' && (
+                        {catSlug !== 'international' && catSlug !== 'politics' && catSlug !== 'trade' && (
                             <div className="DBannerAdd d-flex justify-content-center">
                                 <Link to="/">
                                     <img

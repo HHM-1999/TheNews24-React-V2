@@ -112,14 +112,6 @@ export default function Home() {
                                 <PhotoSection />
                             </div>
                         </section>
-                        {/* ads placement */}
-                        <div className="col-lg-4 m-auto">
-                        <div className="homepageAds">
-                            <img src={HomepageAds} alt="Valentine's Day" title="Valentine's Day" />
-                        </div>
-                        </div>
-                       
-
                     </>
                 </>
 
