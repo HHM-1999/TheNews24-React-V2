@@ -1865,7 +1865,7 @@ picture img {
 .homepageAds {
 	text-align: center;
 }
-
+.ads-area{text-align: center; margin-top: 10px;}
 .life-style-list .Desc {
 	position: absolute;
 	bottom: 0;

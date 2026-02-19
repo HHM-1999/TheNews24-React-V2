@@ -15,7 +15,10 @@ import PhotoSection from './HomeContent/PhotoSection'
 // import Event from './HomeContent/Event'
 import HomeLdJson from './HomeContent/HomeLdJson'
 import DTrade from './HomeContent/DTrade'
-import HomepageAds from '../assets/media/Advertisement/HomepageAds.png'
+// import HomepageAds from '../assets/media/Advertisement/HomepageAds.png'
+import HeaderBottomAds from './HomeContent/HeaderBottomAds'
+import VideoSecBotmR1 from './HomeContent/VideoSecBotmR1'
+import VideoSecBotmR2 from './HomeContent/VideoSecBotmR2'
 // import Ramadan from './HomeContent/Ramadan'
 // import LazyLoaderGIF from '../icon/lazyComponentLoaderGIF.gif'
 
@@ -51,11 +54,18 @@ export default function Home() {
                 <>
                     <DocumentTitle title='The News 24 ::  দ্য নিউজ ২৪' />
                     <HomeLdJson />
-                        <LeadNewsSection />
+                    {/* Header Bottom Ads  */}
+                    <HeaderBottomAds />
+                    <LeadNewsSection />
                     <>
                         <div className="video-area">
                             <div className="container">
                                 <VideoSec />
+                                {/* fresh field ads */}
+                                <VideoSecBotmR1 />
+                                {/* Life bd ads */}
+                                <VideoSecBotmR2 />
+                                 
                             </div>
                         </div>
                         <section className="others-two-area">
